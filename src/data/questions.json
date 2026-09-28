@@ -1,0 +1,388 @@
+[
+  {
+    "id": "C01",
+    "kind": "code",
+    "title": "Toolbox warm-up",
+    "level": "Easy",
+    "points": 10,
+    "source": "Built-in functions; Type conversion functions",
+    "task": "Replace each `None` with one function call. Use `len`, `max`, and `min` on `message`, `int` on `\"32\"`, and `float` on `\"3.14159\"`. Keep the variable names. Each correctly computed variable earns 2 points. Do not type the final values directly.",
+    "hint": "A call has a function name followed by an argument in parentheses.",
+    "starter": "message = \"Hello world\"\ncharacter_count = None\nlargest_character = None\nsmallest_character = None\nwhole_number = None\ndecimal_number = None",
+    "prompt": "## C01 | Toolbox warm-up\n\n**Easy | 10 XP | Five checks worth 2 points each**\n\nReplace each `None` with one function call. Use `len`, `max`, and `min` on `message`, `int` on `\"32\"`, and `float` on `\"3.14159\"`. Keep the variable names. Each correctly computed variable earns 2 points. Do not type the final values directly.\n\n**Hint:** A call has a function name followed by an argument in parentheses.\n\n**Source checkpoint:** Built-in functions; Type conversion functions."
+  },
+  {
+    "id": "C02",
+    "kind": "code",
+    "title": "Random-number lab",
+    "level": "Easy",
+    "points": 10,
+    "source": "Random numbers; Exercise 1",
+    "task": "Complete the three TODOs, keeping the supplied loop. Import `random`, assign a call to `random.random()` to `x`, and print `x` inside the loop. Run your cell twice and compare the outputs. The checks award 2 points each for the import, ten-iteration loop, random call inside the loop, ten numeric output lines, and values in the correct interval. No particular random sequence is required. The loop is supplied; you do not need to design one.",
+    "hint": "Use module.function() notation. Leave the indented lines inside the loop.",
+    "starter": "# TODO: import the module\n\nfor i in range(10):\n    x = None  # TODO: call the function\n    # TODO: print x",
+    "prompt": "## C02 | Random-number lab\n\n**Easy | 10 XP | Five checks worth 2 points each**\n\nComplete the three TODOs, keeping the supplied loop. Import `random`, assign a call to `random.random()` to `x`, and print `x` inside the loop. Run your cell twice and compare the outputs. The checks award 2 points each for the import, ten-iteration loop, random call inside the loop, ten numeric output lines, and values in the correct interval. No particular random sequence is required. The loop is supplied; you do not need to design one.\n\n**Hint:** Use module.function() notation. Leave the indented lines inside the loop.\n\n**Source checkpoint:** Random numbers; Exercise 1."
+  },
+  {
+    "id": "C03",
+    "kind": "code",
+    "title": "Repair the order",
+    "level": "Easy",
+    "points": 10,
+    "source": "Definitions and uses; Exercises 2 and 3",
+    "task": "The first line is in the wrong place. Run the starter once to observe the error. Then move `repeat_message()` below both definitions. Keep `repeat_message` defined before `print_message`. The successful program prints `Hello world` twice, on separate lines. This adapts the chapter's two-function example using another string from the chapter. Checks cover both definitions, their requested order, two helper calls, and the final call/output.",
+    "hint": "Defining a function does not run its body. Both definitions must exist when the final call executes.",
+    "starter": "repeat_message()\n\ndef repeat_message():\n    print_message()\n    print_message()\n\ndef print_message():\n    print(\"Hello world\")",
+    "prompt": "## C03 | Repair the order\n\n**Easy | 10 XP | Five checks worth 2 points each**\n\nThe first line is in the wrong place. Run the starter once to observe the error. Then move `repeat_message()` below both definitions. Keep `repeat_message` defined before `print_message`. The successful program prints `Hello world` twice, on separate lines. This adapts the chapter's two-function example using another string from the chapter. Checks cover both definitions, their requested order, two helper calls, and the final call/output.\n\n**Hint:** Defining a function does not run its body. Both definitions must exist when the final call executes.\n\n**Source checkpoint:** Definitions and uses; Exercises 2 and 3."
+  },
+  {
+    "id": "C04",
+    "kind": "code",
+    "title": "Print twice",
+    "level": "Easy",
+    "points": 10,
+    "source": "Parameters and arguments; Fruitful functions and void functions",
+    "task": "Replace the placeholder body with two print statements using `bruce`. Then replace the final `None` with a call to your function using `\"Bing\"`. Store that call's result in `result`. Do not add a return statement or print `result` in this cell. Checks cover the definition, text input, numeric input, an expression input, and the saved result/sample output.",
+    "hint": "Use the parameter so the function works with different arguments.",
+    "starter": "def print_twice(bruce):\n    ...  # Replace this line\n\nresult = None  # Replace with your function call",
+    "prompt": "## C04 | Print twice\n\n**Easy | 10 XP | Five checks worth 2 points each**\n\nReplace the placeholder body with two print statements using `bruce`. Then replace the final `None` with a call to your function using `\"Bing\"`. Store that call's result in `result`. Do not add a return statement or print `result` in this cell. Checks cover the definition, text input, numeric input, an expression input, and the saved result/sample output.\n\n**Hint:** Use the parameter so the function works with different arguments.\n\n**Source checkpoint:** Parameters and arguments; Fruitful functions and void functions."
+  },
+  {
+    "id": "C05",
+    "kind": "code",
+    "title": "Return a sum",
+    "level": "Easy",
+    "points": 10,
+    "source": "Fruitful functions and void functions; addtwo example",
+    "task": "Complete `addtwo(a, b)` so it returns the sum of its arguments. Call it with `3` and `5`, store the return value in `x`, and print `x` after the definition. The function itself should not print. Checks cover the definition, three input pairs, and the sample call/output.",
+    "hint": "A fruitful function sends its computed value back with return.",
+    "starter": "def addtwo(a, b):\n    return None  # Replace None\n\nx = None  # Replace with your function call\n# Print x here",
+    "prompt": "## C05 | Return a sum\n\n**Easy | 10 XP | Five checks worth 2 points each**\n\nComplete `addtwo(a, b)` so it returns the sum of its arguments. Call it with `3` and `5`, store the return value in `x`, and print `x` after the definition. The function itself should not print. Checks cover the definition, three input pairs, and the sample call/output.\n\n**Hint:** A fruitful function sends its computed value back with return.\n\n**Source checkpoint:** Fruitful functions and void functions; addtwo example."
+  },
+  {
+    "id": "C06",
+    "kind": "code",
+    "title": "Compose the math calls",
+    "level": "Medium",
+    "points": 10,
+    "source": "Math functions; composition example",
+    "task": "Import `math`. Replace `None` values to reproduce the chapter's 45-degree example: compute `radians` with `degrees / 360.0 * 2 * math.pi`, compute `height` by calling `math.sin(radians)`, and compute `comparison` as `math.sqrt(2) / 2.0`. Print `height`, then `comparison`, on separate lines. Each setup/calculation/output check is worth 2 points. The formulas are supplied; no trigonometry knowledge is required.",
+    "hint": "The result of a function call can be part of a larger expression.",
+    "starter": "# Import the module here\ndegrees = 45\nradians = None\nheight = None\ncomparison = None\n# Print the two results here",
+    "prompt": "## C06 | Compose the math calls\n\n**Medium | 10 XP | Five checks worth 2 points each**\n\nImport `math`. Replace `None` values to reproduce the chapter's 45-degree example: compute `radians` with `degrees / 360.0 * 2 * math.pi`, compute `height` by calling `math.sin(radians)`, and compute `comparison` as `math.sqrt(2) / 2.0`. Print `height`, then `comparison`, on separate lines. Each setup/calculation/output check is worth 2 points. The formulas are supplied; no trigonometry knowledge is required.\n\n**Hint:** The result of a function call can be part of a larger expression.\n\n**Source checkpoint:** Math functions; composition example."
+  },
+  {
+    "id": "C07",
+    "kind": "code",
+    "title": "Overtime checkpoint",
+    "level": "Medium",
+    "points": 10,
+    "source": "Exercise 6",
+    "task": "Fill only the three `None` placeholders. Return pay at the regular rate for up to 40 hours. For more than 40 hours, pay the first 40 at `rate` and the remaining hours at `1.5 * rate`. Call `computepay(45, 10)` and store the result in `pay`. The supplied print should show `475` or `475.0`. The branching structure is supplied because the chapter refers back to an earlier pay exercise. Checks cover the function, below/exactly/above 40 hours, and a second overtime rate plus the sample output.",
+    "hint": "Overtime pay is 40 * rate plus (hours - 40) * rate * 1.5.",
+    "starter": "def computepay(hours, rate):\n    # Supplied condition: complete only the return expressions.\n    if hours > 40:\n        return None\n    else:\n        return None\n\npay = None  # Call your function with 45 and 10\nprint(pay)",
+    "prompt": "## C07 | Overtime checkpoint\n\n**Medium | 10 XP | Five checks worth 2 points each**\n\nFill only the three `None` placeholders. Return pay at the regular rate for up to 40 hours. For more than 40 hours, pay the first 40 at `rate` and the remaining hours at `1.5 * rate`. Call `computepay(45, 10)` and store the result in `pay`. The supplied print should show `475` or `475.0`. The branching structure is supplied because the chapter refers back to an earlier pay exercise. Checks cover the function, below/exactly/above 40 hours, and a second overtime rate plus the sample output.\n\n**Hint:** Overtime pay is 40 * rate plus (hours - 40) * rate * 1.5.\n\n**Source checkpoint:** Exercise 6."
+  },
+  {
+    "id": "C08",
+    "kind": "code",
+    "title": "Grade gate",
+    "level": "Medium",
+    "points": 10,
+    "source": "Exercise 7",
+    "task": "Replace the six empty strings inside `computegrade` with the correct return strings: `\"Bad score\"` for a score outside 0 through 1, `\"A\"` for at least 0.9, `\"B\"` for at least 0.8, `\"C\"` for at least 0.7, `\"D\"` for at least 0.6, and `\"F\"` below 0.6. Keep the supplied conditions and helper unchanged. `grade_text` handles converting text and invalid text such as `\"perfect\"`; writing exception handling is not part of this assignment. Checks cover the definition, upper boundaries, lower boundaries, invalid numeric scores, and the supplied helper/sample output.",
+    "hint": "Return quoted strings. The conditions are already in order from highest threshold to lowest.",
+    "starter": "def computegrade(score):\n    # Supplied conditions: fill only the six return strings.\n    if score < 0 or score > 1:\n        return \"\"\n    if score >= 0.9:\n        return \"\"\n    elif score >= 0.8:\n        return \"\"\n    elif score >= 0.7:\n        return \"\"\n    elif score >= 0.6:\n        return \"\"\n    else:\n        return \"\"\n\n\n# PROVIDED SUPPORT: do not change; exception handling is not assessed.\ndef grade_text(text):\n    try:\n        number = float(text)\n    except (ValueError, TypeError):\n        return \"Bad score\"\n    return computegrade(number)\n\nprint(grade_text(\"0.95\"))\nprint(grade_text(\"perfect\"))",
+    "prompt": "## C08 | Grade gate\n\n**Medium | 10 XP | Five checks worth 2 points each**\n\nReplace the six empty strings inside `computegrade` with the correct return strings: `\"Bad score\"` for a score outside 0 through 1, `\"A\"` for at least 0.9, `\"B\"` for at least 0.8, `\"C\"` for at least 0.7, `\"D\"` for at least 0.6, and `\"F\"` below 0.6. Keep the supplied conditions and helper unchanged. `grade_text` handles converting text and invalid text such as `\"perfect\"`; writing exception handling is not part of this assignment. Checks cover the definition, upper boundaries, lower boundaries, invalid numeric scores, and the supplied helper/sample output.\n\n**Hint:** Return quoted strings. The conditions are already in order from highest threshold to lowest.\n\n**Source checkpoint:** Exercise 7."
+  },
+  {
+    "id": "M01",
+    "kind": "mcq",
+    "title": "Define now, call later",
+    "level": "Easy",
+    "points": 2,
+    "source": "Adding new functions; Exercise 4",
+    "task": "What does `def` do?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Immediately runs the function body."
+      },
+      {
+        "letter": "B",
+        "text": "Defines a function whose body runs when called."
+      },
+      {
+        "letter": "C",
+        "text": "Displays the return value."
+      },
+      {
+        "letter": "D",
+        "text": "Imports a module."
+      }
+    ],
+    "answer": "B",
+    "prompt": "### M01 | Define now, call later | Easy | 2 XP\n\nWhat does `def` do?\n\n- **A.** Immediately runs the function body.\n- **B.** Defines a function whose body runs when called.\n- **C.** Displays the return value.\n- **D.** Imports a module.\n\nSource checkpoint: Adding new functions; Exercise 4."
+  },
+  {
+    "id": "M02",
+    "kind": "mcq",
+    "title": "Follow the calls",
+    "level": "Easy",
+    "points": 2,
+    "source": "Exercise 5",
+    "task": "What is the output, in order?\n\n```python\ndef fred():\n    print(\"Zap\")\n\ndef jane():\n    print(\"ABC\")\n\njane()\nfred()\njane()\n```",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Zap, ABC, Zap"
+      },
+      {
+        "letter": "B",
+        "text": "ABC, ABC, Zap"
+      },
+      {
+        "letter": "C",
+        "text": "ABC, Zap, ABC"
+      },
+      {
+        "letter": "D",
+        "text": "No output"
+      }
+    ],
+    "answer": "C",
+    "prompt": "### M02 | Follow the calls | Easy | 2 XP\n\nWhat is the output, in order?\n\n```python\ndef fred():\n    print(\"Zap\")\n\ndef jane():\n    print(\"ABC\")\n\njane()\nfred()\njane()\n```\n\n- **A.** Zap, ABC, Zap\n- **B.** ABC, ABC, Zap\n- **C.** ABC, Zap, ABC\n- **D.** No output\n\nSource checkpoint: Exercise 5."
+  },
+  {
+    "id": "M03",
+    "kind": "mcq",
+    "title": "The value supplied",
+    "level": "Easy",
+    "points": 2,
+    "source": "Function calls",
+    "task": "In `type(32)`, which item is the argument?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "type"
+      },
+      {
+        "letter": "B",
+        "text": "int"
+      },
+      {
+        "letter": "C",
+        "text": "32"
+      },
+      {
+        "letter": "D",
+        "text": "return"
+      }
+    ],
+    "answer": "C",
+    "prompt": "### M03 | The value supplied | Easy | 2 XP\n\nIn `type(32)`, which item is the argument?\n\n- **A.** type\n- **B.** int\n- **C.** 32\n- **D.** return\n\nSource checkpoint: Function calls."
+  },
+  {
+    "id": "M04",
+    "kind": "mcq",
+    "title": "Conversion check",
+    "level": "Easy",
+    "points": 2,
+    "source": "Type conversion functions",
+    "task": "What does `int(-2.3)` return?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "-3"
+      },
+      {
+        "letter": "B",
+        "text": "-2"
+      },
+      {
+        "letter": "C",
+        "text": "2"
+      },
+      {
+        "letter": "D",
+        "text": "-2.3"
+      }
+    ],
+    "answer": "B",
+    "prompt": "### M04 | Conversion check | Easy | 2 XP\n\nWhat does `int(-2.3)` return?\n\n- **A.** -3\n- **B.** -2\n- **C.** 2\n- **D.** -2.3\n\nSource checkpoint: Type conversion functions."
+  },
+  {
+    "id": "M05",
+    "kind": "mcq",
+    "title": "A module call",
+    "level": "Easy",
+    "points": 2,
+    "source": "Math functions",
+    "task": "After `import math`, which expression calls the square-root function?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "math.sqrt(2)"
+      },
+      {
+        "letter": "B",
+        "text": "math: sqrt(2)"
+      },
+      {
+        "letter": "C",
+        "text": "import.sqrt(2)"
+      },
+      {
+        "letter": "D",
+        "text": "sqrt.math(2)"
+      }
+    ],
+    "answer": "A",
+    "prompt": "### M05 | A module call | Easy | 2 XP\n\nAfter `import math`, which expression calls the square-root function?\n\n- **A.** math.sqrt(2)\n- **B.** math: sqrt(2)\n- **C.** import.sqrt(2)\n- **D.** sqrt.math(2)\n\nSource checkpoint: Math functions."
+  },
+  {
+    "id": "M06",
+    "kind": "mcq",
+    "title": "Random range",
+    "level": "Easy",
+    "points": 2,
+    "source": "Random numbers; Exercise 1",
+    "task": "Which interval describes `random.random()`?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "0.0 through 1.0, both included"
+      },
+      {
+        "letter": "B",
+        "text": "Greater than 0.0 through 1.0, including 1.0"
+      },
+      {
+        "letter": "C",
+        "text": "Only the integers 0 and 1"
+      },
+      {
+        "letter": "D",
+        "text": "At least 0.0 and less than 1.0"
+      }
+    ],
+    "answer": "D",
+    "prompt": "### M06 | Random range | Easy | 2 XP\n\nWhich interval describes `random.random()`?\n\n- **A.** 0.0 through 1.0, both included\n- **B.** Greater than 0.0 through 1.0, including 1.0\n- **C.** Only the integers 0 and 1\n- **D.** At least 0.0 and less than 1.0\n\nSource checkpoint: Random numbers; Exercise 1."
+  },
+  {
+    "id": "M07",
+    "kind": "mcq",
+    "title": "Two names, one value",
+    "level": "Easy",
+    "points": 2,
+    "source": "Parameters and arguments",
+    "task": "For `def print_twice(bruce):`, what is `bruce`?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A parameter name"
+      },
+      {
+        "letter": "B",
+        "text": "A required name in the calling code"
+      },
+      {
+        "letter": "C",
+        "text": "A module"
+      },
+      {
+        "letter": "D",
+        "text": "The function name"
+      }
+    ],
+    "answer": "A",
+    "prompt": "### M07 | Two names, one value | Easy | 2 XP\n\nFor `def print_twice(bruce):`, what is `bruce`?\n\n- **A.** A parameter name\n- **B.** A required name in the calling code\n- **C.** A module\n- **D.** The function name\n\nSource checkpoint: Parameters and arguments."
+  },
+  {
+    "id": "M08",
+    "kind": "mcq",
+    "title": "An action without a result",
+    "level": "Easy",
+    "points": 2,
+    "source": "Fruitful functions and void functions",
+    "task": "A function prints text but has no `return` statement. What is assigned by `result = that_function()`?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The printed text"
+      },
+      {
+        "letter": "B",
+        "text": "The string \"None\""
+      },
+      {
+        "letter": "C",
+        "text": "None"
+      },
+      {
+        "letter": "D",
+        "text": "0"
+      }
+    ],
+    "answer": "C",
+    "prompt": "### M08 | An action without a result | Easy | 2 XP\n\nA function prints text but has no `return` statement. What is assigned by `result = that_function()`?\n\n- **A.** The printed text\n- **B.** The string \"None\"\n- **C.** None\n- **D.** 0\n\nSource checkpoint: Fruitful functions and void functions."
+  },
+  {
+    "id": "M09",
+    "kind": "mcq",
+    "title": "Definition order",
+    "level": "Medium",
+    "points": 2,
+    "source": "Definitions and uses; Exercise 3",
+    "task": "A function is defined first, a helper it calls is defined second, and the first function is called last. What happens?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It always fails because the helper appears second."
+      },
+      {
+        "letter": "B",
+        "text": "It can run because both definitions exist before the call."
+      },
+      {
+        "letter": "C",
+        "text": "Both bodies run during definition."
+      },
+      {
+        "letter": "D",
+        "text": "Only the helper runs."
+      }
+    ],
+    "answer": "B",
+    "prompt": "### M09 | Definition order | Medium | 2 XP\n\nA function is defined first, a helper it calls is defined second, and the first function is called last. What happens?\n\n- **A.** It always fails because the helper appears second.\n- **B.** It can run because both definitions exist before the call.\n- **C.** Both bodies run during definition.\n- **D.** Only the helper runs.\n\nSource checkpoint: Definitions and uses; Exercise 3."
+  },
+  {
+    "id": "M10",
+    "kind": "mcq",
+    "title": "Keep the result",
+    "level": "Medium",
+    "points": 2,
+    "source": "Fruitful functions and void functions",
+    "task": "A script contains only `import math` and `math.sqrt(5)`. What happens to that result?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It is automatically printed."
+      },
+      {
+        "letter": "B",
+        "text": "It is stored as x."
+      },
+      {
+        "letter": "C",
+        "text": "It is returned from the whole script."
+      },
+      {
+        "letter": "D",
+        "text": "It is computed but is neither stored nor displayed."
+      }
+    ],
+    "answer": "D",
+    "prompt": "### M10 | Keep the result | Medium | 2 XP\n\nA script contains only `import math` and `math.sqrt(5)`. What happens to that result?\n\n- **A.** It is automatically printed.\n- **B.** It is stored as x.\n- **C.** It is returned from the whole script.\n- **D.** It is computed but is neither stored nor displayed.\n\nSource checkpoint: Fruitful functions and void functions."
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "name": "zhuddle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "astro": "^7.3.5",
+    "@astrojs/react": "^7.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "lucide-react": "^0.468.0",
+    "@uiw/react-codemirror": "^4.23.0",
+    "@codemirror/lang-python": "^6.2.0",
+    "react-markdown": "^10.1.0",
+    "jspdf": "^4.2.1"
+  }
+}
