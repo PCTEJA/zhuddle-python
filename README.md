@@ -45,3 +45,25 @@ For Netlify: upload the deploy ZIP or use the build command `pnpm build` and pub
 For Vercel: import this project, select Astro, and use the included configuration. Add zhuddle.com in the project's Domains panel and use its displayed DNS values.
 
 Source: Charles R. Severance, [Python for Everybody: Functions](https://www.py4e.com/html3/04-functions), [CC BY 4.0](https://www.py4e.com/book). Original question wording, supplied scaffolding, scoring, and UI were added for ZHUDDLE.
+
+## Illustrated dashboard
+
+The dashboard uses the supplied ZHUDDLE artwork in an emerald/mint design based on the reference: course path, learner welcome, Python workspace, goals, badges, challenge scene, knowledge checks, and the achievements/download view. Explore and lesson search link to real learning content. Progress indicators are derived from saved answers; there are no simulated streaks or XP rewards.
+
+### Motion and assets
+
+- `public/assets/zhuddle/` contains 20 animated SVGs and 21 still variants, covering all 18 main illustrations and the three reusable challenge layers.
+- Production SVGs embed compressed WebP versions of the supplied PNGs. Sprite coordinates, frame timing, transparency, and original motion CSS are preserved. The full SVG library is 5.56 MB, reduced from 65.63 MB (91.5%). No image generation was used for this redesign.
+- Only the welcome learner runs an idle animation. Other artwork animates on hover/focus or for a short event; reward artwork is mounted when a check earns points. Offscreen and background-tab artwork switches to still variants.
+- The motion toggle persists locally. The app also observes the system reduced-motion preference, swapping embedded SVGs to actual still files instead of attempting to pause an image with parent CSS.
+- Rebuild the production images with `python scripts/optimize-assets.py PATH_TO_GENERATED_ASSETS` (requires Pillow). The original source pack is kept separately; it is not needed to build or deploy the site.
+- The loop/list badge artwork illustrates the existing Function Explorer/Builder score milestones; it does not claim completion of additional chapters. Badge thresholds remain 0, 50, 75, and 100 XP.
+
+### Browser verification
+
+```sh
+pnpm exec playwright install chromium
+pnpm test
+```
+
+Tests cover real Pyodide execution, retry scoring, edit invalidation and persistence, quiz grading, notebook/PDF downloads, certificate locking, starter reset, search, mobile focus/escape behavior, viewport overflow at seven widths, production asset URLs, and motion preferences. The Python test needs internet access to load Pyodide. Test identities and downloads remain in temporary browser contexts.

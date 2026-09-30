@@ -1,8 +1,9 @@
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
 
 export default defineConfig({
-  site: 'https://zhuddle.com',
-  output: 'static',
+  site: "https://zhuddle.com",
+  output: "static",
   integrations: [react()],
+  devToolbar: { enabled: false },
 });
