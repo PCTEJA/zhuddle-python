@@ -13,7 +13,6 @@ import {
   Flag,
   Menu,
   Search,
-  Sparkles,
   X,
 } from "lucide-react";
 import Art from "./MotionArt";
@@ -408,10 +407,15 @@ export function Sidebar({
 export function Welcome({ state, score, complete, mastered, view }) {
   const first = state.student.name.split(" ")[0];
   return (
-    <section className="welcome-band">
-      <div className="hero-orbit orbit-one" />
-      <div className="hero-orbit orbit-two" />
-      <Art name="boy-laptop" mode="idle" className="hero-learner" eager />
+    <section className="welcome-band welcome-band-compact">
+      <img
+        className="hero-garden"
+        src="/assets/zhuddle/coding-garden-v1.webp"
+        alt=""
+        width="1536"
+        height="1024"
+        fetchPriority="high"
+      />
       <div className="welcome-copy">
         <div className="eyebrow">
           <span className="status-dot" />
@@ -421,14 +425,12 @@ export function Welcome({ state, score, complete, mastered, view }) {
           {view === "results" ? (
             <>
               Small steps.
-              <br />
               <span>Look how far you’ve come.</span>
             </>
           ) : (
             <>
               Keep going{first ? `, ${first}` : ""}
               <span className="hero-period">.</span>
-              <br />
               <span>You’re building something great.</span>
             </>
           )}
@@ -464,15 +466,6 @@ export function Welcome({ state, score, complete, mastered, view }) {
           </div>
         </div>
       </div>
-      <div className="hero-note">
-        <Sparkles size={16} />
-        <span>
-          Great things start
-          <br />
-          with a little <b>try.</b>
-        </span>
-      </div>
-      <Art name="helper-robot" className="hero-robot" eager />
     </section>
   );
 }

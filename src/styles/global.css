@@ -156,7 +156,7 @@ pre code {
   color: #468b75;
 }
 .topbar {
-  height: 82px;
+  height: 62px;
   background: linear-gradient(110deg, #073e36, #0a4d40 62%, #06372f);
   color: #fff;
   display: flex;
@@ -172,15 +172,15 @@ pre code {
 .brand {
   display: flex;
   gap: 6px;
-  font-size: 27px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: -1.2px;
   padding: 0;
   flex-shrink: 0;
 }
 .brand .motion-art {
-  height: 49px;
-  width: 49px;
+  height: 38px;
+  width: 38px;
 }
 .brand-dot {
   color: #ffb960;
@@ -193,7 +193,7 @@ pre code {
 }
 .topnav button {
   padding: 0 13px;
-  margin: 15px 0;
+  margin: 10px 0;
   border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
@@ -213,7 +213,7 @@ pre code {
 .topnav button.selected:after {
   content: "";
   position: absolute;
-  bottom: -15px;
+  bottom: -10px;
   left: 25%;
   right: 25%;
   height: 3px;
@@ -241,7 +241,7 @@ pre code {
   font-size: 12px;
   color: #fff;
   background: transparent;
-  padding: 12px 0;
+  padding: 9px 0;
   border: 0;
   min-width: 0;
 }
@@ -250,7 +250,7 @@ pre code {
 }
 .search-results {
   position: absolute;
-  top: 52px;
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
   min-width: 270px;
@@ -304,7 +304,7 @@ pre code {
   white-space: nowrap;
   border: 1px solid #cf915642;
   border-radius: 11px;
-  padding: 6px 12px 6px 4px;
+  padding: 3px 10px 3px 4px;
   background: #fcb24e08;
 }
 .xp-pill .motion-art {
@@ -331,8 +331,8 @@ pre code {
   text-overflow: ellipsis;
 }
 .profile-button .motion-art {
-  height: 42px;
-  width: 42px;
+  height: 36px;
+  width: 36px;
   border-radius: 50%;
   border: 2px solid #8ddcb9;
   background: #e2f3e6;
@@ -368,7 +368,7 @@ pre code {
 }
 .sidebar {
   position: sticky;
-  top: 104px;
+  top: 84px;
   min-width: 0;
 }
 .course-card,
@@ -2287,7 +2287,7 @@ pre code {
 }
 @media (max-width: 900px) {
   .topbar {
-    height: 74px;
+    height: 60px;
     gap: 16px;
     padding: 0 18px;
   }
@@ -2331,7 +2331,7 @@ pre code {
     gap: 16px;
   }
   .sidebar {
-    top: 90px;
+    top: 76px;
   }
   .course-card {
     padding: 14px 12px;
@@ -2500,7 +2500,7 @@ pre code {
 }
 @media (max-width: 700px) {
   .topbar {
-    height: 68px;
+    height: 56px;
     padding: 0 14px;
     gap: 10px;
   }
@@ -2544,7 +2544,7 @@ pre code {
   .sidebar {
     display: none;
     position: fixed;
-    top: 68px;
+    top: 56px;
     bottom: 0;
     left: 0;
     z-index: 35;
@@ -2559,7 +2559,7 @@ pre code {
   }
   .scrim {
     position: fixed;
-    inset: 68px 0 0;
+    inset: 56px 0 0;
     background: #0a302b77;
     backdrop-filter: blur(2px);
     z-index: 30;

@@ -53,8 +53,8 @@ The dashboard uses the supplied ZHUDDLE artwork in an emerald/mint design based 
 ### Motion and assets
 
 - `public/assets/zhuddle/` contains 20 animated SVGs and 21 still variants, covering all 18 main illustrations and the three reusable challenge layers.
-- Production SVGs embed compressed WebP versions of the supplied PNGs. Sprite coordinates, frame timing, transparency, and original motion CSS are preserved. The full SVG library is 5.56 MB, reduced from 65.63 MB (91.5%). No image generation was used for this redesign.
-- Only the welcome learner runs an idle animation. Other artwork animates on hover/focus or for a short event; reward artwork is mounted when a check earns points. Offscreen and background-tab artwork switches to still variants.
+- Production SVGs embed compressed WebP versions of the supplied PNGs. Sprite coordinates, frame timing, transparency, and original motion CSS are preserved. The full SVG library is 5.56 MB, reduced from 65.63 MB (91.5%). The compact welcome banner uses new generated artwork; its prompt and asset details are in `design/coding-garden-prompt.md`.
+- The welcome illustration is static. Other artwork animates on hover/focus or for a short event; reward artwork is mounted when a check earns points. Offscreen and background-tab artwork switches to still variants.
 - The motion toggle persists locally. The app also observes the system reduced-motion preference, swapping embedded SVGs to actual still files instead of attempting to pause an image with parent CSS.
 - Rebuild the production images with `python scripts/optimize-assets.py PATH_TO_GENERATED_ASSETS` (requires Pillow). The original source pack is kept separately; it is not needed to build or deploy the site.
 - The loop/list badge artwork illustrates the existing Function Explorer/Builder score milestones; it does not claim completion of additional chapters. Badge thresholds remain 0, 50, 75, and 100 XP.
