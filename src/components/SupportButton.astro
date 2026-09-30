@@ -1,0 +1,72 @@
+<aside class="support-link" aria-label="Support ZHUDDLE">
+  <a
+    href="https://www.buymeacoffee.com/hanr"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Buy me a coffee (opens in a new tab)"
+  >
+    <span class="support-coffee" aria-hidden="true">☕</span>
+    <span>Buy me a coffee</span>
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7M7 7h10v10" />
+    </svg>
+  </a>
+</aside>
+
+<style>
+  .support-link {
+    position: fixed;
+    right: max(18px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
+    z-index: 20;
+  }
+
+  .support-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 6px 16px 6px 8px;
+    border: 1px solid #b8ddcb;
+    border-radius: 999px;
+    background: #0b493d;
+    color: #fff9e8;
+    box-shadow: 0 4px 18px #173d3726;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .support-link a:hover {
+    background: #16644b;
+  }
+
+  .support-coffee {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffdd00;
+    font-size: 21px;
+  }
+
+  /* Reserve room at the end of the page for the floating link. */
+  :global(body) {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+
+  /* Keep the learning controls unobstructed on smaller screens. */
+  @media (max-width: 700px) {
+    .support-link {
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 18px max(18px, env(safe-area-inset-bottom));
+    }
+
+    :global(body) {
+      padding-bottom: 0;
+    }
+  }
+</style>

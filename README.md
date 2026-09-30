@@ -42,6 +42,10 @@ Publish only `dist/`, not node_modules, instructor scratch files, or a student's
 
 For Netlify: upload the deploy ZIP or use the build command `pnpm build` and publish directory `dist`. Add zhuddle.com as a custom domain and apply the exact external DNS instructions provided by Netlify in Spaceship. Keep unrelated DNS records intact.
 
+Keep **Project configuration → General → Powered by Netlify badge → Show the badge on this project** switched off in Netlify. This is a per-project hosting setting, not a source-code option; it removes the injected badge for all visitors and persists across deploys.
+
+The site includes a Buy Me a Coffee link to `https://www.buymeacoffee.com/hanr`. It floats at the bottom right on desktop and sits after the content on mobile so it does not cover learning controls. The static link works without JavaScript and opens the support page in a new tab; no third-party widget script or stream-alert credentials are needed.
+
 For Vercel: import this project, select Astro, and use the included configuration. Add zhuddle.com in the project's Domains panel and use its displayed DNS values.
 
 Source: Charles R. Severance, [Python for Everybody: Functions](https://www.py4e.com/html3/04-functions), [CC BY 4.0](https://www.py4e.com/book). Original question wording, supplied scaffolding, scoring, and UI were added for ZHUDDLE.

@@ -1,5 +1,6 @@
 ---
 import App from '../components/App.jsx';
+import SupportButton from '../components/SupportButton.astro';
 import '../styles/global.css';
 import '../styles/welcome.css';
 ---
@@ -15,6 +16,7 @@ import '../styles/welcome.css';
   </head>
   <body>
     <App client:load />
+    <SupportButton />
     <noscript>Enable JavaScript to run the interactive Python exercises. <a href="/ZHUDDLE_Functions_Quest.ipynb">Download the notebook instead.</a></noscript>
   </body>
 </html>
