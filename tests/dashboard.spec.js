@@ -171,7 +171,9 @@ test("motion swaps to still assets, persists and follows the operating system", 
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
   await page.locator(".cm-content").waitFor();
-  await expect(page.locator(".hero-learner img")).toHaveAttribute(
+  const learningArt = page.locator('.topnav img[src*="learning-book"]');
+  await learningArt.hover();
+  await expect(learningArt).toHaveAttribute(
     "src",
     /animated/,
   );
@@ -188,7 +190,8 @@ test("motion swaps to still assets, persists and follows the operating system", 
     .getByRole("button", { name: "Animations off", exact: true })
     .click();
   await page.locator(".welcome-band").scrollIntoViewIfNeeded();
-  await expect(page.locator(".hero-learner img")).toHaveAttribute(
+  await learningArt.hover();
+  await expect(learningArt).toHaveAttribute(
     "src",
     /animated/,
   );
