@@ -44,7 +44,7 @@ For Netlify: upload the deploy ZIP or use the build command `pnpm build` and pub
 
 Keep **Project configuration → General → Powered by Netlify badge → Show the badge on this project** switched off in Netlify. This is a per-project hosting setting, not a source-code option; it removes the injected badge for all visitors and persists across deploys.
 
-The site includes a Buy Me a Coffee link to `https://www.buymeacoffee.com/hanr`. It floats at the bottom right on desktop and sits after the content on mobile so it does not cover learning controls. The static link works without JavaScript and opens the support page in a new tab; no third-party widget script or stream-alert credentials are needed.
+The site includes a heart icon and “Support ZHUDDLE” link to `https://www.buymeacoffee.com/hanr`. It floats at the bottom right on desktop and mobile, with phone safe-area spacing and extra space at the end of the page so the final content can scroll clear of the button. The static link works without JavaScript and opens the support page in a new tab; no third-party widget script or stream-alert credentials are needed.
 
 For Vercel: import this project, select Astro, and use the included configuration. Add zhuddle.com in the project's Domains panel and use its displayed DNS values.
 

@@ -3,10 +3,14 @@
     href="https://www.buymeacoffee.com/hanr"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Buy me a coffee (opens in a new tab)"
+    aria-label="Support ZHUDDLE (opens in a new tab)"
   >
-    <span class="support-coffee" aria-hidden="true">☕</span>
-    <span>Buy me a coffee</span>
+    <span class="support-heart" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+      </svg>
+    </span>
+    <span>Support ZHUDDLE</span>
     <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M7 17 17 7M7 7h10v10" />
     </svg>
@@ -41,14 +45,14 @@
     background: #16644b;
   }
 
-  .support-coffee {
+  .support-heart {
     display: grid;
     place-items: center;
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: #ffdd00;
-    font-size: 21px;
+    background: #fff0e9;
+    color: #c94660;
   }
 
   /* Reserve room at the end of the page for the floating link. */
@@ -56,17 +60,16 @@
     padding-bottom: calc(84px + env(safe-area-inset-bottom));
   }
 
-  /* Keep the learning controls unobstructed on smaller screens. */
+  /* Keep the floating link compact and clear of phone safe areas. */
   @media (max-width: 700px) {
     .support-link {
-      position: static;
-      display: flex;
-      justify-content: flex-end;
-      padding: 0 18px max(18px, env(safe-area-inset-bottom));
+      right: max(12px, env(safe-area-inset-right));
+      bottom: max(12px, env(safe-area-inset-bottom));
     }
 
-    :global(body) {
-      padding-bottom: 0;
+    .support-link a {
+      gap: 8px;
+      font-size: 13px;
     }
   }
 </style>
