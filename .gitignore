@@ -4,3 +4,7 @@ dist/
 .netlify/
 .vercel/
 .env*
+.qa/
+test-results/
+playwright-report/
+__pycache__/

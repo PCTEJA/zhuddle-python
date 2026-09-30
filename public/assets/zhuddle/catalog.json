@@ -1,0 +1,212 @@
+[
+  {
+    "id": "logo",
+    "title": "Zhuddle logo",
+    "mode": "float",
+    "duration": 5.5,
+    "part": false,
+    "still": "logo-still.svg",
+    "animated": "logo-animated.svg",
+    "source": "logo-source.png"
+  },
+  {
+    "id": "boy-laptop",
+    "title": "Laptop learner",
+    "mode": "sprite",
+    "duration": 4.5,
+    "part": false,
+    "still": "boy-laptop-still.svg",
+    "animated": "boy-laptop-animated.svg",
+    "source": "boy-laptop-source.png"
+  },
+  {
+    "id": "helper-robot",
+    "title": "Helper robot",
+    "mode": "sprite",
+    "duration": 3.6,
+    "part": false,
+    "still": "helper-robot-still.svg",
+    "animated": "helper-robot-animated.svg",
+    "source": "helper-robot-source.png"
+  },
+  {
+    "id": "streak-flame",
+    "title": "Streak flame",
+    "mode": "sprite",
+    "duration": 1.6,
+    "part": false,
+    "still": "streak-flame-still.svg",
+    "animated": "streak-flame-animated.svg",
+    "source": "streak-flame-source.png"
+  },
+  {
+    "id": "xp-star",
+    "title": "XP reward star",
+    "mode": "reward",
+    "duration": 1.4,
+    "part": false,
+    "still": "xp-star-still.svg",
+    "animated": "xp-star-animated.svg",
+    "source": "xp-star-source.png"
+  },
+  {
+    "id": "goal-target",
+    "title": "Goal complete",
+    "mode": "sprite-once",
+    "duration": 1.2,
+    "part": false,
+    "still": "goal-target-still.svg",
+    "animated": "goal-target-animated.svg",
+    "source": "goal-target-source.png"
+  },
+  {
+    "id": "badge-function",
+    "title": "Function Starter badge",
+    "mode": "reward",
+    "duration": 1.5,
+    "part": false,
+    "still": "badge-function-still.svg",
+    "animated": "badge-function-animated.svg",
+    "source": "badge-function-source.png"
+  },
+  {
+    "id": "badge-loop",
+    "title": "Loop Learner badge",
+    "mode": "reward",
+    "duration": 1.5,
+    "part": false,
+    "still": "badge-loop-still.svg",
+    "animated": "badge-loop-animated.svg",
+    "source": "badge-loop-source.png"
+  },
+  {
+    "id": "badge-list",
+    "title": "List Master badge",
+    "mode": "reward",
+    "duration": 1.5,
+    "part": false,
+    "still": "badge-list-still.svg",
+    "animated": "badge-list-animated.svg",
+    "source": "badge-list-source.png"
+  },
+  {
+    "id": "badge-python",
+    "title": "Python Explorer badge",
+    "mode": "reward",
+    "duration": 1.5,
+    "part": false,
+    "still": "badge-python-still.svg",
+    "animated": "badge-python-animated.svg",
+    "source": "badge-python-source.png"
+  },
+  {
+    "id": "badge-locked",
+    "title": "Locked achievement",
+    "mode": "nudge",
+    "duration": 0.7,
+    "part": false,
+    "still": "badge-locked-still.svg",
+    "animated": "badge-locked-animated.svg",
+    "source": "badge-locked-source.png"
+  },
+  {
+    "id": "learning-book",
+    "title": "Learning book",
+    "mode": "sprite-once",
+    "duration": 1.6,
+    "part": false,
+    "still": "learning-book-still.svg",
+    "animated": "learning-book-animated.svg",
+    "source": "learning-book-source.png"
+  },
+  {
+    "id": "practice-lightning",
+    "title": "Practice lightning",
+    "mode": "pulse",
+    "duration": 1.1,
+    "part": false,
+    "still": "practice-lightning-still.svg",
+    "animated": "practice-lightning-animated.svg",
+    "source": "practice-lightning-source.png"
+  },
+  {
+    "id": "explore-compass",
+    "title": "Explore compass",
+    "mode": "sprite-once",
+    "duration": 1.8,
+    "part": false,
+    "still": "explore-compass-still.svg",
+    "animated": "explore-compass-animated.svg",
+    "source": "explore-compass-source.png"
+  },
+  {
+    "id": "python-snake",
+    "title": "Python challenge snake",
+    "mode": "sprite",
+    "duration": 4,
+    "part": true,
+    "still": "python-snake-still.svg",
+    "animated": "python-snake-animated.svg",
+    "source": "python-snake-source.png"
+  },
+  {
+    "id": "challenge-landscape",
+    "title": "Challenge landscape layer",
+    "mode": "static",
+    "duration": 0,
+    "part": true,
+    "still": "challenge-landscape-still.svg",
+    "animated": null,
+    "source": "challenge-landscape-source.png"
+  },
+  {
+    "id": "challenge-flag",
+    "title": "Challenge flag layer",
+    "mode": "sprite",
+    "duration": 2.2,
+    "part": true,
+    "still": "challenge-flag-still.svg",
+    "animated": "challenge-flag-animated.svg",
+    "source": "challenge-flag-source.png"
+  },
+  {
+    "id": "thinking-learner",
+    "title": "Thinking learner",
+    "mode": "sprite",
+    "duration": 5,
+    "part": false,
+    "still": "thinking-learner-still.svg",
+    "animated": "thinking-learner-animated.svg",
+    "source": "thinking-learner-source.png"
+  },
+  {
+    "id": "lesson-success",
+    "title": "Lesson celebration",
+    "mode": "sprite-once",
+    "duration": 2.4,
+    "part": false,
+    "still": "lesson-success-still.svg",
+    "animated": "lesson-success-animated.svg",
+    "source": "lesson-success-source.png"
+  },
+  {
+    "id": "loading-code",
+    "title": "Loading code blocks",
+    "mode": "sprite",
+    "duration": 2.4,
+    "part": false,
+    "still": "loading-code-still.svg",
+    "animated": "loading-code-animated.svg",
+    "source": "loading-code-source.png"
+  },
+  {
+    "id": "python-challenge",
+    "title": "Python challenge scene",
+    "mode": "layered loop",
+    "duration": 4,
+    "part": false,
+    "still": "python-challenge-still.svg",
+    "animated": "python-challenge-animated.svg",
+    "source": null
+  }
+]
