@@ -17,6 +17,18 @@
 .welcome-band-compact .welcome-copy {
   max-width: 100%;
 }
+.hero-video {
+  opacity: 0;
+  object-position: center;
+}
+.hero-video.is-playing {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
 .welcome-band-compact .eyebrow {
   font-size: 8px;
   letter-spacing: 1.05px;
@@ -84,6 +96,9 @@
   }
   .hero-garden {
     object-position: left center;
+  }
+  .hero-garden.hero-video {
+    object-position: 8% center;
   }
   .welcome-band-compact .eyebrow {
     font-size: 7px;
