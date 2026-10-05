@@ -410,10 +410,10 @@ export function Welcome({ state, score, complete, mastered, view }) {
     <section className="welcome-band welcome-band-compact">
       <img
         className="hero-garden"
-        src="/assets/zhuddle/coding-garden-v1.webp"
+        src="/assets/zhuddle/emerald-aurora-learner-banner.png"
         alt=""
-        width="1536"
-        height="1024"
+        width="2129"
+        height="738"
         fetchPriority="high"
       />
       <div className="welcome-copy">
