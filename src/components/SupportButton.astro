@@ -5,9 +5,11 @@
     rel="noopener noreferrer"
     aria-label="Support ZHUDDLE (opens in a new tab)"
   >
-    <span class="support-heart" aria-hidden="true">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+    <span class="support-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="4" />
+        <path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-4.24-9.9 4.24-4.24m-14.14 14.14 4.24-4.24" />
       </svg>
     </span>
     <span>Support ZHUDDLE</span>
@@ -39,20 +41,22 @@
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
+    transform: scale(0.8);
+    transform-origin: bottom right;
   }
 
   .support-link a:hover {
     background: #16644b;
   }
 
-  .support-heart {
+  .support-icon {
     display: grid;
     place-items: center;
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: #fff0e9;
-    color: #c94660;
+    background: #e9f8f1;
+    color: #008965;
   }
 
   /* Reserve room at the end of the page for the floating link. */
