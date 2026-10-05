@@ -483,7 +483,7 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
                       <div className={`hint ${hint ? "is-open" : ""}`}>
                         <Art
                           name="helper-robot"
-                          mode={hint ? "event" : "still"}
+                          mode="idle"
                           className="hint-robot"
                         />
                         <button
