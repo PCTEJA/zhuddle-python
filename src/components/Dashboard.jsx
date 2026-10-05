@@ -16,6 +16,7 @@ import {
   X,
 } from "lucide-react";
 import Art from "./MotionArt";
+import BannerMedia from "./BannerMedia";
 import { currentResult } from "../lib/progress";
 
 const SOURCE = "https://www.py4e.com/html3/04-functions";
@@ -408,14 +409,7 @@ export function Welcome({ state, score, complete, mastered, view }) {
   const first = state.student.name.split(" ")[0];
   return (
     <section className="welcome-band welcome-band-compact">
-      <img
-        className="hero-garden"
-        src="/assets/zhuddle/emerald-aurora-learner-banner.png"
-        alt=""
-        width="2129"
-        height="738"
-        fetchPriority="high"
-      />
+      <BannerMedia />
       <div className="welcome-copy">
         <div className="eyebrow">
           <span className="status-dot" />
