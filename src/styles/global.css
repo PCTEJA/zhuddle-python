@@ -2951,8 +2951,11 @@ pre code {
   min-width: 0;
 }
 .quest-surface > .quest-heading {
-  padding-top: 16px;
-  padding-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.quest-heading .eyebrow {
+  margin-bottom: 3px;
 }
 .quest-surface > .coding-layout,
 .quest-surface > .quiz-layout {
