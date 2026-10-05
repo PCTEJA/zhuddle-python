@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 import Art from "./MotionArt";
 import BannerMedia from "./BannerMedia";
+import ChapterSelect from "./ChapterSelect";
 import { currentResult } from "../lib/progress";
 
-const SOURCE = "https://www.py4e.com/html3/04-functions";
 const badges = [
   { name: "badge-function", label: "Function Starter", at: 0 },
   { name: "badge-loop", label: "Function Explorer", at: 50 },
@@ -141,7 +141,7 @@ export function Header({
                 </button>
               ))
             ) : (
-              <p>No lessons found. Try “function” or “random”.</p>
+              <p>No lessons found in this chapter. Try a different topic.</p>
             )}
           </div>
         )}
@@ -182,6 +182,10 @@ export function Header({
 }
 
 export function Sidebar({
+  chapter,
+  chapters,
+  selectChapter,
+  chapterSelectionDisabled,
   state,
   questions,
   complete,
@@ -200,13 +204,14 @@ export function Sidebar({
     document.body.style.overflow = "hidden";
     panel.current?.querySelector("button")?.focus();
     const handleKey = (e) => {
+      if (e.defaultPrevented) return;
       if (e.key === "Escape") {
         e.preventDefault();
         setMenu(false);
       }
       if (e.key === "Tab") {
         const items = [
-          ...panel.current.querySelectorAll("button,a[href]"),
+          ...panel.current.querySelectorAll("button:not([tabindex='-1']),a[href]"),
         ].filter((el) => el.getClientRects().length);
         const first = items[0],
           last = items.at(-1);
@@ -306,16 +311,8 @@ export function Sidebar({
         </div>
       </section>
       <section className="path-card">
-        <div className="chapter-heading">
-          <span className="chapter-symbol">
-            <Code2 size={20} />
-          </span>
-          <div>
-            <small>CHAPTER 04</small>
-            <h3>Functions</h3>
-          </div>
-          <span className="chapter-status">In progress</span>
-        </div>
+        <ChapterSelect chapter={chapter} chapters={chapters} onSelect={selectChapter}
+          disabled={chapterSelectionDisabled} sidebarOpen={menu} />
         <nav aria-label="Coding missions" className="mission-list">
           {code.map((item, index) => {
             const mastered = currentResult(state, item)?.earned === item.points,
@@ -387,12 +384,12 @@ export function Sidebar({
         <ChevronRight size={17} />
       </button>
       <div className="sidebar-bottom">
-        <a href={SOURCE} target="_blank" rel="noreferrer">
+        <a href={chapter.source} target="_blank" rel="noreferrer">
           <BookOpen size={16} />
           Read the chapter
           <ArrowUpRight size={14} />
         </a>
-        <a href="/ZHUDDLE_Functions_Quest.ipynb" download>
+        <a href={chapter.notebook} download>
           <FileCode2 size={16} />
           Offline notebook
           <Download size={14} />
@@ -405,7 +402,7 @@ export function Sidebar({
   );
 }
 
-export function Welcome({ state, score, complete, mastered, view }) {
+export function Welcome({ state, score, complete, mastered, view, chapter }) {
   const first = state.student.name.split(" ")[0];
   return (
     <section className="welcome-band welcome-band-compact">
@@ -413,7 +410,7 @@ export function Welcome({ state, score, complete, mastered, view }) {
       <div className="welcome-copy">
         <div className="eyebrow">
           <span className="status-dot" />
-          YOUR NEXT CHAPTER STARTS HERE
+          CHAPTER {chapter.number} · {chapter.fullTitle.toUpperCase()}
         </div>
         <h1>
           {view === "results" ? (
@@ -438,7 +435,7 @@ export function Welcome({ state, score, complete, mastered, view }) {
                 {score}
                 <em> / 100</em>
               </b>
-              <small>Total XP</small>
+              <small>Chapter XP</small>
             </span>
           </div>
           <div>
@@ -464,7 +461,7 @@ export function Welcome({ state, score, complete, mastered, view }) {
   );
 }
 
-export function BadgeCollection({ score, expanded = false }) {
+export function BadgeCollection({ score, chapter, expanded = false }) {
   return (
     <div className={`badge-collection ${expanded ? "expanded" : ""}`}>
       {badges.map((b) => (
@@ -476,7 +473,7 @@ export function BadgeCollection({ score, expanded = false }) {
             name={score >= b.at ? b.name : "badge-locked"}
             mode={score >= b.at ? "hover" : "still"}
           />
-          <strong>{b.label}</strong>
+          <strong>{b.label.replace('Function', chapter?.id === 'functions' ? 'Function' : chapter?.title || 'Chapter')}</strong>
           <small>{score >= b.at ? "Unlocked" : `${b.at} XP`}</small>
         </div>
       ))}
@@ -485,6 +482,7 @@ export function BadgeCollection({ score, expanded = false }) {
 }
 
 export function ProgressRail({
+  chapter,
   state,
   questions,
   score,
@@ -504,7 +502,7 @@ export function ProgressRail({
     },
     { label: "Get 2 answers correct", done: mastered >= 2 },
     {
-      label: "Try the random-number lab",
+      label: chapter.id === 'functions' ? 'Try the random-number lab' : `Try ${questions[1].title.toLowerCase()}`,
       done: !!currentResult(
         state,
         questions.find((q) => q.id === "C02"),
@@ -559,7 +557,7 @@ export function ProgressRail({
             <ArrowRight size={17} />
           </button>
         </div>
-        <BadgeCollection score={score} />
+        <BadgeCollection score={score} chapter={chapter} />
         <p className="badge-caption">Small wins. Something to be proud of.</p>
       </section>
       <section className="rail-card challenge-card">
@@ -570,7 +568,7 @@ export function ProgressRail({
         </div>
         <button
           className="challenge-art"
-          aria-label="Open Random-number lab"
+          aria-label={`Open ${questions[1].title}`}
           onClick={() => selectQuestion("C02")}
         >
           <BannerMedia
@@ -585,15 +583,13 @@ export function ProgressRail({
           <span className="eyebrow">YOUR NEXT CHALLENGE</span>
           <h3>Let curiosity take the lead.</h3>
           <p>
-            Explore random numbers. Run it twice.
-            <br />
-            See what changes.
+            {chapter.id === 'functions' ? 'Explore random numbers. Run it twice. See what changes.' : `Practice ${chapter.title.toLowerCase()} with ${questions[1].title.toLowerCase()}. Read the feedback, then try again.`}
           </p>
           <button
             className="primary-button full"
             onClick={() => selectQuestion("C02")}
           >
-            Try the random-number lab
+            {chapter.id === 'functions' ? 'Try the random-number lab' : 'Try this chapter’s challenge'}
             <ArrowRight size={17} />
           </button>
         </div>
@@ -635,7 +631,7 @@ export function KnowledgeCard({ selectQuestion }) {
   );
 }
 
-export function Explore({ selectQuestion }) {
+export function Explore({ selectQuestion, chapter }) {
   return (
     <section className="explore-surface">
       <div className="section-intro">
@@ -647,12 +643,12 @@ export function Explore({ selectQuestion }) {
       <div className="explore-grid">
         <a
           className="resource-card"
-          href={SOURCE}
+          href={chapter.source}
           target="_blank"
           rel="noreferrer"
         >
           <Art name="learning-book" />
-          <h3>The story behind functions</h3>
+          <h3>The story behind {chapter.title.toLowerCase()}</h3>
           <p>
             Explore the original Python for Everybody chapter, with examples and
             explanations.
@@ -664,10 +660,9 @@ export function Explore({ selectQuestion }) {
         </a>
         <button className="resource-card" onClick={() => selectQuestion("C02")}>
           <Art name="python-challenge" />
-          <h3>A little unpredictability</h3>
+          <h3>{chapter.id === 'functions' ? 'A little unpredictability' : chapter.questions[1].title}</h3>
           <p>
-            Meet Python’s random module and find out why the same code can
-            surprise you.
+            {chapter.id === 'functions' ? 'Meet Python’s random module and find out why the same code can surprise you.' : `Apply this chapter’s concepts in a coding mission with five checks and helpful feedback.`}
           </p>
           <span>
             Open the lab
@@ -676,7 +671,7 @@ export function Explore({ selectQuestion }) {
         </button>
         <a
           className="resource-card"
-          href="/ZHUDDLE_Functions_Quest.ipynb"
+          href={chapter.notebook}
           download
         >
           <Art name="loading-code" />

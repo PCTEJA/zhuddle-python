@@ -32,9 +32,9 @@ import {
   BadgeCollection,
   Explore,
 } from "./Dashboard";
-import questions from "../data/questions.json";
+import { chapters, functionsChapter, chapterKey, PROFILE_KEY, ACTIVE_CHAPTER_KEY } from "../data/curriculum";
+import { restoreChapter } from "../lib/chapter-storage";
 import {
-  STORAGE_KEY,
   freshState,
   scoreState,
   currentResult,
@@ -44,9 +44,42 @@ import {
 } from "../lib/progress";
 
 const Editor = lazy(() => import("./Editor"));
-const SOURCE = "https://www.py4e.com/html3/04-functions";
-
 export default function App() {
+  const [chapterId, setChapterId] = useState('functions');
+  const [startAtFirst, setStartAtFirst] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [generation, setGeneration] = useState(0);
+  useEffect(() => {
+    try {
+      const selected = localStorage.getItem(ACTIVE_CHAPTER_KEY);
+      if (chapters.some(c => c.id === selected)) setChapterId(selected);
+    } catch { /* Chapter view handles unavailable storage. */ }
+    setReady(true);
+  }, []);
+  function selectChapter(id) {
+    setChapterId(id);
+    setStartAtFirst(true);
+    // Remount even when reselecting the current chapter to open its first lesson.
+    setGeneration(value => value + 1);
+    try { localStorage.setItem(ACTIVE_CHAPTER_KEY, id); } catch {}
+  }
+  function resetStudent() {
+    try {
+      for (const chapter of chapters) localStorage.removeItem(chapterKey(chapter));
+      localStorage.removeItem(PROFILE_KEY);
+    } catch {
+      throw new Error('Saved progress could not be cleared. Clear this site’s browser storage before sharing this device.');
+    }
+    setGeneration(value => value + 1);
+  }
+  const chapter = chapters.find(c => c.id === chapterId) || functionsChapter;
+  if (!ready) return <main className="app-loading" aria-busy="true">Opening your chapters…</main>;
+  return <ChapterApp key={`${chapter.id}-${generation}`} {...{ chapter, startAtFirst, selectChapter, resetStudent }} />;
+}
+
+function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
+  const questions = chapter.questions;
+  const SOURCE = chapter.source;
   const [state, setState] = useState(() => freshState(questions));
   const [loaded, setLoaded] = useState(false),
     [storageError, setStorageError] = useState("");
@@ -65,6 +98,7 @@ export default function App() {
   const [exporting, setExporting] = useState(false),
     [reducedMotion, setReducedMotion] = useState(true);
   const worker = useRef(null),
+    preserveUnreadable = useRef(false),
     timer = useRef(null),
     pending = useRef(null),
     request = useRef(0),
@@ -77,21 +111,23 @@ export default function App() {
   const allDone = complete === questions.length;
 
   useEffect(() => {
+    let restored = freshState(questions);
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-      if (
-        saved?.version === 1 &&
-        typeof saved.code === "object" &&
-        saved.student
-      ) {
-        const base = freshState(questions);
-        setState({ ...base, ...saved, code: { ...base.code, ...saved.code } });
-      }
+      const saved = JSON.parse(localStorage.getItem(chapterKey(chapter)) || "null");
+      restored = restoreChapter(saved, questions);
     } catch {
-      setStorageError(
-        "Saved progress could not be opened. Download your work before leaving.",
-      );
+      preserveUnreadable.current = true;
+      setStorageError('Saved progress could not be opened. The original entry has been preserved. Download new work before leaving.');
     }
+    try {
+      const profile = JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null');
+      if (typeof profile?.name === 'string' && typeof profile?.untId === 'string') restored.student = profile;
+      else if (restored.student.name) localStorage.setItem(PROFILE_KEY, JSON.stringify(restored.student));
+    } catch {
+      setStorageError('The shared profile could not be saved or opened. Chapter answers are still available; download your work before leaving.');
+    }
+    if (startAtFirst) restored.active = questions[0].id;
+    setState(restored);
     const preference = matchMedia("(prefers-reduced-motion: reduce)");
     const syncMotion = () => {
       let paused = false;
@@ -111,9 +147,9 @@ export default function App() {
     };
   }, []);
   useEffect(() => {
-    if (loaded) {
+    if (loaded && !preserveUnreadable.current) {
       try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        localStorage.setItem(chapterKey(chapter), JSON.stringify(state));
       } catch {
         setStorageError(
           "This browser cannot save progress. Download your notebook before leaving.",
@@ -121,6 +157,12 @@ export default function App() {
       }
     }
   }, [state, loaded]);
+  useEffect(() => {
+    if (loaded && startAtFirst) {
+      const target = matchMedia('(max-width: 700px)').matches ? 'workspace' : 'chapter-selector';
+      document.getElementById(target)?.focus({ preventScroll: true });
+    }
+  }, [loaded, startAtFirst]);
   useEffect(() => {
     if (profile || resetQuestion || newStudent) {
       returnFocus.current = document.activeElement;
@@ -159,6 +201,8 @@ export default function App() {
   }
   function saveIdentity(e) {
     e.preventDefault();
+    try { localStorage.setItem(PROFILE_KEY, JSON.stringify({ name: identity.name.trim(), untId: identity.untId.trim() })); }
+    catch { setStorageError('Your profile could not be saved on this device.'); }
     update({
       student: { name: identity.name.trim(), untId: identity.untId.trim() },
     });
@@ -189,7 +233,7 @@ export default function App() {
           pending.current = null;
           sendCode(task);
         } else clearTimeout(timer.current);
-      } else if (data.type === "result" && data.id === request.current) {
+      } else if (data.type === "result" && data.id === request.current && data.chapterId === chapter.id) {
         clearTimeout(timer.current);
         setBusy(false);
         setPythonStatus("ready");
@@ -246,7 +290,7 @@ export default function App() {
     }
     setError("");
     setBusy(true);
-    const task = { qid: q.id, source };
+    const task = { chapterId: chapter.id, qid: q.id, source };
     if (pythonStatus === "ready" && worker.current) {
       sendCode(task);
     } else {
@@ -278,8 +322,8 @@ export default function App() {
           earned,
           possible: 2,
           label: earned
-            ? "Correct. Knowledge key earned."
-            : "Review the chapter and try another answer.",
+            ? "Correct. Knowledge key earned. " + (q.explanation || '')
+            : "Review the chapter and try another answer. " + (q.explanation || ''),
         },
       ],
       stdout: "",
@@ -295,7 +339,7 @@ export default function App() {
     setError("");
     try {
       const { exportPdf } = await import("../lib/export-pdf");
-      exportPdf(state, questions, certificate);
+      exportPdf(state, questions, certificate, chapter);
     } catch (e) {
       setError(e.message || "The PDF could not be created. Please retry.");
     } finally {
@@ -308,9 +352,9 @@ export default function App() {
       return;
     }
     downloadBlob(
-      submissionNotebook(state, questions),
+      submissionNotebook(state, questions, chapter),
       "application/x-ipynb+json",
-      "ZHUDDLE_Student_Submission.ipynb",
+      `ZHUDDLE_Chapter_${chapter.number}_${chapter.title}_Submission.ipynb`,
     );
   }
   const navigateNext = () => {
@@ -347,7 +391,11 @@ export default function App() {
         )}
         <div className="dashboard-layout">
           <Sidebar
+            chapters={chapters}
+            chapterSelectionDisabled={!loaded}
+            selectChapter={(id) => { stopRun(); selectChapter(id); }}
             {...{
+              chapter,
               state,
               questions,
               complete,
@@ -365,7 +413,7 @@ export default function App() {
                 {storageError}
               </div>
             )}
-            <Welcome {...{ state, score, complete, mastered, view }} />
+            <Welcome {...{ state, score, complete, mastered, view, chapter }} />
             {needsIdentity && (
               <div className="identity-banner">
                 <UserRound size={18} />
@@ -377,7 +425,7 @@ export default function App() {
               </div>
             )}
             {view === "explore" ? (
-              <Explore selectQuestion={selectQuestion} />
+              <Explore {...{ selectQuestion, chapter }} />
             ) : view === "quest" ? (
               <section className="quest-surface" key={q.id}>
                 <div className="quest-heading">
@@ -414,7 +462,7 @@ export default function App() {
                       LET’S MAKE SOMETHING WORK
                     </div>
                     <Markdown>{q.task}</Markdown>
-                    {q.kind === "code" && q.id === "C01" && (
+                    {chapter.id === 'functions' && q.kind === "code" && q.id === "C01" && (
                       <div className="example-card">
                         <div>
                           <Code2 size={18} />
@@ -455,7 +503,7 @@ export default function App() {
                       <BookOpen size={14} />
                       <span>
                         From PY4E: {q.source}
-                        <a href={SOURCE} target="_blank" rel="noreferrer">
+                        <a href={q.sourceUrl || chapter.reading} target="_blank" rel="noreferrer">
                           Open chapter
                           <ArrowUpRight size={12} />
                         </a>
@@ -672,10 +720,10 @@ export default function App() {
               </section>
             ) : (
               <section className="results-surface">
-                <BadgeCollection score={score} expanded />
+                <BadgeCollection score={score} chapter={chapter} expanded />
                 <div className="results-title">
                   <div>
-                    <div className="eyebrow">YOUR FUNCTIONS QUEST</div>
+                    <div className="eyebrow">CHAPTER {chapter.number} · YOUR {chapter.title.toUpperCase()} QUEST</div>
                     <h2>
                       {allDone
                         ? "Quest complete. Well done."
@@ -795,7 +843,7 @@ export default function App() {
                     <textarea
                       id="reflection"
                       rows={4}
-                      placeholder="What changed when you ran the random-number mission twice? Why did moving the function call help?"
+                      placeholder={`What did you learn about ${chapter.title.toLowerCase()}? Which answer would you approach differently now?`}
                       value={state.reflection}
                       onChange={(e) => update({ reflection: e.target.value })}
                     />
@@ -836,12 +884,13 @@ export default function App() {
               </a>
             </footer>
             <p className="attribution">
-              Based on Charles R. Severance’s Python for Everybody, Functions.
+              Based on Charles R. Severance’s Python for Everybody, {chapter.fullTitle}.
               ZHUDDLE is an independent practice project.
             </p>
           </main>
           <ProgressRail
             {...{
+              chapter,
               state,
               questions,
               score,
@@ -942,7 +991,7 @@ export default function App() {
               <h2>A new student's turn?</h2>
               <p>
                 Download the current student's work first. Starting again clears
-                this browser's saved name, ID, code, and scores.
+                this browser's saved name, ID, code, and scores across all seven chapters. Download each chapter's work before continuing.
               </p>
               <button
                 className="secondary-button full"
@@ -955,9 +1004,7 @@ export default function App() {
                 className="primary-button full"
                 onClick={() => {
                   stopRun();
-                  setState(freshState(questions));
-                  setView("quest");
-                  closeDialog();
+                  try { resetStudent(); } catch (e) { setStorageError(e.message); closeDialog(); }
                 }}
               >
                 Start fresh

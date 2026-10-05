@@ -7,7 +7,9 @@
     "dev": "astro dev --host 127.0.0.1",
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:grader": "python -m unittest discover -s tests -p test_*.py",
+    "curriculum:build": "python scripts/build-curriculum.py"
   },
   "dependencies": {
     "@astrojs/react": "^7.0.0",

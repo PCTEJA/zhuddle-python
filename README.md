@@ -1,6 +1,22 @@
 # ZHUDDLE
 
-A static Astro + React Python learning app for ZHUDDLE.COM. It uses the same chapter-specific curriculum and Python checks as the companion notebook: 8 coding missions (80 XP) and 10 MCQs (20 XP).
+A static Astro + React Python learning app for ZHUDDLE.COM. Seven independent chapters each follow the original Functions pattern: 8 coding missions (80 XP), 10 MCQs (20 XP), and chapter-specific completion documents.
+
+## Chapters and source boundaries
+
+| Chapter | Topic | PY4E source |
+| --- | --- | --- |
+| 02 | Variables, expressions, and statements | https://www.py4e.com/html3/02-variables |
+| 03 | Conditional execution | https://www.py4e.com/html3/03-conditional |
+| 04 | Functions (original bank and grader retained) | https://www.py4e.com/html3/04-functions |
+| 05 | Loops and iterations | https://www.py4e.com/lessons/loops |
+| 06 | Strings | https://www.py4e.com/html3/06-strings |
+| 07 | Files | https://www.py4e.com/html3/07-files |
+| 08 | Lists | https://www.py4e.com/lessons/lists |
+
+The Loops and Lists lesson pages explicitly link to textbook chapters 5 and 8; their lesson-directory positions (6 and 9) are not textbook chapter numbers. The question banks use those linked readings. Every new question includes its source section and reading URL. Wording, practice fixtures, and answer checks are ZHUDDLE adaptations of concepts and exercises in the specified chapter, not copies of login-only PY4E quizzes. Variables does not require functions, branching, or loops. Loop/list exercises use only patterns covered by their linked readings. The source pages were reviewed on October 4, 2026.
+
+`src/data/curriculum.js` is the chapter registry. `scripts/build-curriculum.py` generates the six new banks in `src/data/chapters.json`, browser grading cases in `public/chapter-checks.json`, offline notebooks, and reference solutions in `tests/solutions.json`. Run `pnpm curriculum:build` after editing the curriculum. Reference solutions are test files and are not included in the static deployment. The original Functions questions and grader remain intact.
 
 ## Run and build
 
@@ -29,10 +45,13 @@ Use one installer consistently in a checkout. The shipped lockfile is for pnpm; 
 - Real Python executes in a dedicated Pyodide web worker. Loading Python is deferred until the first code run. The interpreter is fetched from jsDelivr, so the first run needs internet access.
 - CodeMirror provides Python highlighting and indentation. Editor and PDF libraries are separate chunks; neither blocks the initial static page shell.
 - Students enter a name and UNT ID. Progress is stored only in localStorage on their device; no student records are sent to a database or instructor dashboard.
+- Each chapter has a separate `zhuddle-<chapter-id>-v1` storage key containing code, choices, checks, attempts, reflection, and active question. The original `zhuddle-functions-v1` key is read directly, preserving existing progress. The shared student profile and selected chapter have separate keys. Switching chapters restores its answers and score and terminates any active Python worker. Starting a new student explicitly clears all seven chapters after the existing confirmation dialog.
+- The compact chapter dropdown sits above the sidebar lesson list and overlays it without moving the page. It supports arrow keys, Home/End, typeahead, Enter/Space, Escape, Tab, and outside-click dismissal. The current chapter is highlighted and checked. The menu scrolls within the viewport and is available inside the existing mobile course drawer. Selecting a chapter opens its first lesson while preserving all saved answers, XP, attempts, completion, and reflection. Reloading restores the current lesson. Searches, challenges, badges, source links, and achievement screens follow the selected chapter. Functions remains the initial chapter for compatibility; subsequent visits restore the last selection.
+- New coding missions have five independent checks with fresh variables, simulated `input()` values, and isolated temporary files. The instructions show the first sample's supplied variables/files. Every retry resets fixtures, including overwritten files. Output shown is from the first sample; each check reports its own failure. The Python execution and output budgets limit accidental runaway programs.
 - Editing an answer invalidates its previous score until it is checked again. Retries replace the score, without penalties or double counting.
 - Each code mission has five checks worth 2 points each. MCQs earn 2 or 0. Badges match the notebook. Practice letter grades are A >=90, B >=80, C >=70, D >=60, otherwise F.
 - Completing a check for all 18 answers unlocks a completion certificate at the student's earned score; 100 points is not required for completion. A failed answer can be revised and checked again.
-- The finish screen downloads a completion certificate PDF, detailed grade report PDF, and an IPython notebook containing all current answers. Unchecked edits are included in the notebook, clearly marked ungraded.
+- Each chapter's finish screen downloads its own completion certificate PDF, detailed grade report PDF, and IPython notebook. Chapter number and topic appear in PDF content, metadata, and filenames, so documents from different chapters cannot overwrite each other. Reports remain available while learning; certificates unlock only after all 18 answers in that chapter have been checked. Unchecked edits are included in the notebook, clearly marked ungraded. Exported notebooks include the supplied variables and sample file fixtures needed to run the new missions offline.
 - Reported marks are transparent local practice checks pending instructor review. This is not tamper-resistant exam software and certificates are not official UNT credentials.
 - The UI includes small flame animations, reduced-motion support, a motion toggle, responsive mobile navigation, keyboard focus states, and native modal focus management.
 
@@ -48,7 +67,7 @@ The site includes a heart icon and “Support ZHUDDLE” link to `https://www.bu
 
 For Vercel: import this project, select Astro, and use the included configuration. Add zhuddle.com in the project's Domains panel and use its displayed DNS values.
 
-Source: Charles R. Severance, [Python for Everybody: Functions](https://www.py4e.com/html3/04-functions), [CC BY 4.0](https://www.py4e.com/book). Original question wording, supplied scaffolding, scoring, and UI were added for ZHUDDLE.
+Source: Charles R. Severance, [Python for Everybody](https://www.py4e.com/book), CC BY 4.0; chapter links are listed above. Original question wording, supplied scaffolding, scoring, and UI were added for ZHUDDLE.
 
 ## Illustrated dashboard
 
@@ -68,6 +87,9 @@ The dashboard uses the supplied ZHUDDLE artwork in an emerald/mint design based 
 ```sh
 pnpm exec playwright install chromium
 pnpm test
+pnpm test:grader
 ```
 
 Tests cover real Pyodide execution, retry scoring, edit invalidation and persistence, quiz grading, notebook/PDF downloads, certificate locking, starter reset, search, mobile focus/escape behavior, viewport overflow at seven widths, production asset URLs, and motion preferences. The Python test needs internet access to load Pyodide. Test identities and downloads remain in temporary browser contexts.
+
+The chapter suite additionally runs all 48 new reference solutions through the real browser worker, checks all 240 grading cases locally, rejects representative incorrect solutions, verifies file resets, preserves legacy Functions progress, checks independent chapter completion and reset behavior, and downloads all 14 distinct chapter PDFs plus seven student notebooks. Browser tests save test-only PDF and screenshot artifacts under the ignored `test-results/` directory. The local Python grader suite does not need internet access.

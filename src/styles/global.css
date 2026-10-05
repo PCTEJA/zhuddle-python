@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap");
+.app-loading { padding: 48px; color: #16644b; font-weight: 700; }
 :root {
   font-family: "DM Sans", system-ui, sans-serif;
   color: #173d37;
@@ -439,11 +440,33 @@ pre code {
 .path-card {
   padding: 17px 10px 15px;
 }
-.chapter-heading {
+.chapter-select {
+  position: relative;
+  margin-bottom: 12px;
+  z-index: 5;
+}
+.chapter-trigger {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
   gap: 9px;
-  padding: 0 5px 16px;
+  padding: 10px 8px;
+  text-align: left;
+  border: 1px solid #c4e7dc;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #eaf8f2, #f2faf7);
+  box-shadow: inset 0 0 0 1px #e0f2ea;
+}
+.chapter-trigger:hover,
+.chapter-trigger[aria-expanded="true"] {
+  background: #e6f5ee;
+  border-color: #96d5c1;
+}
+.chapter-trigger:focus-visible {
+  outline: 2px solid #008a70;
+  outline-offset: 3px;
 }
 .chapter-symbol {
   display: flex;
@@ -453,27 +476,76 @@ pre code {
   color: #fff;
   width: 34px;
   height: 36px;
+  flex-shrink: 0;
   border-radius: 10px;
   box-shadow: 0 3px 8px #009c7728;
 }
-.chapter-heading small {
+.chapter-label { flex: 1; min-width: 0; }
+.chapter-label small,
+.chapter-menu-option small {
+  display: block;
   font-size: 8px;
   letter-spacing: 1px;
   color: var(--muted);
   font-weight: 600;
 }
-.chapter-heading h3 {
+.chapter-label strong {
+  display: block;
   font-size: 17px;
   margin: 2px 0 0;
+  overflow-wrap: anywhere;
 }
-.chapter-status {
+.chapter-chevron {
   margin-left: auto;
-  color: #258168;
-  background: #edf7f1;
-  border-radius: 4px;
-  font-size: 8px;
-  padding: 4px;
-  white-space: nowrap;
+  flex-shrink: 0;
+  color: #14564c;
+  transition: transform .18s;
+}
+.chapter-chevron.is-open { transform: rotate(180deg); }
+.chapter-options {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 5px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #b2d8c9 transparent;
+  border: 1px solid #c4e7dc;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px #174d3426, 0 3px 8px #174d3410;
+}
+.chapter-options.above { top: auto; bottom: calc(100% + 4px); }
+.chapter-menu-option {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 51px;
+  padding: 8px 12px;
+  text-align: left;
+  border-radius: 7px;
+  position: relative;
+}
+.chapter-menu-option + .chapter-menu-option { border-top: 1px solid #f0f6f3; }
+.chapter-menu-option strong { display: block; margin-top: 3px; font-size: 14px; font-weight: 600; }
+.chapter-menu-option[aria-selected="true"] {
+  background: #e5f5ed;
+  box-shadow: inset 3px 0 #009c7b;
+}
+.chapter-menu-option[aria-selected="true"] small,
+.chapter-menu-option > svg { color: #00866c; }
+.chapter-menu-option > svg { flex-shrink: 0; }
+.chapter-menu-option:hover { background: #edf7f2; }
+.chapter-menu-option:focus {
+  outline: 2px solid #249c7b;
+  outline-offset: -2px;
+  background: #edf7f2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapter-chevron { transition: none; }
 }
 .mission-list {
   display: flex;
