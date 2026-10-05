@@ -2950,6 +2950,23 @@ pre code {
 .quest-heading > div:not(.mission-tags) {
   min-width: 0;
 }
+.quest-surface > .quest-heading {
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+.quest-surface > .coding-layout,
+.quest-surface > .quiz-layout {
+  padding-top: 12px;
+}
+.mission-tags .tag {
+  font-size: 12px;
+  gap: 5.5px;
+  padding: 8px 11px;
+}
+.mission-tags .tag.points svg {
+  width: 16px;
+  height: 19px;
+}
 .editor-loading {
   height: 320px;
 }
