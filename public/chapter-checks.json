@@ -1,0 +1,3431 @@
+{
+  "variables": {
+    "C01": {
+      "cases": [
+        {
+          "label": "Store an integer.",
+          "given": {},
+          "expected": {
+            "whole": 17
+          }
+        },
+        {
+          "label": "Store a float.",
+          "given": {},
+          "expected": {
+            "fraction": 3.2
+          }
+        },
+        {
+          "label": "Keep quoted digits as text.",
+          "given": {},
+          "expected": {
+            "text": "17"
+          }
+        },
+        {
+          "label": "Identify the integer and float types.",
+          "given": {},
+          "expected": {
+            "whole_type": {
+              "$type": "int"
+            },
+            "fraction_type": {
+              "$type": "float"
+            }
+          }
+        },
+        {
+          "label": "Identify the string type.",
+          "given": {},
+          "expected": {
+            "text_type": {
+              "$type": "str"
+            }
+          }
+        }
+      ],
+      "requires": [
+        "call:type"
+      ]
+    },
+    "C02": {
+      "cases": [
+        {
+          "label": "Update 17 to 18.",
+          "given": {
+            "n": 17
+          },
+          "expected": {
+            "original": 17,
+            "n": 18
+          },
+          "stdout": "18"
+        },
+        {
+          "label": "Update 0 to 1.",
+          "given": {
+            "n": 0
+          },
+          "expected": {
+            "original": 0,
+            "n": 1
+          },
+          "stdout": "1"
+        },
+        {
+          "label": "Update -1 to 0.",
+          "given": {
+            "n": -1
+          },
+          "expected": {
+            "original": -1,
+            "n": 0
+          },
+          "stdout": "0"
+        },
+        {
+          "label": "Update 99 to 100.",
+          "given": {
+            "n": 99
+          },
+          "expected": {
+            "original": 99,
+            "n": 100
+          },
+          "stdout": "100"
+        },
+        {
+          "label": "Update -8 to -7.",
+          "given": {
+            "n": -8
+          },
+          "expected": {
+            "original": -8,
+            "n": -7
+          },
+          "stdout": "-7"
+        }
+      ],
+      "requires": []
+    },
+    "C03": {
+      "cases": [
+        {
+          "label": "Arithmetic with 7 and 3.",
+          "given": {
+            "a": 7,
+            "b": 3
+          },
+          "expected": {
+            "total": 10,
+            "difference": 4,
+            "product": 21,
+            "quotient": 2.3333333333333335,
+            "remainder": 1
+          }
+        },
+        {
+          "label": "Arithmetic with 20 and 4.",
+          "given": {
+            "a": 20,
+            "b": 4
+          },
+          "expected": {
+            "total": 24,
+            "difference": 16,
+            "product": 80,
+            "quotient": 5.0,
+            "remainder": 0
+          }
+        },
+        {
+          "label": "Arithmetic with 0 and 5.",
+          "given": {
+            "a": 0,
+            "b": 5
+          },
+          "expected": {
+            "total": 5,
+            "difference": -5,
+            "product": 0,
+            "quotient": 0.0,
+            "remainder": 0
+          }
+        },
+        {
+          "label": "Arithmetic with 17 and 2.",
+          "given": {
+            "a": 17,
+            "b": 2
+          },
+          "expected": {
+            "total": 19,
+            "difference": 15,
+            "product": 34,
+            "quotient": 8.5,
+            "remainder": 1
+          }
+        },
+        {
+          "label": "Arithmetic with 9 and 7.",
+          "given": {
+            "a": 9,
+            "b": 7
+          },
+          "expected": {
+            "total": 16,
+            "difference": 2,
+            "product": 63,
+            "quotient": 1.2857142857142858,
+            "remainder": 2
+          }
+        }
+      ],
+      "requires": []
+    },
+    "C04": {
+      "cases": [
+        {
+          "label": "Width 17, height 12.0.",
+          "given": {
+            "width": 17,
+            "height": 12.0
+          },
+          "expected": {
+            "floor_half": 8,
+            "decimal_half": 8.5,
+            "third": 4.0,
+            "expression": 11,
+            "grouped": 15
+          }
+        },
+        {
+          "label": "Width 8, height 9.0.",
+          "given": {
+            "width": 8,
+            "height": 9.0
+          },
+          "expected": {
+            "floor_half": 4,
+            "decimal_half": 4.0,
+            "third": 3.0,
+            "expression": 11,
+            "grouped": 15
+          }
+        },
+        {
+          "label": "Width 1, height 3.0.",
+          "given": {
+            "width": 1,
+            "height": 3.0
+          },
+          "expected": {
+            "floor_half": 0,
+            "decimal_half": 0.5,
+            "third": 1.0,
+            "expression": 11,
+            "grouped": 15
+          }
+        },
+        {
+          "label": "Width 22, height 15.0.",
+          "given": {
+            "width": 22,
+            "height": 15.0
+          },
+          "expected": {
+            "floor_half": 11,
+            "decimal_half": 11.0,
+            "third": 5.0,
+            "expression": 11,
+            "grouped": 15
+          }
+        },
+        {
+          "label": "Width 0, height 0.0.",
+          "given": {
+            "width": 0,
+            "height": 0.0
+          },
+          "expected": {
+            "floor_half": 0,
+            "decimal_half": 0.0,
+            "third": 0.0,
+            "expression": 11,
+            "grouped": 15
+          }
+        }
+      ],
+      "requires": []
+    },
+    "C05": {
+      "cases": [
+        {
+          "label": "Join and repeat sample 1.",
+          "given": {
+            "first": "100",
+            "second": "150",
+            "times": 3
+          },
+          "expected": {
+            "joined": "100150",
+            "repeated": "100100100"
+          }
+        },
+        {
+          "label": "Join and repeat sample 2.",
+          "given": {
+            "first": "Py",
+            "second": "thon",
+            "times": 2
+          },
+          "expected": {
+            "joined": "Python",
+            "repeated": "PyPy"
+          }
+        },
+        {
+          "label": "Join and repeat sample 3.",
+          "given": {
+            "first": "Hi ",
+            "second": "there",
+            "times": 1
+          },
+          "expected": {
+            "joined": "Hi there",
+            "repeated": "Hi "
+          }
+        },
+        {
+          "label": "Join and repeat sample 4.",
+          "given": {
+            "first": "",
+            "second": "end",
+            "times": 4
+          },
+          "expected": {
+            "joined": "end",
+            "repeated": ""
+          }
+        },
+        {
+          "label": "Join and repeat sample 5.",
+          "given": {
+            "first": "Test ",
+            "second": "!",
+            "times": 0
+          },
+          "expected": {
+            "joined": "Test !",
+            "repeated": ""
+          }
+        }
+      ],
+      "requires": []
+    },
+    "C06": {
+      "cases": [
+        {
+          "label": "Welcome Chuck.",
+          "given": {},
+          "expected": {
+            "name": "Chuck"
+          },
+          "inputs": [
+            "Chuck"
+          ],
+          "stdout": "Hello Chuck"
+        },
+        {
+          "label": "Welcome Ada.",
+          "given": {},
+          "expected": {
+            "name": "Ada"
+          },
+          "inputs": [
+            "Ada"
+          ],
+          "stdout": "Hello Ada"
+        },
+        {
+          "label": "Welcome Grace Hopper.",
+          "given": {},
+          "expected": {
+            "name": "Grace Hopper"
+          },
+          "inputs": [
+            "Grace Hopper"
+          ],
+          "stdout": "Hello Grace Hopper"
+        },
+        {
+          "label": "Welcome Lin.",
+          "given": {},
+          "expected": {
+            "name": "Lin"
+          },
+          "inputs": [
+            "Lin"
+          ],
+          "stdout": "Hello Lin"
+        },
+        {
+          "label": "Welcome Sam.",
+          "given": {},
+          "expected": {
+            "name": "Sam"
+          },
+          "inputs": [
+            "Sam"
+          ],
+          "stdout": "Hello Sam"
+        }
+      ],
+      "requires": [
+        "call:input"
+      ]
+    },
+    "C07": {
+      "cases": [
+        {
+          "label": "35 hours at 2.75.",
+          "given": {},
+          "expected": {
+            "hours": 35.0,
+            "rate": 2.75,
+            "pay": 96.25
+          },
+          "inputs": [
+            "35",
+            "2.75"
+          ],
+          "stdout": "Pay: 96.25"
+        },
+        {
+          "label": "10 hours at 12.5.",
+          "given": {},
+          "expected": {
+            "hours": 10.0,
+            "rate": 12.5,
+            "pay": 125.0
+          },
+          "inputs": [
+            "10",
+            "12.5"
+          ],
+          "stdout": "Pay: 125.0"
+        },
+        {
+          "label": "0 hours at 8.",
+          "given": {},
+          "expected": {
+            "hours": 0.0,
+            "rate": 8.0,
+            "pay": 0.0
+          },
+          "inputs": [
+            "0",
+            "8"
+          ],
+          "stdout": "Pay: 0.0"
+        },
+        {
+          "label": "45 hours at 10.",
+          "given": {},
+          "expected": {
+            "hours": 45.0,
+            "rate": 10.0,
+            "pay": 450.0
+          },
+          "inputs": [
+            "45",
+            "10"
+          ],
+          "stdout": "Pay: 450.0"
+        },
+        {
+          "label": "2.5 hours at 4.",
+          "given": {},
+          "expected": {
+            "hours": 2.5,
+            "rate": 4.0,
+            "pay": 10.0
+          },
+          "inputs": [
+            "2.5",
+            "4"
+          ],
+          "stdout": "Pay: 10.0"
+        }
+      ],
+      "requires": [
+        "call:input",
+        "call:float"
+      ]
+    },
+    "C08": {
+      "cases": [
+        {
+          "label": "Convert 0 Celsius.",
+          "given": {},
+          "expected": {
+            "celsius": 0.0,
+            "fahrenheit": 32.0
+          },
+          "inputs": [
+            "0"
+          ],
+          "stdout": "32.0"
+        },
+        {
+          "label": "Convert 100 Celsius.",
+          "given": {},
+          "expected": {
+            "celsius": 100.0,
+            "fahrenheit": 212.0
+          },
+          "inputs": [
+            "100"
+          ],
+          "stdout": "212.0"
+        },
+        {
+          "label": "Convert -40 Celsius.",
+          "given": {},
+          "expected": {
+            "celsius": -40.0,
+            "fahrenheit": -40.0
+          },
+          "inputs": [
+            "-40"
+          ],
+          "stdout": "-40.0"
+        },
+        {
+          "label": "Convert 25 Celsius.",
+          "given": {},
+          "expected": {
+            "celsius": 25.0,
+            "fahrenheit": 77.0
+          },
+          "inputs": [
+            "25"
+          ],
+          "stdout": "77.0"
+        },
+        {
+          "label": "Convert 37.5 Celsius.",
+          "given": {},
+          "expected": {
+            "celsius": 37.5,
+            "fahrenheit": 99.5
+          },
+          "inputs": [
+            "37.5"
+          ],
+          "stdout": "99.5"
+        }
+      ],
+      "requires": [
+        "call:input"
+      ]
+    }
+  },
+  "conditionals": {
+    "C01": {
+      "cases": [
+        {
+          "label": "Compare 5 and 5.",
+          "given": {
+            "x": 5,
+            "y": 5
+          },
+          "expected": {
+            "equal": true,
+            "different": false,
+            "greater": false,
+            "at_least": true,
+            "at_most": true
+          }
+        },
+        {
+          "label": "Compare 5 and 6.",
+          "given": {
+            "x": 5,
+            "y": 6
+          },
+          "expected": {
+            "equal": false,
+            "different": true,
+            "greater": false,
+            "at_least": false,
+            "at_most": true
+          }
+        },
+        {
+          "label": "Compare 6 and 5.",
+          "given": {
+            "x": 6,
+            "y": 5
+          },
+          "expected": {
+            "equal": false,
+            "different": true,
+            "greater": true,
+            "at_least": true,
+            "at_most": false
+          }
+        },
+        {
+          "label": "Compare -2 and 0.",
+          "given": {
+            "x": -2,
+            "y": 0
+          },
+          "expected": {
+            "equal": false,
+            "different": true,
+            "greater": false,
+            "at_least": false,
+            "at_most": true
+          }
+        },
+        {
+          "label": "Compare 0 and -2.",
+          "given": {
+            "x": 0,
+            "y": -2
+          },
+          "expected": {
+            "equal": false,
+            "different": true,
+            "greater": true,
+            "at_least": true,
+            "at_most": false
+          }
+        }
+      ],
+      "requires": []
+    },
+    "C02": {
+      "cases": [
+        {
+          "label": "Combine conditions for 6.",
+          "given": {
+            "n": 6
+          },
+          "expected": {
+            "single_digit": true,
+            "divisible": true,
+            "not_positive": false
+          }
+        },
+        {
+          "label": "Combine conditions for 7.",
+          "given": {
+            "n": 7
+          },
+          "expected": {
+            "single_digit": true,
+            "divisible": false,
+            "not_positive": false
+          }
+        },
+        {
+          "label": "Combine conditions for 10.",
+          "given": {
+            "n": 10
+          },
+          "expected": {
+            "single_digit": false,
+            "divisible": true,
+            "not_positive": false
+          }
+        },
+        {
+          "label": "Combine conditions for 0.",
+          "given": {
+            "n": 0
+          },
+          "expected": {
+            "single_digit": false,
+            "divisible": true,
+            "not_positive": true
+          }
+        },
+        {
+          "label": "Combine conditions for -3.",
+          "given": {
+            "n": -3
+          },
+          "expected": {
+            "single_digit": false,
+            "divisible": true,
+            "not_positive": true
+          }
+        }
+      ],
+      "requires": [
+        "node:And",
+        "node:Or",
+        "node:Not"
+      ]
+    },
+    "C03": {
+      "cases": [
+        {
+          "label": "Classify 4.",
+          "given": {
+            "n": 4
+          },
+          "expected": {
+            "parity": "even"
+          },
+          "stdout": "even"
+        },
+        {
+          "label": "Classify 7.",
+          "given": {
+            "n": 7
+          },
+          "expected": {
+            "parity": "odd"
+          },
+          "stdout": "odd"
+        },
+        {
+          "label": "Classify 0.",
+          "given": {
+            "n": 0
+          },
+          "expected": {
+            "parity": "even"
+          },
+          "stdout": "even"
+        },
+        {
+          "label": "Classify -2.",
+          "given": {
+            "n": -2
+          },
+          "expected": {
+            "parity": "even"
+          },
+          "stdout": "even"
+        },
+        {
+          "label": "Classify -3.",
+          "given": {
+            "n": -3
+          },
+          "expected": {
+            "parity": "odd"
+          },
+          "stdout": "odd"
+        }
+      ],
+      "requires": [
+        "node:If"
+      ]
+    },
+    "C04": {
+      "cases": [
+        {
+          "label": "Order 1 and 2.",
+          "given": {
+            "x": 1,
+            "y": 2
+          },
+          "expected": {
+            "relation": "less"
+          },
+          "stdout": "less"
+        },
+        {
+          "label": "Order 2 and 2.",
+          "given": {
+            "x": 2,
+            "y": 2
+          },
+          "expected": {
+            "relation": "equal"
+          },
+          "stdout": "equal"
+        },
+        {
+          "label": "Order 3 and 2.",
+          "given": {
+            "x": 3,
+            "y": 2
+          },
+          "expected": {
+            "relation": "greater"
+          },
+          "stdout": "greater"
+        },
+        {
+          "label": "Order -5 and -1.",
+          "given": {
+            "x": -5,
+            "y": -1
+          },
+          "expected": {
+            "relation": "less"
+          },
+          "stdout": "less"
+        },
+        {
+          "label": "Order 0 and -1.",
+          "given": {
+            "x": 0,
+            "y": -1
+          },
+          "expected": {
+            "relation": "greater"
+          },
+          "stdout": "greater"
+        }
+      ],
+      "requires": [
+        "node:If"
+      ]
+    },
+    "C05": {
+      "cases": [
+        {
+          "label": "Guard x=6, y=2.",
+          "given": {
+            "x": 6,
+            "y": 2
+          },
+          "expected": {
+            "safe": true
+          }
+        },
+        {
+          "label": "Guard x=6, y=0.",
+          "given": {
+            "x": 6,
+            "y": 0
+          },
+          "expected": {
+            "safe": false
+          }
+        },
+        {
+          "label": "Guard x=1, y=0.",
+          "given": {
+            "x": 1,
+            "y": 0
+          },
+          "expected": {
+            "safe": false
+          }
+        },
+        {
+          "label": "Guard x=4, y=2.",
+          "given": {
+            "x": 4,
+            "y": 2
+          },
+          "expected": {
+            "safe": false
+          }
+        },
+        {
+          "label": "Guard x=9, y=3.",
+          "given": {
+            "x": 9,
+            "y": 3
+          },
+          "expected": {
+            "safe": true
+          }
+        }
+      ],
+      "requires": [
+        "node:And"
+      ]
+    },
+    "C06": {
+      "cases": [
+        {
+          "label": "Handle input '32'.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "32"
+          ],
+          "stdout": "0.0"
+        },
+        {
+          "label": "Handle input '212'.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "212"
+          ],
+          "stdout": "100.0"
+        },
+        {
+          "label": "Handle input '-40'.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "-40"
+          ],
+          "stdout": "-40.0"
+        },
+        {
+          "label": "Handle input 'fred'.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "fred"
+          ],
+          "stdout": "Please enter a number"
+        },
+        {
+          "label": "Handle input ''.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            ""
+          ],
+          "stdout": "Please enter a number"
+        }
+      ],
+      "requires": [
+        "node:Try",
+        "call:input"
+      ]
+    },
+    "C07": {
+      "cases": [
+        {
+          "label": "Hours 45, rate 10.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "45",
+            "10"
+          ],
+          "stdout": "475.0"
+        },
+        {
+          "label": "Hours 40, rate 10.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "40",
+            "10"
+          ],
+          "stdout": "400.0"
+        },
+        {
+          "label": "Hours 30, rate 10.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "30",
+            "10"
+          ],
+          "stdout": "300.0"
+        },
+        {
+          "label": "Hours bad, rate 10.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "bad",
+            "10"
+          ],
+          "stdout": "Error, please enter numeric input"
+        },
+        {
+          "label": "Hours 20, rate bad.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "20",
+            "bad"
+          ],
+          "stdout": "Error, please enter numeric input"
+        }
+      ],
+      "requires": [
+        "node:If",
+        "node:Try",
+        "call:input"
+      ]
+    },
+    "C08": {
+      "cases": [
+        {
+          "label": "A and B boundaries.",
+          "variants": [
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                "1"
+              ],
+              "stdout": "A"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".9"
+              ],
+              "stdout": "A"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".899"
+              ],
+              "stdout": "B"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".8"
+              ],
+              "stdout": "B"
+            }
+          ],
+          "given": {},
+          "expected": {}
+        },
+        {
+          "label": "C boundary.",
+          "variants": [
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".799"
+              ],
+              "stdout": "C"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".7"
+              ],
+              "stdout": "C"
+            }
+          ],
+          "given": {},
+          "expected": {}
+        },
+        {
+          "label": "D boundary.",
+          "variants": [
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".699"
+              ],
+              "stdout": "D"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".6"
+              ],
+              "stdout": "D"
+            }
+          ],
+          "given": {},
+          "expected": {}
+        },
+        {
+          "label": "F and zero.",
+          "variants": [
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                ".599"
+              ],
+              "stdout": "F"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                "0"
+              ],
+              "stdout": "F"
+            }
+          ],
+          "given": {},
+          "expected": {}
+        },
+        {
+          "label": "Reject invalid scores.",
+          "variants": [
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                "-0.1"
+              ],
+              "stdout": "Bad score"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                "1.1"
+              ],
+              "stdout": "Bad score"
+            },
+            {
+              "label": "",
+              "given": {},
+              "expected": {},
+              "inputs": [
+                "perfect"
+              ],
+              "stdout": "Bad score"
+            }
+          ],
+          "given": {},
+          "expected": {}
+        }
+      ],
+      "requires": [
+        "node:If",
+        "node:Try",
+        "call:input"
+      ]
+    }
+  },
+  "loops": {
+    "C01": {
+      "cases": [
+        {
+          "label": "Countdown from 5.",
+          "given": {
+            "n": 5
+          },
+          "expected": {
+            "n": 0
+          },
+          "stdout": "5\n4\n3\n2\n1\nBlastoff!"
+        },
+        {
+          "label": "Countdown from 1.",
+          "given": {
+            "n": 1
+          },
+          "expected": {
+            "n": 0
+          },
+          "stdout": "1\nBlastoff!"
+        },
+        {
+          "label": "Countdown from 3.",
+          "given": {
+            "n": 3
+          },
+          "expected": {
+            "n": 0
+          },
+          "stdout": "3\n2\n1\nBlastoff!"
+        },
+        {
+          "label": "Countdown from 8.",
+          "given": {
+            "n": 8
+          },
+          "expected": {
+            "n": 0
+          },
+          "stdout": "8\n7\n6\n5\n4\n3\n2\n1\nBlastoff!"
+        },
+        {
+          "label": "Countdown from 2.",
+          "given": {
+            "n": 2
+          },
+          "expected": {
+            "n": 0
+          },
+          "stdout": "2\n1\nBlastoff!"
+        }
+      ],
+      "requires": [
+        "node:While"
+      ]
+    },
+    "C02": {
+      "cases": [
+        {
+          "label": "Sentinel sequence 1.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "hello",
+            "done"
+          ],
+          "stdout": "hello\nDone!"
+        },
+        {
+          "label": "Sentinel sequence 2.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "done"
+          ],
+          "stdout": "Done!"
+        },
+        {
+          "label": "Sentinel sequence 3.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "one",
+            "two",
+            "done"
+          ],
+          "stdout": "one\ntwo\nDone!"
+        },
+        {
+          "label": "Sentinel sequence 4.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "Done",
+            "done"
+          ],
+          "stdout": "Done\nDone!"
+        },
+        {
+          "label": "Sentinel sequence 5.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "42",
+            "done"
+          ],
+          "stdout": "42\nDone!"
+        }
+      ],
+      "requires": [
+        "node:While",
+        "node:Break",
+        "call:input"
+      ]
+    },
+    "C03": {
+      "cases": [
+        {
+          "label": "Filter sequence 1.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "#ignore",
+            "hello",
+            "done"
+          ],
+          "stdout": "hello\nDone!"
+        },
+        {
+          "label": "Filter sequence 2.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "#one",
+            "#two",
+            "done"
+          ],
+          "stdout": "Done!"
+        },
+        {
+          "label": "Filter sequence 3.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "plain",
+            "done"
+          ],
+          "stdout": "plain\nDone!"
+        },
+        {
+          "label": "Filter sequence 4.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "x#y",
+            "done"
+          ],
+          "stdout": "x#y\nDone!"
+        },
+        {
+          "label": "Filter sequence 5.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "done"
+          ],
+          "stdout": "Done!"
+        }
+      ],
+      "requires": [
+        "node:Continue",
+        "call:input"
+      ]
+    },
+    "C04": {
+      "cases": [
+        {
+          "label": "Greet group 1.",
+          "given": {
+            "friends": [
+              "Joseph",
+              "Glenn",
+              "Sally"
+            ]
+          },
+          "expected": {},
+          "stdout": "Happy New Year: Joseph\nHappy New Year: Glenn\nHappy New Year: Sally\nDone!"
+        },
+        {
+          "label": "Greet group 2.",
+          "given": {
+            "friends": [
+              "Ada"
+            ]
+          },
+          "expected": {},
+          "stdout": "Happy New Year: Ada\nDone!"
+        },
+        {
+          "label": "Greet group 3.",
+          "given": {
+            "friends": []
+          },
+          "expected": {},
+          "stdout": "Done!"
+        },
+        {
+          "label": "Greet group 4.",
+          "given": {
+            "friends": [
+              "Sam",
+              "Lin"
+            ]
+          },
+          "expected": {},
+          "stdout": "Happy New Year: Sam\nHappy New Year: Lin\nDone!"
+        },
+        {
+          "label": "Greet group 5.",
+          "given": {
+            "friends": [
+              "Lee",
+              "Lee"
+            ]
+          },
+          "expected": {},
+          "stdout": "Happy New Year: Lee\nHappy New Year: Lee\nDone!"
+        }
+      ],
+      "requires": [
+        "node:For"
+      ]
+    },
+    "C05": {
+      "cases": [
+        {
+          "label": "Count and sum sample 1.",
+          "given": {
+            "numbers": [
+              3,
+              41,
+              12,
+              9,
+              74,
+              15
+            ]
+          },
+          "expected": {
+            "count": 6,
+            "total": 154
+          }
+        },
+        {
+          "label": "Count and sum sample 2.",
+          "given": {
+            "numbers": []
+          },
+          "expected": {
+            "count": 0,
+            "total": 0
+          }
+        },
+        {
+          "label": "Count and sum sample 3.",
+          "given": {
+            "numbers": [
+              -5,
+              -2,
+              -8
+            ]
+          },
+          "expected": {
+            "count": 3,
+            "total": -15
+          }
+        },
+        {
+          "label": "Count and sum sample 4.",
+          "given": {
+            "numbers": [
+              7
+            ]
+          },
+          "expected": {
+            "count": 1,
+            "total": 7
+          }
+        },
+        {
+          "label": "Count and sum sample 5.",
+          "given": {
+            "numbers": [
+              0,
+              0,
+              0
+            ]
+          },
+          "expected": {
+            "count": 3,
+            "total": 0
+          }
+        }
+      ],
+      "requires": [
+        "node:For",
+        "no-call:len",
+        "no-call:sum"
+      ]
+    },
+    "C06": {
+      "cases": [
+        {
+          "label": "Largest in sample 1.",
+          "given": {
+            "numbers": [
+              3,
+              41,
+              12,
+              9,
+              74,
+              15
+            ]
+          },
+          "expected": {
+            "largest": 74
+          }
+        },
+        {
+          "label": "Largest in sample 2.",
+          "given": {
+            "numbers": []
+          },
+          "expected": {
+            "largest": null
+          }
+        },
+        {
+          "label": "Largest in sample 3.",
+          "given": {
+            "numbers": [
+              -5,
+              -2,
+              -8
+            ]
+          },
+          "expected": {
+            "largest": -2
+          }
+        },
+        {
+          "label": "Largest in sample 4.",
+          "given": {
+            "numbers": [
+              7
+            ]
+          },
+          "expected": {
+            "largest": 7
+          }
+        },
+        {
+          "label": "Largest in sample 5.",
+          "given": {
+            "numbers": [
+              0,
+              0,
+              0
+            ]
+          },
+          "expected": {
+            "largest": 0
+          }
+        }
+      ],
+      "requires": [
+        "node:For",
+        "no-call:max"
+      ]
+    },
+    "C07": {
+      "cases": [
+        {
+          "label": "Smallest in sample 1.",
+          "given": {
+            "numbers": [
+              3,
+              41,
+              12,
+              9,
+              74,
+              15
+            ]
+          },
+          "expected": {
+            "smallest": 3
+          }
+        },
+        {
+          "label": "Smallest in sample 2.",
+          "given": {
+            "numbers": []
+          },
+          "expected": {
+            "smallest": null
+          }
+        },
+        {
+          "label": "Smallest in sample 3.",
+          "given": {
+            "numbers": [
+              -5,
+              -2,
+              -8
+            ]
+          },
+          "expected": {
+            "smallest": -8
+          }
+        },
+        {
+          "label": "Smallest in sample 4.",
+          "given": {
+            "numbers": [
+              7
+            ]
+          },
+          "expected": {
+            "smallest": 7
+          }
+        },
+        {
+          "label": "Smallest in sample 5.",
+          "given": {
+            "numbers": [
+              0,
+              0,
+              0
+            ]
+          },
+          "expected": {
+            "smallest": 0
+          }
+        }
+      ],
+      "requires": [
+        "node:For",
+        "no-call:min"
+      ]
+    },
+    "C08": {
+      "cases": [
+        {
+          "label": "Skip bad data.",
+          "given": {},
+          "expected": {
+            "total": 16,
+            "count": 3
+          },
+          "inputs": [
+            "4",
+            "5",
+            "bad data",
+            "7",
+            "done"
+          ],
+          "stdout": "Invalid input\n16 3 5.333333333333333"
+        },
+        {
+          "label": "Empty stream.",
+          "given": {},
+          "expected": {
+            "total": 0,
+            "count": 0
+          },
+          "inputs": [
+            "done"
+          ],
+          "stdout": "No numbers"
+        },
+        {
+          "label": "Negative values.",
+          "given": {},
+          "expected": {
+            "total": -6,
+            "count": 2
+          },
+          "inputs": [
+            "-2",
+            "-4",
+            "done"
+          ],
+          "stdout": "-6 2 -3.0"
+        },
+        {
+          "label": "Zero is valid.",
+          "given": {},
+          "expected": {
+            "total": 0,
+            "count": 1
+          },
+          "inputs": [
+            "0",
+            "done"
+          ],
+          "stdout": "0 1 0.0"
+        },
+        {
+          "label": "Only invalid data.",
+          "given": {},
+          "expected": {
+            "total": 0,
+            "count": 0
+          },
+          "inputs": [
+            "bad",
+            "done"
+          ],
+          "stdout": "Invalid input\nNo numbers"
+        }
+      ],
+      "requires": [
+        "node:While",
+        "node:Try",
+        "node:Break",
+        "node:Continue"
+      ]
+    }
+  },
+  "strings": {
+    "C01": {
+      "cases": [
+        {
+          "label": "Inspect 'banana'.",
+          "given": {
+            "fruit": "banana"
+          },
+          "expected": {
+            "first": "b",
+            "last": "a",
+            "length": 6
+          }
+        },
+        {
+          "label": "Inspect 'apple'.",
+          "given": {
+            "fruit": "apple"
+          },
+          "expected": {
+            "first": "a",
+            "last": "e",
+            "length": 5
+          }
+        },
+        {
+          "label": "Inspect 'x'.",
+          "given": {
+            "fruit": "x"
+          },
+          "expected": {
+            "first": "x",
+            "last": "x",
+            "length": 1
+          }
+        },
+        {
+          "label": "Inspect 'pear'.",
+          "given": {
+            "fruit": "pear"
+          },
+          "expected": {
+            "first": "p",
+            "last": "r",
+            "length": 4
+          }
+        },
+        {
+          "label": "Inspect 'orange'.",
+          "given": {
+            "fruit": "orange"
+          },
+          "expected": {
+            "first": "o",
+            "last": "e",
+            "length": 6
+          }
+        }
+      ],
+      "requires": [
+        "call:len",
+        "node:Subscript"
+      ]
+    },
+    "C02": {
+      "cases": [
+        {
+          "label": "Reverse traversal of 'banana'.",
+          "given": {
+            "fruit": "banana"
+          },
+          "expected": {},
+          "stdout": "a\nn\na\nn\na\nb"
+        },
+        {
+          "label": "Reverse traversal of 'abc'.",
+          "given": {
+            "fruit": "abc"
+          },
+          "expected": {},
+          "stdout": "c\nb\na"
+        },
+        {
+          "label": "Reverse traversal of 'x'.",
+          "given": {
+            "fruit": "x"
+          },
+          "expected": {},
+          "stdout": "x"
+        },
+        {
+          "label": "Reverse traversal of ''.",
+          "given": {
+            "fruit": ""
+          },
+          "expected": {},
+          "stdout": ""
+        },
+        {
+          "label": "Reverse traversal of 'pear'.",
+          "given": {
+            "fruit": "pear"
+          },
+          "expected": {},
+          "stdout": "r\na\ne\np"
+        }
+      ],
+      "requires": [
+        "node:While"
+      ]
+    },
+    "C03": {
+      "cases": [
+        {
+          "label": "Slice 'banana'.",
+          "given": {
+            "fruit": "banana"
+          },
+          "expected": {
+            "prefix": "ban",
+            "suffix": "ana",
+            "copy": "banana"
+          }
+        },
+        {
+          "label": "Slice 'Python'.",
+          "given": {
+            "fruit": "Python"
+          },
+          "expected": {
+            "prefix": "Pyt",
+            "suffix": "hon",
+            "copy": "Python"
+          }
+        },
+        {
+          "label": "Slice 'hi'.",
+          "given": {
+            "fruit": "hi"
+          },
+          "expected": {
+            "prefix": "hi",
+            "suffix": "",
+            "copy": "hi"
+          }
+        },
+        {
+          "label": "Slice ''.",
+          "given": {
+            "fruit": ""
+          },
+          "expected": {
+            "prefix": "",
+            "suffix": "",
+            "copy": ""
+          }
+        },
+        {
+          "label": "Slice 'abcd'.",
+          "given": {
+            "fruit": "abcd"
+          },
+          "expected": {
+            "prefix": "abc",
+            "suffix": "d",
+            "copy": "abcd"
+          }
+        }
+      ],
+      "requires": [
+        "node:Slice"
+      ]
+    },
+    "C04": {
+      "cases": [
+        {
+          "label": "Replace first character in sample 1.",
+          "given": {
+            "greeting": "Hello, world!",
+            "letter": "J"
+          },
+          "expected": {
+            "greeting": "Hello, world!",
+            "new_greeting": "Jello, world!"
+          }
+        },
+        {
+          "label": "Replace first character in sample 2.",
+          "given": {
+            "greeting": "cat",
+            "letter": "b"
+          },
+          "expected": {
+            "greeting": "cat",
+            "new_greeting": "bat"
+          }
+        },
+        {
+          "label": "Replace first character in sample 3.",
+          "given": {
+            "greeting": "x",
+            "letter": "y"
+          },
+          "expected": {
+            "greeting": "x",
+            "new_greeting": "y"
+          }
+        },
+        {
+          "label": "Replace first character in sample 4.",
+          "given": {
+            "greeting": "Python",
+            "letter": "J"
+          },
+          "expected": {
+            "greeting": "Python",
+            "new_greeting": "Jython"
+          }
+        },
+        {
+          "label": "Replace first character in sample 5.",
+          "given": {
+            "greeting": "door",
+            "letter": "p"
+          },
+          "expected": {
+            "greeting": "door",
+            "new_greeting": "poor"
+          }
+        }
+      ],
+      "requires": [
+        "node:Slice"
+      ]
+    },
+    "C05": {
+      "cases": [
+        {
+          "label": "Count 'a' in 'banana'.",
+          "given": {
+            "word": "banana",
+            "letter": "a"
+          },
+          "expected": {
+            "count": 3
+          }
+        },
+        {
+          "label": "Count 'z' in 'banana'.",
+          "given": {
+            "word": "banana",
+            "letter": "z"
+          },
+          "expected": {
+            "count": 0
+          }
+        },
+        {
+          "label": "Count 's' in 'Mississippi'.",
+          "given": {
+            "word": "Mississippi",
+            "letter": "s"
+          },
+          "expected": {
+            "count": 4
+          }
+        },
+        {
+          "label": "Count 'a' in ''.",
+          "given": {
+            "word": "",
+            "letter": "a"
+          },
+          "expected": {
+            "count": 0
+          }
+        },
+        {
+          "label": "Count 'a' in 'AaA'.",
+          "given": {
+            "word": "AaA",
+            "letter": "a"
+          },
+          "expected": {
+            "count": 1
+          }
+        }
+      ],
+      "requires": [
+        "node:For",
+        "no-method:count"
+      ]
+    },
+    "C06": {
+      "cases": [
+        {
+          "label": "Normalize sample 1.",
+          "given": {
+            "line": "  Have a nice day  "
+          },
+          "expected": {
+            "line": "  Have a nice day  ",
+            "clean": "Have a nice day",
+            "loud": "HAVE A NICE DAY",
+            "quiet": "have a nice day",
+            "starts": true
+          }
+        },
+        {
+          "label": "Normalize sample 2.",
+          "given": {
+            "line": "\tHELLO\n"
+          },
+          "expected": {
+            "line": "\tHELLO\n",
+            "clean": "HELLO",
+            "loud": "HELLO",
+            "quiet": "hello",
+            "starts": false
+          }
+        },
+        {
+          "label": "Normalize sample 3.",
+          "given": {
+            "line": "have fun"
+          },
+          "expected": {
+            "line": "have fun",
+            "clean": "have fun",
+            "loud": "HAVE FUN",
+            "quiet": "have fun",
+            "starts": true
+          }
+        },
+        {
+          "label": "Normalize sample 4.",
+          "given": {
+            "line": "   "
+          },
+          "expected": {
+            "line": "   ",
+            "clean": "",
+            "loud": "",
+            "quiet": "",
+            "starts": false
+          }
+        },
+        {
+          "label": "Normalize sample 5.",
+          "given": {
+            "line": "HAVEN"
+          },
+          "expected": {
+            "line": "HAVEN",
+            "clean": "HAVEN",
+            "loud": "HAVEN",
+            "quiet": "haven",
+            "starts": true
+          }
+        }
+      ],
+      "requires": [
+        "method:strip",
+        "method:upper",
+        "method:lower",
+        "method:startswith"
+      ]
+    },
+    "C07": {
+      "cases": [
+        {
+          "label": "Extract domain in sample 1.",
+          "given": {
+            "data": "From stephen@uct.ac.za Sat Jan 5"
+          },
+          "expected": {
+            "host": "uct.ac.za"
+          }
+        },
+        {
+          "label": "Extract domain in sample 2.",
+          "given": {
+            "data": "From a@example.org Sat Jan 5"
+          },
+          "expected": {
+            "host": "example.org"
+          }
+        },
+        {
+          "label": "Extract domain in sample 3.",
+          "given": {
+            "data": "From long.name@school.edu Sat Jan 5"
+          },
+          "expected": {
+            "host": "school.edu"
+          }
+        },
+        {
+          "label": "Extract domain in sample 4.",
+          "given": {
+            "data": "From x@a.io Sat Jan 5"
+          },
+          "expected": {
+            "host": "a.io"
+          }
+        },
+        {
+          "label": "Extract domain in sample 5.",
+          "given": {
+            "data": "From person@mail.example.net Sat Jan 5"
+          },
+          "expected": {
+            "host": "mail.example.net"
+          }
+        }
+      ],
+      "requires": [
+        "method:find",
+        "node:Slice",
+        "no-method:split"
+      ]
+    },
+    "C08": {
+      "cases": [
+        {
+          "label": "Parse confidence 0.8475.",
+          "given": {
+            "text": "X-DSPAM-Confidence: 0.8475"
+          },
+          "expected": {
+            "confidence": 0.8475
+          },
+          "stdout": "0.8475"
+        },
+        {
+          "label": "Parse confidence  0.5.",
+          "given": {
+            "text": "X-DSPAM-Confidence:  0.5"
+          },
+          "expected": {
+            "confidence": 0.5
+          },
+          "stdout": "0.5"
+        },
+        {
+          "label": "Parse confidence 1.0.",
+          "given": {
+            "text": "X-DSPAM-Confidence: 1.0"
+          },
+          "expected": {
+            "confidence": 1.0
+          },
+          "stdout": "1.0"
+        },
+        {
+          "label": "Parse confidence 0.0.",
+          "given": {
+            "text": "X-DSPAM-Confidence: 0.0"
+          },
+          "expected": {
+            "confidence": 0.0
+          },
+          "stdout": "0.0"
+        },
+        {
+          "label": "Parse confidence  0.123 .",
+          "given": {
+            "text": "X-DSPAM-Confidence:  0.123 "
+          },
+          "expected": {
+            "confidence": 0.123
+          },
+          "stdout": "0.123"
+        }
+      ],
+      "requires": [
+        "method:find",
+        "node:Slice",
+        "call:float"
+      ]
+    }
+  },
+  "files": {
+    "C01": {
+      "cases": [
+        {
+          "label": "Count lines in file sample 1.",
+          "given": {},
+          "expected": {
+            "count": 2
+          },
+          "stdout": "2",
+          "files": {
+            "sample.txt": "Hello\nWorld!\n"
+          }
+        },
+        {
+          "label": "Count lines in file sample 2.",
+          "given": {},
+          "expected": {
+            "count": 1
+          },
+          "stdout": "1",
+          "files": {
+            "sample.txt": "one line\n"
+          }
+        },
+        {
+          "label": "Count lines in file sample 3.",
+          "given": {},
+          "expected": {
+            "count": 0
+          },
+          "stdout": "0",
+          "files": {
+            "sample.txt": ""
+          }
+        },
+        {
+          "label": "Count lines in file sample 4.",
+          "given": {},
+          "expected": {
+            "count": 3
+          },
+          "stdout": "3",
+          "files": {
+            "sample.txt": "a\nb\nc"
+          }
+        },
+        {
+          "label": "Count lines in file sample 5.",
+          "given": {},
+          "expected": {
+            "count": 1
+          },
+          "stdout": "1",
+          "files": {
+            "sample.txt": "last line"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "node:For"
+      ]
+    },
+    "C02": {
+      "cases": [
+        {
+          "label": "Read file sample 1.",
+          "given": {},
+          "expected": {
+            "contents": "Hello\nWorld!\n",
+            "again": "",
+            "length": 13
+          },
+          "files": {
+            "sample.txt": "Hello\nWorld!\n"
+          }
+        },
+        {
+          "label": "Read file sample 2.",
+          "given": {},
+          "expected": {
+            "contents": "one line\n",
+            "again": "",
+            "length": 9
+          },
+          "files": {
+            "sample.txt": "one line\n"
+          }
+        },
+        {
+          "label": "Read file sample 3.",
+          "given": {},
+          "expected": {
+            "contents": "",
+            "again": "",
+            "length": 0
+          },
+          "files": {
+            "sample.txt": ""
+          }
+        },
+        {
+          "label": "Read file sample 4.",
+          "given": {},
+          "expected": {
+            "contents": "a\nb\nc",
+            "again": "",
+            "length": 5
+          },
+          "files": {
+            "sample.txt": "a\nb\nc"
+          }
+        },
+        {
+          "label": "Read file sample 5.",
+          "given": {},
+          "expected": {
+            "contents": "last line",
+            "again": "",
+            "length": 9
+          },
+          "files": {
+            "sample.txt": "last line"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "method:read",
+        "method:close"
+      ]
+    },
+    "C03": {
+      "cases": [
+        {
+          "label": "Select headers from sample 1.",
+          "given": {},
+          "expected": {},
+          "stdout": "From: ada@example.org\nFrom: lin@example.org",
+          "files": {
+            "mail.txt": "From: ada@example.org\nSubject: Hello\n\nFrom: lin@example.org\n"
+          }
+        },
+        {
+          "label": "Select headers from sample 2.",
+          "given": {},
+          "expected": {},
+          "stdout": "",
+          "files": {
+            "mail.txt": "Subject: No sender\n"
+          }
+        },
+        {
+          "label": "Select headers from sample 3.",
+          "given": {},
+          "expected": {},
+          "stdout": "",
+          "files": {
+            "mail.txt": ""
+          }
+        },
+        {
+          "label": "Select headers from sample 4.",
+          "given": {},
+          "expected": {},
+          "stdout": "From: person@example.org",
+          "files": {
+            "mail.txt": "From person@example.org Sat Jan 5\nFrom: person@example.org\n"
+          }
+        },
+        {
+          "label": "Select headers from sample 5.",
+          "given": {},
+          "expected": {},
+          "stdout": "From: one@example.org\nFrom: two@example.org\nFrom: three@example.org",
+          "files": {
+            "mail.txt": "From: one@example.org\nFrom: two@example.org\nFrom: three@example.org\n"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "method:startswith",
+        "method:rstrip"
+      ]
+    },
+    "C04": {
+      "cases": [
+        {
+          "label": "Search file sample 1.",
+          "given": {},
+          "expected": {},
+          "stdout": "From: a@uct.ac.za",
+          "files": {
+            "mail.txt": "From: a@uct.ac.za\nFrom: b@example.org\n"
+          }
+        },
+        {
+          "label": "Search file sample 2.",
+          "given": {},
+          "expected": {},
+          "stdout": "@uct.ac.za at index zero",
+          "files": {
+            "mail.txt": "@uct.ac.za at index zero\n"
+          }
+        },
+        {
+          "label": "Search file sample 3.",
+          "given": {},
+          "expected": {},
+          "stdout": "",
+          "files": {
+            "mail.txt": "none\n"
+          }
+        },
+        {
+          "label": "Search file sample 4.",
+          "given": {},
+          "expected": {},
+          "stdout": "",
+          "files": {
+            "mail.txt": ""
+          }
+        },
+        {
+          "label": "Search file sample 5.",
+          "given": {},
+          "expected": {},
+          "stdout": "To: x@uct.ac.za\nCc: y@uct.ac.za",
+          "files": {
+            "mail.txt": "To: x@uct.ac.za\nCc: y@uct.ac.za\n"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "method:find"
+      ]
+    },
+    "C05": {
+      "cases": [
+        {
+          "label": "Two subject headers.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "mail.txt"
+          ],
+          "stdout": "2",
+          "files": {
+            "mail.txt": "Subject: one\nFrom: a\nSubject: two\n"
+          }
+        },
+        {
+          "label": "Empty file.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "empty.txt"
+          ],
+          "stdout": "0",
+          "files": {
+            "empty.txt": ""
+          }
+        },
+        {
+          "label": "Missing file.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "missing.txt"
+          ],
+          "stdout": "File cannot be opened: missing.txt",
+          "files": {}
+        },
+        {
+          "label": "Do not count embedded text.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "other.txt"
+          ],
+          "stdout": "0",
+          "files": {
+            "other.txt": "Re: Subject: one\n"
+          }
+        },
+        {
+          "label": "Different filename.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "notes.txt"
+          ],
+          "stdout": "1",
+          "files": {
+            "notes.txt": "Subject: test\n"
+          }
+        }
+      ],
+      "requires": [
+        "node:Try",
+        "call:open",
+        "call:input"
+      ]
+    },
+    "C06": {
+      "cases": [
+        {
+          "label": "Uppercase file sample 1.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "words.txt"
+          ],
+          "stdout": "HELLO\nWORLD",
+          "files": {
+            "words.txt": "hello\nworld\n"
+          }
+        },
+        {
+          "label": "Uppercase file sample 2.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "words.txt"
+          ],
+          "stdout": "MIXED",
+          "files": {
+            "words.txt": "MiXeD\n"
+          }
+        },
+        {
+          "label": "Uppercase file sample 3.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "words.txt"
+          ],
+          "stdout": "",
+          "files": {
+            "words.txt": ""
+          }
+        },
+        {
+          "label": "Uppercase file sample 4.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "words.txt"
+          ],
+          "stdout": "ONE\n\nTWO",
+          "files": {
+            "words.txt": "one\n\ntwo\n"
+          }
+        },
+        {
+          "label": "Uppercase file sample 5.",
+          "given": {},
+          "expected": {},
+          "inputs": [
+            "words.txt"
+          ],
+          "stdout": "LAST LINE",
+          "files": {
+            "words.txt": "last line"
+          }
+        }
+      ],
+      "requires": [
+        "call:input",
+        "call:open",
+        "method:upper"
+      ]
+    },
+    "C07": {
+      "cases": [
+        {
+          "label": "Average sample 1.",
+          "given": {},
+          "expected": {
+            "count": 2,
+            "total": 1.5
+          },
+          "stdout": "0.75",
+          "files": {
+            "mail.txt": "X-DSPAM-Confidence: 0.5\nIgnore this\nX-DSPAM-Confidence: 1.0\n"
+          }
+        },
+        {
+          "label": "Average sample 2.",
+          "given": {},
+          "expected": {
+            "count": 1,
+            "total": 0.8475
+          },
+          "stdout": "0.8475",
+          "files": {
+            "mail.txt": "X-DSPAM-Confidence: 0.8475\n"
+          }
+        },
+        {
+          "label": "Average sample 3.",
+          "given": {},
+          "expected": {
+            "count": 0,
+            "total": 0.0
+          },
+          "stdout": "No matching lines",
+          "files": {
+            "mail.txt": "Subject: none\n"
+          }
+        },
+        {
+          "label": "Average sample 4.",
+          "given": {},
+          "expected": {
+            "count": 0,
+            "total": 0.0
+          },
+          "stdout": "No matching lines",
+          "files": {
+            "mail.txt": ""
+          }
+        },
+        {
+          "label": "Average sample 5.",
+          "given": {},
+          "expected": {
+            "count": 3,
+            "total": 0.6
+          },
+          "stdout": "0.19999999999999998",
+          "files": {
+            "mail.txt": "X-DSPAM-Confidence: 0.0\nX-DSPAM-Confidence: 0.2\nX-DSPAM-Confidence: 0.4\n"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "call:float",
+        "node:For"
+      ]
+    },
+    "C08": {
+      "cases": [
+        {
+          "label": "Write sample 1.",
+          "given": {
+            "first": "Hello",
+            "second": "World"
+          },
+          "expected": {},
+          "files": {
+            "output.txt": "old contents that must disappear\n"
+          },
+          "written": {
+            "output.txt": "Hello\nWorld\n"
+          }
+        },
+        {
+          "label": "Write sample 2.",
+          "given": {
+            "first": "one",
+            "second": "two"
+          },
+          "expected": {},
+          "files": {
+            "output.txt": "old contents that must disappear\n"
+          },
+          "written": {
+            "output.txt": "one\ntwo\n"
+          }
+        },
+        {
+          "label": "Write sample 3.",
+          "given": {
+            "first": "",
+            "second": "end"
+          },
+          "expected": {},
+          "files": {
+            "output.txt": "old contents that must disappear\n"
+          },
+          "written": {
+            "output.txt": "\nend\n"
+          }
+        },
+        {
+          "label": "Write sample 4.",
+          "given": {
+            "first": "42",
+            "second": "text"
+          },
+          "expected": {},
+          "files": {
+            "output.txt": "old contents that must disappear\n"
+          },
+          "written": {
+            "output.txt": "42\ntext\n"
+          }
+        },
+        {
+          "label": "Write sample 5.",
+          "given": {
+            "first": "last",
+            "second": ""
+          },
+          "expected": {},
+          "files": {
+            "output.txt": "old contents that must disappear\n"
+          },
+          "written": {
+            "output.txt": "last\n\n"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "method:write",
+        "method:close"
+      ]
+    }
+  },
+  "lists": {
+    "C01": {
+      "cases": [
+        {
+          "label": "Mutate sample 1.",
+          "given": {
+            "numbers": [
+              10,
+              20,
+              30
+            ],
+            "replacement": 99
+          },
+          "expected": {
+            "first": 10,
+            "last": 30,
+            "numbers": [
+              99,
+              20,
+              30
+            ],
+            "length": 3
+          }
+        },
+        {
+          "label": "Mutate sample 2.",
+          "given": {
+            "numbers": [
+              1
+            ],
+            "replacement": 8
+          },
+          "expected": {
+            "first": 1,
+            "last": 1,
+            "numbers": [
+              8
+            ],
+            "length": 1
+          }
+        },
+        {
+          "label": "Mutate sample 3.",
+          "given": {
+            "numbers": [
+              -1,
+              -2
+            ],
+            "replacement": 0
+          },
+          "expected": {
+            "first": -1,
+            "last": -2,
+            "numbers": [
+              0,
+              -2
+            ],
+            "length": 2
+          }
+        },
+        {
+          "label": "Mutate sample 4.",
+          "given": {
+            "numbers": [
+              0,
+              0
+            ],
+            "replacement": 3
+          },
+          "expected": {
+            "first": 0,
+            "last": 0,
+            "numbers": [
+              3,
+              0
+            ],
+            "length": 2
+          }
+        },
+        {
+          "label": "Mutate sample 5.",
+          "given": {
+            "numbers": [
+              2,
+              4,
+              6,
+              8
+            ],
+            "replacement": 5
+          },
+          "expected": {
+            "first": 2,
+            "last": 8,
+            "numbers": [
+              5,
+              4,
+              6,
+              8
+            ],
+            "length": 4
+          }
+        }
+      ],
+      "requires": [
+        "node:Subscript"
+      ]
+    },
+    "C02": {
+      "cases": [
+        {
+          "label": "List operations sample 1.",
+          "given": {
+            "left": [
+              1,
+              2
+            ],
+            "right": [
+              3,
+              4
+            ]
+          },
+          "expected": {
+            "left": [
+              1,
+              2
+            ],
+            "right": [
+              3,
+              4
+            ],
+            "joined": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "repeated": [
+              1,
+              2,
+              1,
+              2
+            ],
+            "middle": [
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "label": "List operations sample 2.",
+          "given": {
+            "left": [],
+            "right": [
+              7
+            ]
+          },
+          "expected": {
+            "left": [],
+            "right": [
+              7
+            ],
+            "joined": [
+              7
+            ],
+            "repeated": [],
+            "middle": []
+          }
+        },
+        {
+          "label": "List operations sample 3.",
+          "given": {
+            "left": [
+              9
+            ],
+            "right": []
+          },
+          "expected": {
+            "left": [
+              9
+            ],
+            "right": [],
+            "joined": [
+              9
+            ],
+            "repeated": [
+              9,
+              9
+            ],
+            "middle": []
+          }
+        },
+        {
+          "label": "List operations sample 4.",
+          "given": {
+            "left": [
+              1
+            ],
+            "right": [
+              2,
+              3
+            ]
+          },
+          "expected": {
+            "left": [
+              1
+            ],
+            "right": [
+              2,
+              3
+            ],
+            "joined": [
+              1,
+              2,
+              3
+            ],
+            "repeated": [
+              1,
+              1
+            ],
+            "middle": [
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "label": "List operations sample 5.",
+          "given": {
+            "left": [],
+            "right": []
+          },
+          "expected": {
+            "left": [],
+            "right": [],
+            "joined": [],
+            "repeated": [],
+            "middle": []
+          }
+        }
+      ],
+      "requires": [
+        "node:Slice"
+      ]
+    },
+    "C03": {
+      "cases": [
+        {
+          "label": "Build and sort sample 1.",
+          "given": {
+            "values": [
+              3,
+              1
+            ],
+            "item": 2,
+            "extra": [
+              5,
+              4
+            ]
+          },
+          "expected": {
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        {
+          "label": "Build and sort sample 2.",
+          "given": {
+            "values": [],
+            "item": 0,
+            "extra": []
+          },
+          "expected": {
+            "values": [
+              0
+            ]
+          }
+        },
+        {
+          "label": "Build and sort sample 3.",
+          "given": {
+            "values": [
+              2
+            ],
+            "item": 2,
+            "extra": [
+              2
+            ]
+          },
+          "expected": {
+            "values": [
+              2,
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "label": "Build and sort sample 4.",
+          "given": {
+            "values": [
+              -1
+            ],
+            "item": -3,
+            "extra": [
+              -2
+            ]
+          },
+          "expected": {
+            "values": [
+              -3,
+              -2,
+              -1
+            ]
+          }
+        },
+        {
+          "label": "Build and sort sample 5.",
+          "given": {
+            "values": [
+              9,
+              1
+            ],
+            "item": 4,
+            "extra": [
+              0
+            ]
+          },
+          "expected": {
+            "values": [
+              0,
+              1,
+              4,
+              9
+            ]
+          }
+        }
+      ],
+      "requires": [
+        "method:append",
+        "method:extend",
+        "method:sort"
+      ]
+    },
+    "C04": {
+      "cases": [
+        {
+          "label": "Remove index 1 from sample 1.",
+          "given": {
+            "values": [
+              10,
+              20,
+              30
+            ],
+            "index": 1
+          },
+          "expected": {
+            "removed": 20,
+            "values": [
+              10,
+              30
+            ]
+          }
+        },
+        {
+          "label": "Remove index 0 from sample 2.",
+          "given": {
+            "values": [
+              5
+            ],
+            "index": 0
+          },
+          "expected": {
+            "removed": 5,
+            "values": []
+          }
+        },
+        {
+          "label": "Remove index 0 from sample 3.",
+          "given": {
+            "values": [
+              1,
+              2,
+              3
+            ],
+            "index": 0
+          },
+          "expected": {
+            "removed": 1,
+            "values": [
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "label": "Remove index 2 from sample 4.",
+          "given": {
+            "values": [
+              1,
+              2,
+              3
+            ],
+            "index": 2
+          },
+          "expected": {
+            "removed": 3,
+            "values": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "label": "Remove index 1 from sample 5.",
+          "given": {
+            "values": [
+              "a",
+              "b"
+            ],
+            "index": 1
+          },
+          "expected": {
+            "removed": "b",
+            "values": [
+              "a"
+            ]
+          }
+        }
+      ],
+      "requires": [
+        "method:pop"
+      ]
+    },
+    "C05": {
+      "cases": [
+        {
+          "label": "Split and join sample 1.",
+          "given": {
+            "text": "pining for the fjords"
+          },
+          "expected": {
+            "words": [
+              "pining",
+              "for",
+              "the",
+              "fjords"
+            ],
+            "joined": "pining-for-the-fjords",
+            "count": 4
+          }
+        },
+        {
+          "label": "Split and join sample 2.",
+          "given": {
+            "text": "  one   two  "
+          },
+          "expected": {
+            "words": [
+              "one",
+              "two"
+            ],
+            "joined": "one-two",
+            "count": 2
+          }
+        },
+        {
+          "label": "Split and join sample 3.",
+          "given": {
+            "text": ""
+          },
+          "expected": {
+            "words": [],
+            "joined": "",
+            "count": 0
+          }
+        },
+        {
+          "label": "Split and join sample 4.",
+          "given": {
+            "text": "single"
+          },
+          "expected": {
+            "words": [
+              "single"
+            ],
+            "joined": "single",
+            "count": 1
+          }
+        },
+        {
+          "label": "Split and join sample 5.",
+          "given": {
+            "text": "a\tb\nc"
+          },
+          "expected": {
+            "words": [
+              "a",
+              "b",
+              "c"
+            ],
+            "joined": "a-b-c",
+            "count": 3
+          }
+        }
+      ],
+      "requires": [
+        "method:split",
+        "method:join"
+      ]
+    },
+    "C06": {
+      "cases": [
+        {
+          "label": "Independent copy sample 1.",
+          "given": {
+            "original": [
+              1,
+              2
+            ],
+            "replacement": 9
+          },
+          "expected": {
+            "original": [
+              1,
+              2
+            ],
+            "copy": [
+              9,
+              2
+            ],
+            "same_object": false
+          }
+        },
+        {
+          "label": "Independent copy sample 2.",
+          "given": {
+            "original": [
+              "a",
+              "b"
+            ],
+            "replacement": "z"
+          },
+          "expected": {
+            "original": [
+              "a",
+              "b"
+            ],
+            "copy": [
+              "z",
+              "b"
+            ],
+            "same_object": false
+          }
+        },
+        {
+          "label": "Independent copy sample 3.",
+          "given": {
+            "original": [
+              0
+            ],
+            "replacement": 7
+          },
+          "expected": {
+            "original": [
+              0
+            ],
+            "copy": [
+              7
+            ],
+            "same_object": false
+          }
+        },
+        {
+          "label": "Independent copy sample 4.",
+          "given": {
+            "original": [
+              3,
+              3
+            ],
+            "replacement": 4
+          },
+          "expected": {
+            "original": [
+              3,
+              3
+            ],
+            "copy": [
+              4,
+              3
+            ],
+            "same_object": false
+          }
+        },
+        {
+          "label": "Independent copy sample 5.",
+          "given": {
+            "original": [
+              -1,
+              -2
+            ],
+            "replacement": 0
+          },
+          "expected": {
+            "original": [
+              -1,
+              -2
+            ],
+            "copy": [
+              0,
+              -2
+            ],
+            "same_object": false
+          }
+        }
+      ],
+      "requires": [
+        "node:Slice",
+        "node:Is"
+      ]
+    },
+    "C07": {
+      "cases": [
+        {
+          "label": "Unique words sample 1.",
+          "given": {},
+          "expected": {
+            "unique": [
+              "But",
+              "breaks",
+              "light",
+              "soft",
+              "what"
+            ]
+          },
+          "files": {
+            "romeo.txt": "But soft what light\nwhat light breaks\n"
+          }
+        },
+        {
+          "label": "Unique words sample 2.",
+          "given": {},
+          "expected": {
+            "unique": [
+              "one"
+            ]
+          },
+          "files": {
+            "romeo.txt": "one one one\n"
+          }
+        },
+        {
+          "label": "Unique words sample 3.",
+          "given": {},
+          "expected": {
+            "unique": []
+          },
+          "files": {
+            "romeo.txt": ""
+          }
+        },
+        {
+          "label": "Unique words sample 4.",
+          "given": {},
+          "expected": {
+            "unique": [
+              "A",
+              "a"
+            ]
+          },
+          "files": {
+            "romeo.txt": "A a A\n"
+          }
+        },
+        {
+          "label": "Unique words sample 5.",
+          "given": {},
+          "expected": {
+            "unique": [
+              "blue",
+              "green",
+              "red"
+            ]
+          },
+          "files": {
+            "romeo.txt": "red blue\nblue green\n"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "method:split",
+        "method:append",
+        "method:sort",
+        "no-call:set",
+        "no-node:Set",
+        "no-node:SetComp",
+        "no-node:Dict",
+        "no-node:DictComp"
+      ]
+    },
+    "C08": {
+      "cases": [
+        {
+          "label": "Guard mailbox sample 1.",
+          "given": {},
+          "expected": {
+            "count": 2
+          },
+          "stdout": "ada@example.org\nlin@example.org\nCount: 2",
+          "files": {
+            "mail.txt": "From ada@example.org Sat Jan 5\nFrom: header@example.org\n\nFrom\nFrom lin@example.org Sun Jan 6\n"
+          }
+        },
+        {
+          "label": "Guard mailbox sample 2.",
+          "given": {},
+          "expected": {
+            "count": 0
+          },
+          "stdout": "Count: 0",
+          "files": {
+            "mail.txt": ""
+          }
+        },
+        {
+          "label": "Guard mailbox sample 3.",
+          "given": {},
+          "expected": {
+            "count": 0
+          },
+          "stdout": "Count: 0",
+          "files": {
+            "mail.txt": "From\n\nOther\n"
+          }
+        },
+        {
+          "label": "Guard mailbox sample 4.",
+          "given": {},
+          "expected": {
+            "count": 0
+          },
+          "stdout": "Count: 0",
+          "files": {
+            "mail.txt": "From: header@example.org\n"
+          }
+        },
+        {
+          "label": "Guard mailbox sample 5.",
+          "given": {},
+          "expected": {
+            "count": 2
+          },
+          "stdout": "a@example.org\na@example.org\nCount: 2",
+          "files": {
+            "mail.txt": "From a@example.org\nFrom a@example.org\n"
+          }
+        }
+      ],
+      "requires": [
+        "call:open",
+        "method:split"
+      ]
+    }
+  }
+}

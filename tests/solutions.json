@@ -1,0 +1,62 @@
+{
+  "variables": {
+    "C01": "whole = 17\nfraction = 3.2\ntext = '17'\nwhole_type = type(whole)\nfraction_type = type(fraction)\ntext_type = type(text)",
+    "C02": "original = n\nn = n + 1\nprint(n)",
+    "C03": "total = a + b\ndifference = a - b\nproduct = a * b\nquotient = a / b\nremainder = a % b",
+    "C04": "floor_half = width // 2\ndecimal_half = width / 2.0\nthird = height / 3\nexpression = 1 + 2 * 5\ngrouped = (1 + 2) * 5",
+    "C05": "joined = first + second\nrepeated = first * times",
+    "C06": "name = input('Name: ')\nprint('Hello', name)",
+    "C07": "hours = float(input('Hours: '))\nrate = float(input('Rate: '))\npay = hours * rate\nprint('Pay:', pay)",
+    "C08": "celsius = float(input(\"Celsius: \"))\nfahrenheit = celsius * 9 / 5 + 32\nprint(fahrenheit)"
+  },
+  "conditionals": {
+    "C01": "equal = x == y\ndifferent = x != y\ngreater = x > y\nat_least = x >= y\nat_most = x <= y",
+    "C02": "single_digit = n > 0 and n < 10\ndivisible = n % 2 == 0 or n % 3 == 0\nnot_positive = not (n > 0)",
+    "C03": "if n % 2 == 0:\n    parity = \"even\"\nelse:\n    parity = \"odd\"\nprint(parity)",
+    "C04": "if x < y:\n    relation = \"less\"\nelif x == y:\n    relation = \"equal\"\nelse:\n    relation = \"greater\"\nprint(relation)",
+    "C05": "safe = x >= 2 and y != 0 and x / y > 2",
+    "C06": "text = input(\"Fahrenheit: \")\ntry:\n    fahrenheit = float(text)\n    print((fahrenheit - 32) * 5 / 9)\nexcept:\n    print(\"Please enter a number\")",
+    "C07": "try:\n    hours = float(input(\"Hours: \"))\n    rate = float(input(\"Rate: \"))\n    if hours > 40:\n        pay = 40 * rate + (hours - 40) * rate * 1.5\n    else:\n        pay = hours * rate\n    print(pay)\nexcept:\n    print(\"Error, please enter numeric input\")",
+    "C08": "try:\n    score = float(input(\"Score: \"))\n    if score < 0 or score > 1:\n        print(\"Bad score\")\n    elif score >= .9:\n        print(\"A\")\n    elif score >= .8:\n        print(\"B\")\n    elif score >= .7:\n        print(\"C\")\n    elif score >= .6:\n        print(\"D\")\n    else:\n        print(\"F\")\nexcept:\n    print(\"Bad score\")"
+  },
+  "loops": {
+    "C01": "while n > 0:\n    print(n)\n    n = n - 1\nprint(\"Blastoff!\")",
+    "C02": "while True:\n    line = input(\"> \")\n    if line == \"done\":\n        break\n    print(line)\nprint(\"Done!\")",
+    "C03": "while True:\n    line = input(\"> \")\n    if line == \"done\":\n        break\n    if line.startswith(\"#\"):\n        continue\n    print(line)\nprint(\"Done!\")",
+    "C04": "for friend in friends:\n    print(\"Happy New Year:\", friend)\nprint(\"Done!\")",
+    "C05": "count = 0\ntotal = 0\nfor number in numbers:\n    count = count + 1\n    total = total + number",
+    "C06": "largest = None\nfor number in numbers:\n    if largest is None or number > largest:\n        largest = number",
+    "C07": "smallest = None\nfor number in numbers:\n    if smallest is None or number < smallest:\n        smallest = number",
+    "C08": "total = 0\ncount = 0\nwhile True:\n    text = input(\"Number: \")\n    if text == \"done\":\n        break\n    try:\n        number = int(text)\n    except:\n        print(\"Invalid input\")\n        continue\n    total = total + number\n    count = count + 1\nif count > 0:\n    print(total, count, total / count)\nelse:\n    print(\"No numbers\")"
+  },
+  "strings": {
+    "C01": "first = fruit[0]\nlast = fruit[-1]\nlength = len(fruit)",
+    "C02": "index = len(fruit) - 1\nwhile index >= 0:\n    print(fruit[index])\n    index = index - 1",
+    "C03": "prefix = fruit[:3]\nsuffix = fruit[3:]\ncopy = fruit[:]",
+    "C04": "new_greeting = letter + greeting[1:]",
+    "C05": "count = 0\nfor char in word:\n    if char == letter:\n        count = count + 1",
+    "C06": "clean = line.strip()\nloud = clean.upper()\nquiet = clean.lower()\nstarts = quiet.startswith(\"have\")",
+    "C07": "atpos = data.find(\"@\")\nsppos = data.find(\" \", atpos)\nhost = data[atpos + 1:sppos]",
+    "C08": "position = text.find(\":\")\nconfidence = float(text[position + 1:])\nprint(confidence)"
+  },
+  "files": {
+    "C01": "fhand = open(\"sample.txt\")\ncount = 0\nfor line in fhand:\n    count = count + 1\nfhand.close()\nprint(count)",
+    "C02": "fhand = open(\"sample.txt\")\ncontents = fhand.read()\nagain = fhand.read()\nlength = len(contents)\nfhand.close()",
+    "C03": "fhand = open(\"mail.txt\")\nfor line in fhand:\n    if line.startswith(\"From:\"):\n        print(line.rstrip())\nfhand.close()",
+    "C04": "fhand = open(\"mail.txt\")\nfor line in fhand:\n    if line.find(\"@uct.ac.za\") == -1:\n        continue\n    print(line.rstrip())\nfhand.close()",
+    "C05": "fname = input(\"File: \")\ntry:\n    fhand = open(fname)\nexcept:\n    print(\"File cannot be opened:\", fname)\nelse:\n    count = 0\n    for line in fhand:\n        if line.startswith(\"Subject:\"):\n            count = count + 1\n    fhand.close()\n    print(count)",
+    "C06": "fname = input(\"File: \")\nfhand = open(fname)\nfor line in fhand:\n    print(line.rstrip().upper())\nfhand.close()",
+    "C07": "count = 0\ntotal = 0.0\nfhand = open(\"mail.txt\")\nfor line in fhand:\n    if not line.startswith(\"X-DSPAM-Confidence:\"):\n        continue\n    value = float(line[line.find(\":\") + 1:])\n    count = count + 1\n    total = total + value\nfhand.close()\nif count > 0:\n    print(total / count)\nelse:\n    print(\"No matching lines\")",
+    "C08": "fout = open(\"output.txt\", \"w\")\nfout.write(first + \"\\n\")\nfout.write(second + \"\\n\")\nfout.close()"
+  },
+  "lists": {
+    "C01": "first = numbers[0]\nlast = numbers[-1]\nnumbers[0] = replacement\nlength = len(numbers)",
+    "C02": "joined = left + right\nrepeated = left * 2\nmiddle = joined[1:3]",
+    "C03": "values.append(item)\nvalues.extend(extra)\nvalues.sort()",
+    "C04": "removed = values.pop(index)",
+    "C05": "words = text.split()\njoined = \"-\".join(words)\ncount = len(words)",
+    "C06": "copy = original[:]\ncopy[0] = replacement\nsame_object = copy is original",
+    "C07": "unique = []\nfhand = open(\"romeo.txt\")\nfor line in fhand:\n    for word in line.split():\n        if word not in unique:\n            unique.append(word)\nfhand.close()\nunique.sort()",
+    "C08": "count = 0\nfhand = open(\"mail.txt\")\nfor line in fhand:\n    words = line.split()\n    if len(words) < 2 or words[0] != \"From\":\n        continue\n    print(words[1])\n    count = count + 1\nfhand.close()\nprint(\"Count:\", count)"
+  }
+}

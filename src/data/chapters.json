@@ -1,0 +1,2745 @@
+[
+  {
+    "id": "variables",
+    "number": "02",
+    "title": "Variables",
+    "fullTitle": "Variables, expressions, and statements",
+    "source": "https://www.py4e.com/html3/02-variables",
+    "reading": "https://www.py4e.com/html3/02-variables",
+    "questions": [
+      {
+        "id": "C01",
+        "kind": "code",
+        "title": "Values and their types",
+        "level": "Easy",
+        "points": 10,
+        "source": "Values and types",
+        "task": "Assign `whole`, `fraction`, and `text` the values 17, 3.2, and the string \"17\". Use `type()` to store their types in `whole_type`, `fraction_type`, and `text_type`.\n\nFive independent checks are worth 2 XP each. ",
+        "starter": "whole = None\nfraction = None\ntext = None\nwhole_type = None\nfraction_type = None\ntext_type = None",
+        "hint": "Quotes change a numeric-looking value into a string.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C01 | Values and their types\n\nAssign `whole`, `fraction`, and `text` the values 17, 3.2, and the string \"17\". Use `type()` to store their types in `whole_type`, `fraction_type`, and `text_type`.\n\nFive independent checks are worth 2 XP each. \n\n**Source checkpoint:** Values and types",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "C02",
+        "kind": "code",
+        "title": "Assignment and updates",
+        "level": "Easy",
+        "points": 10,
+        "source": "Variables; Statements",
+        "task": "The checker supplies `n`. Store its value in `original`, increase `n` by 1, and print the updated number.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 17\n```",
+        "starter": "original = None\n# Update n, then print it.",
+        "hint": "The right side of an assignment is evaluated before the left side changes.",
+        "setup": "n = 17",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C02 | Assignment and updates\n\nThe checker supplies `n`. Store its value in `original`, increase `n` by 1, and print the updated number.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 17\n```\n\n**Source checkpoint:** Variables; Statements",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "C03",
+        "kind": "code",
+        "title": "Arithmetic toolbox",
+        "level": "Easy",
+        "points": 10,
+        "source": "Operators and operands; Modulus operator",
+        "task": "Using supplied integers `a` and `b` (b is positive), calculate `total` (sum), `difference` (a minus b), `product`, `quotient` (true division), and `remainder` (a modulo b).\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\na = 7\nb = 3\n```",
+        "starter": "total = None\ndifference = None\nproduct = None\nquotient = None\nremainder = None",
+        "hint": "The percent operator produces the remainder, not a percentage.",
+        "setup": "a = 7\nb = 3",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C03 | Arithmetic toolbox\n\nUsing supplied integers `a` and `b` (b is positive), calculate `total` (sum), `difference` (a minus b), `product`, `quotient` (true division), and `remainder` (a modulo b).\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\na = 7\nb = 3\n```\n\n**Source checkpoint:** Operators and operands; Modulus operator",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "C04",
+        "kind": "code",
+        "title": "Precedence workshop",
+        "level": "Easy",
+        "points": 10,
+        "source": "Order of operations; Exercise 4",
+        "task": "Use `width` and `height` to compute `floor_half = width // 2`, `decimal_half = width / 2.0`, and `third = height / 3`. Also calculate `expression` from `1 + 2 * 5` and `grouped` from `(1 + 2) * 5`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nwidth = 17\nheight = 12.0\n```",
+        "starter": "floor_half = None\ndecimal_half = None\nthird = None\nexpression = None\ngrouped = None",
+        "hint": "Parentheses control grouping; multiplication happens before addition.",
+        "setup": "width = 17\nheight = 12.0",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C04 | Precedence workshop\n\nUse `width` and `height` to compute `floor_half = width // 2`, `decimal_half = width / 2.0`, and `third = height / 3`. Also calculate `expression` from `1 + 2 * 5` and `grouped` from `(1 + 2) * 5`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nwidth = 17\nheight = 12.0\n```\n\n**Source checkpoint:** Order of operations; Exercise 4",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "C05",
+        "kind": "code",
+        "title": "Joining and repeating text",
+        "level": "Medium",
+        "points": 10,
+        "source": "String operations",
+        "task": "Join `first` and `second` with `+`, saving `joined`. Repeat `first` by the supplied integer `times`, saving `repeated`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfirst = '100'\nsecond = '150'\ntimes = 3\n```",
+        "starter": "joined = None\nrepeated = None",
+        "hint": "For strings, + joins and * with an integer repeats.",
+        "setup": "first = '100'\nsecond = '150'\ntimes = 3",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C05 | Joining and repeating text\n\nJoin `first` and `second` with `+`, saving `joined`. Repeat `first` by the supplied integer `times`, saving `repeated`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfirst = '100'\nsecond = '150'\ntimes = 3\n```\n\n**Source checkpoint:** String operations",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "C06",
+        "kind": "code",
+        "title": "A personal welcome",
+        "level": "Medium",
+        "points": 10,
+        "source": "Asking the user for input; Exercise 2",
+        "task": "Read one name with `input()` into `name`. Print `Hello` followed by a space and that name.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `Chuck`. Input prompts are omitted from captured output.",
+        "starter": "# Read a name and welcome the user.",
+        "hint": "input returns text; print can separate two arguments with a space.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "Chuck"
+        ],
+        "prompt": "## C06 | A personal welcome\n\nRead one name with `input()` into `name`. Print `Hello` followed by a space and that name.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `Chuck`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Asking the user for input; Exercise 2",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "C07",
+        "kind": "code",
+        "title": "Gross pay calculator",
+        "level": "Medium",
+        "points": 10,
+        "source": "Choosing mnemonic variable names; Exercise 3",
+        "task": "Read hours and hourly rate using two `input()` calls. Convert both to `float`, store them in `hours` and `rate`, compute `pay`, then print `Pay:` and the amount. This chapter uses straight pay for all hours.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `35`, `2.75`. Input prompts are omitted from captured output.",
+        "starter": "# Read hours, read rate, calculate pay, then print.",
+        "hint": "Convert the input strings before multiplying.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "35",
+          "2.75"
+        ],
+        "prompt": "## C07 | Gross pay calculator\n\nRead hours and hourly rate using two `input()` calls. Convert both to `float`, store them in `hours` and `rate`, compute `pay`, then print `Pay:` and the amount. This chapter uses straight pay for all hours.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `35`, `2.75`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Choosing mnemonic variable names; Exercise 3",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "C08",
+        "kind": "code",
+        "title": "Temperature converter",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercise 5",
+        "task": "Read a Celsius temperature using `input()`, convert it to a float named `celsius`, and compute `fahrenheit = celsius * 9 / 5 + 32`. Print only the Fahrenheit value.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `0`. Input prompts are omitted from captured output.",
+        "starter": "# Convert Celsius input to Fahrenheit.",
+        "hint": "Apply multiplication and division before adding 32.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "0"
+        ],
+        "prompt": "## C08 | Temperature converter\n\nRead a Celsius temperature using `input()`, convert it to a float named `celsius`, and compute `fahrenheit = celsius * 9 / 5 + 32`. Print only the Fahrenheit value.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `0`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Exercises: Exercise 5",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M01",
+        "kind": "mcq",
+        "title": "Quoted numbers",
+        "level": "Easy",
+        "points": 2,
+        "source": "Values and types",
+        "task": "What is the type of `\"3.2\"`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "float"
+          },
+          {
+            "letter": "B",
+            "text": "int"
+          },
+          {
+            "letter": "C",
+            "text": "str"
+          },
+          {
+            "letter": "D",
+            "text": "bool"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Quotation marks make this a string, even though it looks numeric.",
+        "prompt": "## M01 | Quoted numbers\n\nWhat is the type of `\"3.2\"`?\n\nA. float\nB. int\nC. str\nD. bool",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M02",
+        "kind": "mcq",
+        "title": "A valid name",
+        "level": "Easy",
+        "points": 2,
+        "source": "Variable names and keywords",
+        "task": "Which assignment uses a legal variable name?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "2hours = 4"
+          },
+          {
+            "letter": "B",
+            "text": "hours_worked = 4"
+          },
+          {
+            "letter": "C",
+            "text": "class = 4"
+          },
+          {
+            "letter": "D",
+            "text": "hour-rate = 4"
+          }
+        ],
+        "answer": "B",
+        "explanation": "Underscores are allowed; names cannot start with a digit or be reserved keywords.",
+        "prompt": "## M02 | A valid name\n\nWhich assignment uses a legal variable name?\n\nA. 2hours = 4\nB. hours_worked = 4\nC. class = 4\nD. hour-rate = 4",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M03",
+        "kind": "mcq",
+        "title": "Assignment output",
+        "level": "Easy",
+        "points": 2,
+        "source": "Statements",
+        "task": "What does a script containing only `x = 5` print?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "5"
+          },
+          {
+            "letter": "B",
+            "text": "x"
+          },
+          {
+            "letter": "C",
+            "text": "None"
+          },
+          {
+            "letter": "D",
+            "text": "Nothing"
+          }
+        ],
+        "answer": "D",
+        "explanation": "Assignment stores a value but does not print it.",
+        "prompt": "## M03 | Assignment output\n\nWhat does a script containing only `x = 5` print?\n\nA. 5\nB. x\nC. None\nD. Nothing",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M04",
+        "kind": "mcq",
+        "title": "True division",
+        "level": "Easy",
+        "points": 2,
+        "source": "Operators and operands",
+        "task": "In Python 3, what is `7 / 2`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "3.5"
+          },
+          {
+            "letter": "B",
+            "text": "3"
+          },
+          {
+            "letter": "C",
+            "text": "1"
+          },
+          {
+            "letter": "D",
+            "text": "14"
+          }
+        ],
+        "answer": "A",
+        "explanation": "The / operator performs true division.",
+        "prompt": "## M04 | True division\n\nIn Python 3, what is `7 / 2`?\n\nA. 3.5\nB. 3\nC. 1\nD. 14",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M05",
+        "kind": "mcq",
+        "title": "Floor division",
+        "level": "Easy",
+        "points": 2,
+        "source": "Operators and operands",
+        "task": "What is `17 // 2`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "8.5"
+          },
+          {
+            "letter": "B",
+            "text": "9"
+          },
+          {
+            "letter": "C",
+            "text": "8"
+          },
+          {
+            "letter": "D",
+            "text": "1"
+          }
+        ],
+        "answer": "C",
+        "explanation": "For these positive values, floor division gives the whole-number quotient.",
+        "prompt": "## M05 | Floor division\n\nWhat is `17 // 2`?\n\nA. 8.5\nB. 9\nC. 8\nD. 1",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M06",
+        "kind": "mcq",
+        "title": "Remainder",
+        "level": "Easy",
+        "points": 2,
+        "source": "Modulus operator",
+        "task": "What is `17 % 5`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "3"
+          },
+          {
+            "letter": "B",
+            "text": "2"
+          },
+          {
+            "letter": "C",
+            "text": "0.2"
+          },
+          {
+            "letter": "D",
+            "text": "5"
+          }
+        ],
+        "answer": "B",
+        "explanation": "Three groups of five leave two.",
+        "prompt": "## M06 | Remainder\n\nWhat is `17 % 5`?\n\nA. 3\nB. 2\nC. 0.2\nD. 5",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M07",
+        "kind": "mcq",
+        "title": "Order matters",
+        "level": "Easy",
+        "points": 2,
+        "source": "Order of operations",
+        "task": "What is `1 + 2 * 5`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "15"
+          },
+          {
+            "letter": "B",
+            "text": "25"
+          },
+          {
+            "letter": "C",
+            "text": "10"
+          },
+          {
+            "letter": "D",
+            "text": "11"
+          }
+        ],
+        "answer": "D",
+        "explanation": "Multiplication is evaluated before addition.",
+        "prompt": "## M07 | Order matters\n\nWhat is `1 + 2 * 5`?\n\nA. 15\nB. 25\nC. 10\nD. 11",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M08",
+        "kind": "mcq",
+        "title": "Input is text",
+        "level": "Easy",
+        "points": 2,
+        "source": "Asking the user for input",
+        "task": "A user types 42 at `input()`. What type is returned?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "str"
+          },
+          {
+            "letter": "B",
+            "text": "int"
+          },
+          {
+            "letter": "C",
+            "text": "float"
+          },
+          {
+            "letter": "D",
+            "text": "It depends on the digits"
+          }
+        ],
+        "answer": "A",
+        "explanation": "input returns a string. A conversion is needed for arithmetic.",
+        "prompt": "## M08 | Input is text\n\nA user types 42 at `input()`. What type is returned?\n\nA. str\nB. int\nC. float\nD. It depends on the digits",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M09",
+        "kind": "mcq",
+        "title": "Joining strings",
+        "level": "Easy",
+        "points": 2,
+        "source": "String operations",
+        "task": "What is `\"10\" + \"15\"`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "25"
+          },
+          {
+            "letter": "B",
+            "text": "\"25\""
+          },
+          {
+            "letter": "C",
+            "text": "\"1015\""
+          },
+          {
+            "letter": "D",
+            "text": "An error"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Adding two strings concatenates them.",
+        "prompt": "## M09 | Joining strings\n\nWhat is `\"10\" + \"15\"`?\n\nA. 25\nB. \"25\"\nC. \"1015\"\nD. An error",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      },
+      {
+        "id": "M10",
+        "kind": "mcq",
+        "title": "Useful comments",
+        "level": "Easy",
+        "points": 2,
+        "source": "Comments",
+        "task": "What happens to text after # outside a string on a Python line?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "It is printed"
+          },
+          {
+            "letter": "B",
+            "text": "It is ignored during execution"
+          },
+          {
+            "letter": "C",
+            "text": "It becomes a variable"
+          },
+          {
+            "letter": "D",
+            "text": "It runs after the next line"
+          }
+        ],
+        "answer": "B",
+        "explanation": "A comment documents the program without changing its execution.",
+        "prompt": "## M10 | Useful comments\n\nWhat happens to text after # outside a string on a Python line?\n\nA. It is printed\nB. It is ignored during execution\nC. It becomes a variable\nD. It runs after the next line",
+        "sourceUrl": "https://www.py4e.com/html3/02-variables"
+      }
+    ],
+    "notebook": "/ZHUDDLE_Variables_Quest.ipynb"
+  },
+  {
+    "id": "conditionals",
+    "number": "03",
+    "title": "Conditionals",
+    "fullTitle": "Conditional execution",
+    "source": "https://www.py4e.com/html3/03-conditional",
+    "reading": "https://www.py4e.com/html3/03-conditional",
+    "questions": [
+      {
+        "id": "C01",
+        "kind": "code",
+        "title": "Boolean comparisons",
+        "level": "Easy",
+        "points": 10,
+        "source": "Boolean expressions",
+        "task": "Compare supplied `x` and `y`. Save `equal` (==), `different` (!=), `greater` (>), `at_least` (>=), and `at_most` (<=) as booleans.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nx = 5\ny = 5\n```",
+        "starter": "equal = None\ndifferent = None\ngreater = None\nat_least = None\nat_most = None",
+        "hint": "A comparison uses ==; assignment uses =.",
+        "setup": "x = 5\ny = 5",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C01 | Boolean comparisons\n\nCompare supplied `x` and `y`. Save `equal` (==), `different` (!=), `greater` (>), `at_least` (>=), and `at_most` (<=) as booleans.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nx = 5\ny = 5\n```\n\n**Source checkpoint:** Boolean expressions",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "C02",
+        "kind": "code",
+        "title": "Logical combinations",
+        "level": "Easy",
+        "points": 10,
+        "source": "Logical operators",
+        "task": "For supplied integer `n`, save `single_digit` as whether 0 < n < 10 using `and`. Save `divisible` as whether n is divisible by 2 or 3 using `or`. Save `not_positive` using `not` on n > 0.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 6\n```",
+        "starter": "single_digit = None\ndivisible = None\nnot_positive = None",
+        "hint": "and needs both conditions; or needs at least one.",
+        "setup": "n = 6",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C02 | Logical combinations\n\nFor supplied integer `n`, save `single_digit` as whether 0 < n < 10 using `and`. Save `divisible` as whether n is divisible by 2 or 3 using `or`. Save `not_positive` using `not` on n > 0.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 6\n```\n\n**Source checkpoint:** Logical operators",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "C03",
+        "kind": "code",
+        "title": "Choose even or odd",
+        "level": "Easy",
+        "points": 10,
+        "source": "Alternative execution",
+        "task": "Use `if` and `else` to set `parity` to \"even\" or \"odd\" for supplied integer `n`. Print parity.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 4\n```",
+        "starter": "# Choose one of two branches.",
+        "hint": "A zero remainder after division by two means even.",
+        "setup": "n = 4",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C03 | Choose even or odd\n\nUse `if` and `else` to set `parity` to \"even\" or \"odd\" for supplied integer `n`. Print parity.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 4\n```\n\n**Source checkpoint:** Alternative execution",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "C04",
+        "kind": "code",
+        "title": "Three-way comparison",
+        "level": "Easy",
+        "points": 10,
+        "source": "Chained conditionals",
+        "task": "Use an if/elif/else chain to compare `x` and `y`. Set `relation` to \"less\", \"equal\", or \"greater\" and print it.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nx = 1\ny = 2\n```",
+        "starter": "# Compare x with y.",
+        "hint": "Only the first true branch in the chain runs.",
+        "setup": "x = 1\ny = 2",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C04 | Three-way comparison\n\nUse an if/elif/else chain to compare `x` and `y`. Set `relation` to \"less\", \"equal\", or \"greater\" and print it.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nx = 1\ny = 2\n```\n\n**Source checkpoint:** Chained conditionals",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "C05",
+        "kind": "code",
+        "title": "Guard the division",
+        "level": "Medium",
+        "points": 10,
+        "source": "Short-circuit evaluation of logical expressions",
+        "task": "Set `safe` to the boolean result of x >= 2 and x / y > 2. Add a `y != 0` guard before division so a zero denominator makes the result False instead of raising an error.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nx = 6\ny = 2\n```",
+        "starter": "safe = None",
+        "hint": "and stops as soon as a condition is false.",
+        "setup": "x = 6\ny = 2",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C05 | Guard the division\n\nSet `safe` to the boolean result of x >= 2 and x / y > 2. Add a `y != 0` guard before division so a zero denominator makes the result False instead of raising an error.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nx = 6\ny = 2\n```\n\n**Source checkpoint:** Short-circuit evaluation of logical expressions",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "C06",
+        "kind": "code",
+        "title": "A safer temperature input",
+        "level": "Medium",
+        "points": 10,
+        "source": "Catching exceptions using try and except",
+        "task": "Read Fahrenheit using `input()`. In a `try` block, convert it to float and print (fahrenheit - 32) * 5 / 9. On invalid text, print exactly `Please enter a number`.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `32`. Input prompts are omitted from captured output.",
+        "starter": "# Read input and handle conversion errors.",
+        "hint": "The except block handles a failed numeric conversion.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "32"
+        ],
+        "prompt": "## C06 | A safer temperature input\n\nRead Fahrenheit using `input()`. In a `try` block, convert it to float and print (fahrenheit - 32) * 5 / 9. On invalid text, print exactly `Please enter a number`.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `32`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Catching exceptions using try and except",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "C07",
+        "kind": "code",
+        "title": "Overtime with error handling",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercises 1 and 2",
+        "task": "Read hours and rate as floats with `input()`. Pay 1.5 times the rate for hours above 40, and the ordinary rate for other hours. Print only the pay. If either input is not numeric, print `Error, please enter numeric input`. Use conditionals, without defining a function.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `45`, `10`. Input prompts are omitted from captured output.",
+        "starter": "# Read two values, handle errors, and calculate overtime.",
+        "hint": "Compute regular pay and overtime separately inside the valid-input path.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "45",
+          "10"
+        ],
+        "prompt": "## C07 | Overtime with error handling\n\nRead hours and rate as floats with `input()`. Pay 1.5 times the rate for hours above 40, and the ordinary rate for other hours. Print only the pay. If either input is not numeric, print `Error, please enter numeric input`. Use conditionals, without defining a function.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `45`, `10`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Exercises: Exercises 1 and 2",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "C08",
+        "kind": "code",
+        "title": "Score to letter grade",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercise 3",
+        "task": "Read a numeric score with `input()`. For scores from 0 to 1, print A at 0.9+, B at 0.8+, C at 0.7+, D at 0.6+, otherwise F. Print `Bad score` for out-of-range values or nonnumeric text. Each check covers a group of inputs, including boundaries.\n\nFive independent checks are worth 2 XP each. ",
+        "starter": "# Validate the score before choosing a grade.",
+        "hint": "Check the highest threshold first, after validating the range.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C08 | Score to letter grade\n\nRead a numeric score with `input()`. For scores from 0 to 1, print A at 0.9+, B at 0.8+, C at 0.7+, D at 0.6+, otherwise F. Print `Bad score` for out-of-range values or nonnumeric text. Each check covers a group of inputs, including boundaries.\n\nFive independent checks are worth 2 XP each. \n\n**Source checkpoint:** Exercises: Exercise 3",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M01",
+        "kind": "mcq",
+        "title": "Boolean type",
+        "level": "Easy",
+        "points": 2,
+        "source": "Boolean expressions",
+        "task": "Which is a boolean value?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "\"True\""
+          },
+          {
+            "letter": "B",
+            "text": "True"
+          },
+          {
+            "letter": "C",
+            "text": "\"False\""
+          },
+          {
+            "letter": "D",
+            "text": "\"bool\""
+          }
+        ],
+        "answer": "B",
+        "explanation": "True without quotation marks is a bool value.",
+        "prompt": "## M01 | Boolean type\n\nWhich is a boolean value?\n\nA. \"True\"\nB. True\nC. \"False\"\nD. \"bool\"",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M02",
+        "kind": "mcq",
+        "title": "Equality test",
+        "level": "Easy",
+        "points": 2,
+        "source": "Boolean expressions",
+        "task": "Which operator tests equality?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "="
+          },
+          {
+            "letter": "B",
+            "text": "=>"
+          },
+          {
+            "letter": "C",
+            "text": "=="
+          },
+          {
+            "letter": "D",
+            "text": "!="
+          }
+        ],
+        "answer": "C",
+        "explanation": "== compares values; = assigns a value.",
+        "prompt": "## M02 | Equality test\n\nWhich operator tests equality?\n\nA. =\nB. =>\nC. ==\nD. !=",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M03",
+        "kind": "mcq",
+        "title": "Both conditions",
+        "level": "Easy",
+        "points": 2,
+        "source": "Logical operators",
+        "task": "When is `x > 0 and x < 10` true?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "For every positive x"
+          },
+          {
+            "letter": "B",
+            "text": "Only at x = 10"
+          },
+          {
+            "letter": "C",
+            "text": "For negative x"
+          },
+          {
+            "letter": "D",
+            "text": "When x lies strictly between 0 and 10"
+          }
+        ],
+        "answer": "D",
+        "explanation": "Both comparisons must be true.",
+        "prompt": "## M03 | Both conditions\n\nWhen is `x > 0 and x < 10` true?\n\nA. For every positive x\nB. Only at x = 10\nC. For negative x\nD. When x lies strictly between 0 and 10",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M04",
+        "kind": "mcq",
+        "title": "Either condition",
+        "level": "Easy",
+        "points": 2,
+        "source": "Logical operators",
+        "task": "What is `False or True`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "True"
+          },
+          {
+            "letter": "B",
+            "text": "False"
+          },
+          {
+            "letter": "C",
+            "text": "None"
+          },
+          {
+            "letter": "D",
+            "text": "An error"
+          }
+        ],
+        "answer": "A",
+        "explanation": "or is true if either operand is true.",
+        "prompt": "## M04 | Either condition\n\nWhat is `False or True`?\n\nA. True\nB. False\nC. None\nD. An error",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M05",
+        "kind": "mcq",
+        "title": "An empty branch",
+        "level": "Easy",
+        "points": 2,
+        "source": "Conditional execution",
+        "task": "Which statement can occupy a branch that does nothing?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "empty"
+          },
+          {
+            "letter": "B",
+            "text": "skip"
+          },
+          {
+            "letter": "C",
+            "text": "pass"
+          },
+          {
+            "letter": "D",
+            "text": "stop"
+          }
+        ],
+        "answer": "C",
+        "explanation": "pass is a valid statement with no effect.",
+        "prompt": "## M05 | An empty branch\n\nWhich statement can occupy a branch that does nothing?\n\nA. empty\nB. skip\nC. pass\nD. stop",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M06",
+        "kind": "mcq",
+        "title": "Branch structure",
+        "level": "Easy",
+        "points": 2,
+        "source": "Conditional execution",
+        "task": "What must follow an if header and colon?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "A closing brace"
+          },
+          {
+            "letter": "B",
+            "text": "An indented body"
+          },
+          {
+            "letter": "C",
+            "text": "A return statement"
+          },
+          {
+            "letter": "D",
+            "text": "An import"
+          }
+        ],
+        "answer": "B",
+        "explanation": "Indentation identifies the statements controlled by the condition.",
+        "prompt": "## M06 | Branch structure\n\nWhat must follow an if header and colon?\n\nA. A closing brace\nB. An indented body\nC. A return statement\nD. An import",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M07",
+        "kind": "mcq",
+        "title": "First matching branch",
+        "level": "Easy",
+        "points": 2,
+        "source": "Chained conditionals",
+        "task": "If two conditions in an if/elif chain are true, which bodies run?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "Both"
+          },
+          {
+            "letter": "B",
+            "text": "Neither"
+          },
+          {
+            "letter": "C",
+            "text": "Only the last"
+          },
+          {
+            "letter": "D",
+            "text": "Only the first matching body"
+          }
+        ],
+        "answer": "D",
+        "explanation": "An if/elif chain selects the first condition that is true.",
+        "prompt": "## M07 | First matching branch\n\nIf two conditions in an if/elif chain are true, which bodies run?\n\nA. Both\nB. Neither\nC. Only the last\nD. Only the first matching body",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M08",
+        "kind": "mcq",
+        "title": "Nested decisions",
+        "level": "Easy",
+        "points": 2,
+        "source": "Nested conditionals",
+        "task": "When is an inner if reached inside an outer if body?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "When the outer condition is true"
+          },
+          {
+            "letter": "B",
+            "text": "Before the outer condition is tested"
+          },
+          {
+            "letter": "C",
+            "text": "Only when the outer condition is false"
+          },
+          {
+            "letter": "D",
+            "text": "Always"
+          }
+        ],
+        "answer": "A",
+        "explanation": "The outer branch must run before its nested statement can be reached.",
+        "prompt": "## M08 | Nested decisions\n\nWhen is an inner if reached inside an outer if body?\n\nA. When the outer condition is true\nB. Before the outer condition is tested\nC. Only when the outer condition is false\nD. Always",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M09",
+        "kind": "mcq",
+        "title": "Exception path",
+        "level": "Easy",
+        "points": 2,
+        "source": "Catching exceptions using try and except",
+        "task": "If float conversion raises an error inside try, control moves to which block?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "else automatically"
+          },
+          {
+            "letter": "B",
+            "text": "The next line of try"
+          },
+          {
+            "letter": "C",
+            "text": "except"
+          },
+          {
+            "letter": "D",
+            "text": "The beginning of the script"
+          }
+        ],
+        "answer": "C",
+        "explanation": "An applicable except block handles the exception.",
+        "prompt": "## M09 | Exception path\n\nIf float conversion raises an error inside try, control moves to which block?\n\nA. else automatically\nB. The next line of try\nC. except\nD. The beginning of the script",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      },
+      {
+        "id": "M10",
+        "kind": "mcq",
+        "title": "Guardian ordering",
+        "level": "Easy",
+        "points": 2,
+        "source": "Short-circuit evaluation of logical expressions",
+        "task": "Which expression guards division when y is zero?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "x / y > 2 and y != 0"
+          },
+          {
+            "letter": "B",
+            "text": "y != 0 and x / y > 2"
+          },
+          {
+            "letter": "C",
+            "text": "x / y > 2 or y == 0"
+          },
+          {
+            "letter": "D",
+            "text": "y == 0 and x / y > 2"
+          }
+        ],
+        "answer": "B",
+        "explanation": "The nonzero test must occur before division in an and expression.",
+        "prompt": "## M10 | Guardian ordering\n\nWhich expression guards division when y is zero?\n\nA. x / y > 2 and y != 0\nB. y != 0 and x / y > 2\nC. x / y > 2 or y == 0\nD. y == 0 and x / y > 2",
+        "sourceUrl": "https://www.py4e.com/html3/03-conditional"
+      }
+    ],
+    "notebook": "/ZHUDDLE_Conditionals_Quest.ipynb"
+  },
+  {
+    "id": "loops",
+    "number": "05",
+    "title": "Loops",
+    "fullTitle": "Loops and iterations",
+    "source": "https://www.py4e.com/lessons/loops",
+    "reading": "https://www.py4e.com/html3/05-iterations",
+    "questions": [
+      {
+        "id": "C01",
+        "kind": "code",
+        "title": "Count down with while",
+        "level": "Easy",
+        "points": 10,
+        "source": "The while statement",
+        "task": "Use a `while` loop to print supplied positive integer `n`, then each lower integer down through 1. Decrease n on each iteration. Finish by printing `Blastoff!`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 5\n```",
+        "starter": "# Count down, then announce blastoff.",
+        "hint": "The loop condition is tested before each iteration.",
+        "setup": "n = 5",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C01 | Count down with while\n\nUse a `while` loop to print supplied positive integer `n`, then each lower integer down through 1. Decrease n on each iteration. Finish by printing `Blastoff!`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nn = 5\n```\n\n**Source checkpoint:** The while statement",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "C02",
+        "kind": "code",
+        "title": "Stop at done",
+        "level": "Easy",
+        "points": 10,
+        "source": "Infinite loops and break",
+        "task": "Repeatedly read text using `input()` in a while loop. When the text is `done`, use `break`. Print every other entry unchanged, then print `Done!` once after the loop.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `hello`, `done`. Input prompts are omitted from captured output.",
+        "starter": "# Read until the sentinel is entered.",
+        "hint": "Check for the sentinel before printing the input.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "hello",
+          "done"
+        ],
+        "prompt": "## C02 | Stop at done\n\nRepeatedly read text using `input()` in a while loop. When the text is `done`, use `break`. Print every other entry unchanged, then print `Done!` once after the loop.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `hello`, `done`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Infinite loops and break",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "C03",
+        "kind": "code",
+        "title": "Skip comment lines",
+        "level": "Easy",
+        "points": 10,
+        "source": "Finishing iterations with continue",
+        "task": "Read lines until `done`. Skip lines starting with # using `continue`. Print other lines unchanged, then `Done!` after the loop. The supplied skeleton checks done for you.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `#ignore`, `hello`, `done`. Input prompts are omitted from captured output.",
+        "starter": "while True:\n    line = input(\"> \")\n    if line == \"done\":\n        break\n    # Skip comment lines; print the others.\nprint(\"Done!\")",
+        "hint": "continue skips the remaining body and begins another iteration.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "#ignore",
+          "hello",
+          "done"
+        ],
+        "prompt": "## C03 | Skip comment lines\n\nRead lines until `done`. Skip lines starting with # using `continue`. Print other lines unchanged, then `Done!` after the loop. The supplied skeleton checks done for you.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `#ignore`, `hello`, `done`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Finishing iterations with continue",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "C04",
+        "kind": "code",
+        "title": "Greet each friend",
+        "level": "Easy",
+        "points": 10,
+        "source": "Definite loops using for",
+        "task": "Use a `for` loop over supplied `friends`. Print `Happy New Year:` followed by a space and each friend. Print `Done!` after all friends have been processed.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfriends = ['Joseph', 'Glenn', 'Sally']\n```",
+        "starter": "# Greet every friend in order.",
+        "hint": "The loop variable receives each item from the supplied list.",
+        "setup": "friends = ['Joseph', 'Glenn', 'Sally']",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C04 | Greet each friend\n\nUse a `for` loop over supplied `friends`. Print `Happy New Year:` followed by a space and each friend. Print `Done!` after all friends have been processed.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfriends = ['Joseph', 'Glenn', 'Sally']\n```\n\n**Source checkpoint:** Definite loops using for",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "C05",
+        "kind": "code",
+        "title": "Count and accumulate",
+        "level": "Medium",
+        "points": 10,
+        "source": "Counting and summing loops",
+        "task": "Use a for loop over `numbers` to compute `count` and `total`. Initialize both to zero. Practice the loop pattern without calling len or sum. No printing is required.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [3, 41, 12, 9, 74, 15]\n```",
+        "starter": "count = 0\ntotal = 0\n# Process numbers.",
+        "hint": "A counter adds one; an accumulator adds the current value.",
+        "setup": "numbers = [3, 41, 12, 9, 74, 15]",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C05 | Count and accumulate\n\nUse a for loop over `numbers` to compute `count` and `total`. Initialize both to zero. Practice the loop pattern without calling len or sum. No printing is required.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [3, 41, 12, 9, 74, 15]\n```\n\n**Source checkpoint:** Counting and summing loops",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "C06",
+        "kind": "code",
+        "title": "Largest so far",
+        "level": "Medium",
+        "points": 10,
+        "source": "Maximum and minimum loops",
+        "task": "Initialize `largest` to None. Use a loop to track the greatest value in `numbers`, without calling max. For an empty list, leave largest as None.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [3, 41, 12, 9, 74, 15]\n```",
+        "starter": "largest = None\n# Track the largest value.",
+        "hint": "None marks the state before the first value has been seen.",
+        "setup": "numbers = [3, 41, 12, 9, 74, 15]",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C06 | Largest so far\n\nInitialize `largest` to None. Use a loop to track the greatest value in `numbers`, without calling max. For an empty list, leave largest as None.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [3, 41, 12, 9, 74, 15]\n```\n\n**Source checkpoint:** Maximum and minimum loops",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "C07",
+        "kind": "code",
+        "title": "Smallest so far",
+        "level": "Medium",
+        "points": 10,
+        "source": "Maximum and minimum loops",
+        "task": "Initialize `smallest` to None. Use a loop to find the least value in `numbers`, without calling min. Leave None for an empty list.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [3, 41, 12, 9, 74, 15]\n```",
+        "starter": "smallest = None\n# Track the smallest value.",
+        "hint": "Reverse the comparison used by the largest-value pattern.",
+        "setup": "numbers = [3, 41, 12, 9, 74, 15]",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C07 | Smallest so far\n\nInitialize `smallest` to None. Use a loop to find the least value in `numbers`, without calling min. Leave None for an empty list.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [3, 41, 12, 9, 74, 15]\n```\n\n**Source checkpoint:** Maximum and minimum loops",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "C08",
+        "kind": "code",
+        "title": "A resilient number loop",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercise 1",
+        "task": "Read integers until `done`. Handle invalid entries with try/except, print `Invalid input`, and continue. Track `total` and `count`. At the end, print total, count, and average separated by spaces. For no valid entries, print `No numbers` instead of dividing by zero.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `4`, `5`, `bad data`, `7`, `done`. Input prompts are omitted from captured output.",
+        "starter": "total = 0\ncount = 0\n# Read numbers until done, then report.",
+        "hint": "Check for done before converting text to an integer.",
+        "setup": "",
+        "sampleFiles": {},
+        "sampleInputs": [
+          "4",
+          "5",
+          "bad data",
+          "7",
+          "done"
+        ],
+        "prompt": "## C08 | A resilient number loop\n\nRead integers until `done`. Handle invalid entries with try/except, print `Invalid input`, and continue. Track `total` and `count`. At the end, print total, count, and average separated by spaces. For no valid entries, print `No numbers` instead of dividing by zero.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `4`, `5`, `bad data`, `7`, `done`. Input prompts are omitted from captured output.\n\n**Source checkpoint:** Exercises: Exercise 1",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M01",
+        "kind": "mcq",
+        "title": "Initialization",
+        "level": "Easy",
+        "points": 2,
+        "source": "Updating variables",
+        "task": "Before executing `count = count + 1`, what must be true?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "count must be zero"
+          },
+          {
+            "letter": "B",
+            "text": "count must already have a value"
+          },
+          {
+            "letter": "C",
+            "text": "count must be a string"
+          },
+          {
+            "letter": "D",
+            "text": "count must be a keyword"
+          }
+        ],
+        "answer": "B",
+        "explanation": "Python evaluates the old value before assigning the new one.",
+        "prompt": "## M01 | Initialization\n\nBefore executing `count = count + 1`, what must be true?\n\nA. count must be zero\nB. count must already have a value\nC. count must be a string\nD. count must be a keyword",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M02",
+        "kind": "mcq",
+        "title": "While condition",
+        "level": "Easy",
+        "points": 2,
+        "source": "The while statement",
+        "task": "When is the condition of a while loop evaluated?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "Only after the loop"
+          },
+          {
+            "letter": "B",
+            "text": "Only once"
+          },
+          {
+            "letter": "C",
+            "text": "Before every iteration"
+          },
+          {
+            "letter": "D",
+            "text": "Only after break"
+          }
+        ],
+        "answer": "C",
+        "explanation": "A false condition prevents the body from running.",
+        "prompt": "## M02 | While condition\n\nWhen is the condition of a while loop evaluated?\n\nA. Only after the loop\nB. Only once\nC. Before every iteration\nD. Only after break",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M03",
+        "kind": "mcq",
+        "title": "No iterations",
+        "level": "Easy",
+        "points": 2,
+        "source": "The while statement",
+        "task": "What happens if a while condition is false at its first check?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "The body runs once"
+          },
+          {
+            "letter": "B",
+            "text": "The program always fails"
+          },
+          {
+            "letter": "C",
+            "text": "The body runs forever"
+          },
+          {
+            "letter": "D",
+            "text": "The body is skipped"
+          }
+        ],
+        "answer": "D",
+        "explanation": "while tests its condition before entering the body.",
+        "prompt": "## M03 | No iterations\n\nWhat happens if a while condition is false at its first check?\n\nA. The body runs once\nB. The program always fails\nC. The body runs forever\nD. The body is skipped",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M04",
+        "kind": "mcq",
+        "title": "Leaving a loop",
+        "level": "Easy",
+        "points": 2,
+        "source": "Infinite loops and break",
+        "task": "What does break do?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "Exits the current loop"
+          },
+          {
+            "letter": "B",
+            "text": "Restarts the script"
+          },
+          {
+            "letter": "C",
+            "text": "Skips only one print"
+          },
+          {
+            "letter": "D",
+            "text": "Ends every function"
+          }
+        ],
+        "answer": "A",
+        "explanation": "Execution continues after the loop containing break.",
+        "prompt": "## M04 | Leaving a loop\n\nWhat does break do?\n\nA. Exits the current loop\nB. Restarts the script\nC. Skips only one print\nD. Ends every function",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M05",
+        "kind": "mcq",
+        "title": "Skipping an iteration",
+        "level": "Easy",
+        "points": 2,
+        "source": "Finishing iterations with continue",
+        "task": "What does continue do?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "Stops the interpreter"
+          },
+          {
+            "letter": "B",
+            "text": "Exits the loop permanently"
+          },
+          {
+            "letter": "C",
+            "text": "Moves to the next iteration"
+          },
+          {
+            "letter": "D",
+            "text": "Resets all variables"
+          }
+        ],
+        "answer": "C",
+        "explanation": "The rest of the current loop body is skipped.",
+        "prompt": "## M05 | Skipping an iteration\n\nWhat does continue do?\n\nA. Stops the interpreter\nB. Exits the loop permanently\nC. Moves to the next iteration\nD. Resets all variables",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M06",
+        "kind": "mcq",
+        "title": "Definite iteration",
+        "level": "Easy",
+        "points": 2,
+        "source": "Definite loops using for",
+        "task": "In `for friend in friends:`, what is friend?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "The whole list"
+          },
+          {
+            "letter": "B",
+            "text": "The iteration variable"
+          },
+          {
+            "letter": "C",
+            "text": "A keyword"
+          },
+          {
+            "letter": "D",
+            "text": "A function"
+          }
+        ],
+        "answer": "B",
+        "explanation": "It refers to each list element in turn.",
+        "prompt": "## M06 | Definite iteration\n\nIn `for friend in friends:`, what is friend?\n\nA. The whole list\nB. The iteration variable\nC. A keyword\nD. A function",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M07",
+        "kind": "mcq",
+        "title": "Counting pattern",
+        "level": "Easy",
+        "points": 2,
+        "source": "Counting and summing loops",
+        "task": "Which update counts each processed item?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "count = item"
+          },
+          {
+            "letter": "B",
+            "text": "count = count + item"
+          },
+          {
+            "letter": "C",
+            "text": "count = 0"
+          },
+          {
+            "letter": "D",
+            "text": "count = count + 1"
+          }
+        ],
+        "answer": "D",
+        "explanation": "Adding one per iteration measures the number of items.",
+        "prompt": "## M07 | Counting pattern\n\nWhich update counts each processed item?\n\nA. count = item\nB. count = count + item\nC. count = 0\nD. count = count + 1",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M08",
+        "kind": "mcq",
+        "title": "Accumulator pattern",
+        "level": "Easy",
+        "points": 2,
+        "source": "Counting and summing loops",
+        "task": "Which update adds the current value to a running total?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "total = total + value"
+          },
+          {
+            "letter": "B",
+            "text": "total = value"
+          },
+          {
+            "letter": "C",
+            "text": "total = total + 1"
+          },
+          {
+            "letter": "D",
+            "text": "value = total"
+          }
+        ],
+        "answer": "A",
+        "explanation": "An accumulator retains the prior total and adds the next value.",
+        "prompt": "## M08 | Accumulator pattern\n\nWhich update adds the current value to a running total?\n\nA. total = total + value\nB. total = value\nC. total = total + 1\nD. value = total",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M09",
+        "kind": "mcq",
+        "title": "Before the first value",
+        "level": "Easy",
+        "points": 2,
+        "source": "Maximum and minimum loops",
+        "task": "Why initialize largest to None rather than 0?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "None is a large integer"
+          },
+          {
+            "letter": "B",
+            "text": "None sorts above numbers"
+          },
+          {
+            "letter": "C",
+            "text": "It marks that no item has been seen"
+          },
+          {
+            "letter": "D",
+            "text": "None automatically calculates the maximum"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Using zero as the initial maximum gives wrong results for all-negative data.",
+        "prompt": "## M09 | Before the first value\n\nWhy initialize largest to None rather than 0?\n\nA. None is a large integer\nB. None sorts above numbers\nC. It marks that no item has been seen\nD. None automatically calculates the maximum",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      },
+      {
+        "id": "M10",
+        "kind": "mcq",
+        "title": "Debug by bisection",
+        "level": "Easy",
+        "points": 2,
+        "source": "Debugging",
+        "task": "What is the purpose of checking an intermediate value near the middle of a program?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "To double the code"
+          },
+          {
+            "letter": "B",
+            "text": "To narrow which portion contains the bug"
+          },
+          {
+            "letter": "C",
+            "text": "To remove all loops"
+          },
+          {
+            "letter": "D",
+            "text": "To skip input validation"
+          }
+        ],
+        "answer": "B",
+        "explanation": "The check helps determine whether the error occurred before or after that point.",
+        "prompt": "## M10 | Debug by bisection\n\nWhat is the purpose of checking an intermediate value near the middle of a program?\n\nA. To double the code\nB. To narrow which portion contains the bug\nC. To remove all loops\nD. To skip input validation",
+        "sourceUrl": "https://www.py4e.com/html3/05-iterations"
+      }
+    ],
+    "notebook": "/ZHUDDLE_Loops_Quest.ipynb"
+  },
+  {
+    "id": "strings",
+    "number": "06",
+    "title": "Strings",
+    "fullTitle": "Strings",
+    "source": "https://www.py4e.com/html3/06-strings",
+    "reading": "https://www.py4e.com/html3/06-strings",
+    "questions": [
+      {
+        "id": "C01",
+        "kind": "code",
+        "title": "First, last, and length",
+        "level": "Easy",
+        "points": 10,
+        "source": "A string is a sequence; Getting the length of a string using len",
+        "task": "For supplied nonempty `fruit`, assign its first character to `first`, its last character to `last`, and its length to `length`. Use indexing and len.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfruit = 'banana'\n```",
+        "starter": "first = None\nlast = None\nlength = None",
+        "hint": "Indexes start at zero; -1 selects the last character.",
+        "setup": "fruit = 'banana'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C01 | First, last, and length\n\nFor supplied nonempty `fruit`, assign its first character to `first`, its last character to `last`, and its length to `length`. Use indexing and len.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfruit = 'banana'\n```\n\n**Source checkpoint:** A string is a sequence; Getting the length of a string using len",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "C02",
+        "kind": "code",
+        "title": "Walk a string backwards",
+        "level": "Easy",
+        "points": 10,
+        "source": "Traversal through a string with a loop; Exercise 1",
+        "task": "Use a while loop to print each character of `fruit` on its own line, starting at the end. An empty string should print nothing.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfruit = 'banana'\n```",
+        "starter": "# Start at the final index and work backwards.",
+        "hint": "Start at len(fruit) - 1 and keep going while the index is nonnegative.",
+        "setup": "fruit = 'banana'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C02 | Walk a string backwards\n\nUse a while loop to print each character of `fruit` on its own line, starting at the end. An empty string should print nothing.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfruit = 'banana'\n```\n\n**Source checkpoint:** Traversal through a string with a loop; Exercise 1",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "C03",
+        "kind": "code",
+        "title": "Slice a word",
+        "level": "Easy",
+        "points": 10,
+        "source": "String slices; Exercise 2",
+        "task": "Using slices of `fruit`, save its first three characters as `prefix`, everything from index 3 as `suffix`, and the full string as `copy`. Short and empty strings are valid.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfruit = 'banana'\n```",
+        "starter": "prefix = None\nsuffix = None\ncopy = None",
+        "hint": "A slice includes its start and excludes its stop.",
+        "setup": "fruit = 'banana'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C03 | Slice a word\n\nUsing slices of `fruit`, save its first three characters as `prefix`, everything from index 3 as `suffix`, and the full string as `copy`. Short and empty strings are valid.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfruit = 'banana'\n```\n\n**Source checkpoint:** String slices; Exercise 2",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "C04",
+        "kind": "code",
+        "title": "Create a new greeting",
+        "level": "Easy",
+        "points": 10,
+        "source": "Strings are immutable",
+        "task": "Keep supplied nonempty `greeting` unchanged. Build `new_greeting` by replacing its first character with supplied `letter`, using concatenation and a slice.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ngreeting = 'Hello, world!'\nletter = 'J'\n```",
+        "starter": "new_greeting = None",
+        "hint": "You can build a new string, but cannot assign to greeting[0].",
+        "setup": "greeting = 'Hello, world!'\nletter = 'J'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C04 | Create a new greeting\n\nKeep supplied nonempty `greeting` unchanged. Build `new_greeting` by replacing its first character with supplied `letter`, using concatenation and a slice.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ngreeting = 'Hello, world!'\nletter = 'J'\n```\n\n**Source checkpoint:** Strings are immutable",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "C05",
+        "kind": "code",
+        "title": "Count a chosen letter",
+        "level": "Medium",
+        "points": 10,
+        "source": "Looping and counting",
+        "task": "Use a for loop to count occurrences of supplied `letter` in `word`. Save the integer in `count`. Matching is case-sensitive. Practice the counter pattern without using the count method.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nword = 'banana'\nletter = 'a'\n```",
+        "starter": "count = 0\n# Count matching letters.",
+        "hint": "Increment only when the current character matches.",
+        "setup": "word = 'banana'\nletter = 'a'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C05 | Count a chosen letter\n\nUse a for loop to count occurrences of supplied `letter` in `word`. Save the integer in `count`. Matching is case-sensitive. Practice the counter pattern without using the count method.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nword = 'banana'\nletter = 'a'\n```\n\n**Source checkpoint:** Looping and counting",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "C06",
+        "kind": "code",
+        "title": "Clean and normalize",
+        "level": "Medium",
+        "points": 10,
+        "source": "String methods",
+        "task": "Remove whitespace from both ends of `line` into `clean`. Save an uppercase copy as `loud` and a lowercase copy as `quiet`. Set `starts` to whether quiet starts with \"have\". Leave line unchanged.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nline = '  Have a nice day  '\n```",
+        "starter": "clean = None\nloud = None\nquiet = None\nstarts = None",
+        "hint": "String methods return new strings; save the returned values.",
+        "setup": "line = '  Have a nice day  '",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C06 | Clean and normalize\n\nRemove whitespace from both ends of `line` into `clean`. Save an uppercase copy as `loud` and a lowercase copy as `quiet`. Set `starts` to whether quiet starts with \"have\". Leave line unchanged.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nline = '  Have a nice day  '\n```\n\n**Source checkpoint:** String methods",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "C07",
+        "kind": "code",
+        "title": "Find the mail host",
+        "level": "Medium",
+        "points": 10,
+        "source": "Parsing strings",
+        "task": "The supplied `data` contains a From line with an email address followed by a space and date. Use find and slicing to extract the domain after @ into `host`. Do not use split.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ndata = 'From stephen@uct.ac.za Sat Jan 5'\n```",
+        "starter": "host = None\n# Locate @, then the space after it.",
+        "hint": "Start the second find at the position of the at-sign.",
+        "setup": "data = 'From stephen@uct.ac.za Sat Jan 5'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C07 | Find the mail host\n\nThe supplied `data` contains a From line with an email address followed by a space and date. Use find and slicing to extract the domain after @ into `host`. Do not use split.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ndata = 'From stephen@uct.ac.za Sat Jan 5'\n```\n\n**Source checkpoint:** Parsing strings",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "C08",
+        "kind": "code",
+        "title": "Extract a numeric field",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercise 5",
+        "task": "From `text` in the form `X-DSPAM-Confidence: number`, use find and slicing to take the text after the colon. Convert it to a float called `confidence` and print it. Whitespace around the number is allowed.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ntext = 'X-DSPAM-Confidence: 0.8475'\n```",
+        "starter": "confidence = None\n# Find the colon, slice, convert, and print.",
+        "hint": "float accepts leading and trailing whitespace.",
+        "setup": "text = 'X-DSPAM-Confidence: 0.8475'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C08 | Extract a numeric field\n\nFrom `text` in the form `X-DSPAM-Confidence: number`, use find and slicing to take the text after the colon. Convert it to a float called `confidence` and print it. Whitespace around the number is allowed.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ntext = 'X-DSPAM-Confidence: 0.8475'\n```\n\n**Source checkpoint:** Exercises: Exercise 5",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M01",
+        "kind": "mcq",
+        "title": "Zero-based indexing",
+        "level": "Easy",
+        "points": 2,
+        "source": "A string is a sequence",
+        "task": "What is `\"banana\"[1]`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "b"
+          },
+          {
+            "letter": "B",
+            "text": "a"
+          },
+          {
+            "letter": "C",
+            "text": "n"
+          },
+          {
+            "letter": "D",
+            "text": "An error"
+          }
+        ],
+        "answer": "B",
+        "explanation": "Index zero is b; index one is a.",
+        "prompt": "## M01 | Zero-based indexing\n\nWhat is `\"banana\"[1]`?\n\nA. b\nB. a\nC. n\nD. An error",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M02",
+        "kind": "mcq",
+        "title": "Final character",
+        "level": "Easy",
+        "points": 2,
+        "source": "Getting the length of a string using len",
+        "task": "For a nonempty string s, which selects its final character?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "s[len(s)]"
+          },
+          {
+            "letter": "B",
+            "text": "s[1]"
+          },
+          {
+            "letter": "C",
+            "text": "s[-1]"
+          },
+          {
+            "letter": "D",
+            "text": "s[0]"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Negative indexes count from the end; -1 selects the last character.",
+        "prompt": "## M02 | Final character\n\nFor a nonempty string s, which selects its final character?\n\nA. s[len(s)]\nB. s[1]\nC. s[-1]\nD. s[0]",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M03",
+        "kind": "mcq",
+        "title": "Slice boundary",
+        "level": "Easy",
+        "points": 2,
+        "source": "String slices",
+        "task": "What is `\"Monty Python\"[0:5]`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "\"Monty \""
+          },
+          {
+            "letter": "B",
+            "text": "\"Python\""
+          },
+          {
+            "letter": "C",
+            "text": "\"Mont\""
+          },
+          {
+            "letter": "D",
+            "text": "\"Monty\""
+          }
+        ],
+        "answer": "D",
+        "explanation": "The slice includes indexes zero through four.",
+        "prompt": "## M03 | Slice boundary\n\nWhat is `\"Monty Python\"[0:5]`?\n\nA. \"Monty \"\nB. \"Python\"\nC. \"Mont\"\nD. \"Monty\"",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M04",
+        "kind": "mcq",
+        "title": "Empty slice",
+        "level": "Easy",
+        "points": 2,
+        "source": "String slices",
+        "task": "What is `\"banana\"[3:3]`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "An empty string"
+          },
+          {
+            "letter": "B",
+            "text": "\"a\""
+          },
+          {
+            "letter": "C",
+            "text": "None"
+          },
+          {
+            "letter": "D",
+            "text": "An error"
+          }
+        ],
+        "answer": "A",
+        "explanation": "Equal slice boundaries select no characters.",
+        "prompt": "## M04 | Empty slice\n\nWhat is `\"banana\"[3:3]`?\n\nA. An empty string\nB. \"a\"\nC. None\nD. An error",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M05",
+        "kind": "mcq",
+        "title": "Immutable text",
+        "level": "Easy",
+        "points": 2,
+        "source": "Strings are immutable",
+        "task": "What happens to `greeting[0] = \"J\"` when greeting is a string?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "It changes the first letter"
+          },
+          {
+            "letter": "B",
+            "text": "It appends J"
+          },
+          {
+            "letter": "C",
+            "text": "It raises a TypeError"
+          },
+          {
+            "letter": "D",
+            "text": "It deletes greeting"
+          }
+        ],
+        "answer": "C",
+        "explanation": "A string does not support item assignment.",
+        "prompt": "## M05 | Immutable text\n\nWhat happens to `greeting[0] = \"J\"` when greeting is a string?\n\nA. It changes the first letter\nB. It appends J\nC. It raises a TypeError\nD. It deletes greeting",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M06",
+        "kind": "mcq",
+        "title": "Substring membership",
+        "level": "Easy",
+        "points": 2,
+        "source": "The in operator",
+        "task": "What is `\"ana\" in \"banana\"`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "False"
+          },
+          {
+            "letter": "B",
+            "text": "True"
+          },
+          {
+            "letter": "C",
+            "text": "3"
+          },
+          {
+            "letter": "D",
+            "text": "\"ana\""
+          }
+        ],
+        "answer": "B",
+        "explanation": "in tests whether one string appears inside another.",
+        "prompt": "## M06 | Substring membership\n\nWhat is `\"ana\" in \"banana\"`?\n\nA. False\nB. True\nC. 3\nD. \"ana\"",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M07",
+        "kind": "mcq",
+        "title": "Find failure",
+        "level": "Easy",
+        "points": 2,
+        "source": "String methods",
+        "task": "What does `\"banana\".find(\"z\")` return?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "0"
+          },
+          {
+            "letter": "B",
+            "text": "None"
+          },
+          {
+            "letter": "C",
+            "text": "6"
+          },
+          {
+            "letter": "D",
+            "text": "-1"
+          }
+        ],
+        "answer": "D",
+        "explanation": "find returns -1 when the substring is absent.",
+        "prompt": "## M07 | Find failure\n\nWhat does `\"banana\".find(\"z\")` return?\n\nA. 0\nB. None\nC. 6\nD. -1",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M08",
+        "kind": "mcq",
+        "title": "Whitespace cleanup",
+        "level": "Easy",
+        "points": 2,
+        "source": "String methods",
+        "task": "Which removes whitespace from both ends of a string?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "strip()"
+          },
+          {
+            "letter": "B",
+            "text": "upper()"
+          },
+          {
+            "letter": "C",
+            "text": "find()"
+          },
+          {
+            "letter": "D",
+            "text": "startswith()"
+          }
+        ],
+        "answer": "A",
+        "explanation": "strip removes leading and trailing whitespace.",
+        "prompt": "## M08 | Whitespace cleanup\n\nWhich removes whitespace from both ends of a string?\n\nA. strip()\nB. upper()\nC. find()\nD. startswith()",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M09",
+        "kind": "mcq",
+        "title": "Case-sensitive prefix",
+        "level": "Easy",
+        "points": 2,
+        "source": "String methods",
+        "task": "What is `\"Have a nice day\".startswith(\"h\")`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "True"
+          },
+          {
+            "letter": "B",
+            "text": "\"Have\""
+          },
+          {
+            "letter": "C",
+            "text": "False"
+          },
+          {
+            "letter": "D",
+            "text": "An error"
+          }
+        ],
+        "answer": "C",
+        "explanation": "The lowercase h does not match uppercase H.",
+        "prompt": "## M09 | Case-sensitive prefix\n\nWhat is `\"Have a nice day\".startswith(\"h\")`?\n\nA. True\nB. \"Have\"\nC. False\nD. An error",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      },
+      {
+        "id": "M10",
+        "kind": "mcq",
+        "title": "A full slice",
+        "level": "Easy",
+        "points": 2,
+        "source": "String slices; Exercise 2",
+        "task": "What does `fruit[:]` select?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "The first character"
+          },
+          {
+            "letter": "B",
+            "text": "The entire string"
+          },
+          {
+            "letter": "C",
+            "text": "The last character"
+          },
+          {
+            "letter": "D",
+            "text": "An empty string"
+          }
+        ],
+        "answer": "B",
+        "explanation": "Omitting both bounds selects from the beginning through the end.",
+        "prompt": "## M10 | A full slice\n\nWhat does `fruit[:]` select?\n\nA. The first character\nB. The entire string\nC. The last character\nD. An empty string",
+        "sourceUrl": "https://www.py4e.com/html3/06-strings"
+      }
+    ],
+    "notebook": "/ZHUDDLE_Strings_Quest.ipynb"
+  },
+  {
+    "id": "files",
+    "number": "07",
+    "title": "Files",
+    "fullTitle": "Files",
+    "source": "https://www.py4e.com/html3/07-files",
+    "reading": "https://www.py4e.com/html3/07-files",
+    "questions": [
+      {
+        "id": "C01",
+        "kind": "code",
+        "title": "Count lines in a file",
+        "level": "Easy",
+        "points": 10,
+        "source": "Opening files; Reading files",
+        "task": "Open the supplied practice file `sample.txt`. Use a for loop over its handle to count lines into `count`, then print count. A final line without a newline still counts.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**sample.txt**\n```text\nHello\nWorld!\n\n```",
+        "starter": "count = 0\n# Open sample.txt and count its lines.",
+        "hint": "A file handle can be used directly in a for loop.",
+        "setup": "",
+        "sampleFiles": {
+          "sample.txt": "Hello\nWorld!\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C01 | Count lines in a file\n\nOpen the supplied practice file `sample.txt`. Use a for loop over its handle to count lines into `count`, then print count. A final line without a newline still counts.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**sample.txt**\n```text\nHello\nWorld!\n\n```\n\n**Source checkpoint:** Opening files; Reading files",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "C02",
+        "kind": "code",
+        "title": "Read and exhaust a handle",
+        "level": "Easy",
+        "points": 10,
+        "source": "Reading files",
+        "task": "Open `sample.txt`. Save the first call to its read method in `contents`, and the second call on the same handle in `again`. Save the character count of contents as `length`. Close the handle.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**sample.txt**\n```text\nHello\nWorld!\n\n```",
+        "starter": "# Read the same handle twice.",
+        "hint": "After reading to the end, another read on that handle returns an empty string.",
+        "setup": "",
+        "sampleFiles": {
+          "sample.txt": "Hello\nWorld!\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C02 | Read and exhaust a handle\n\nOpen `sample.txt`. Save the first call to its read method in `contents`, and the second call on the same handle in `again`. Save the character count of contents as `length`. Close the handle.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**sample.txt**\n```text\nHello\nWorld!\n\n```\n\n**Source checkpoint:** Reading files",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "C03",
+        "kind": "code",
+        "title": "Select sender headers",
+        "level": "Easy",
+        "points": 10,
+        "source": "Searching through a file",
+        "task": "Read `mail.txt` line by line. Print only lines beginning with `From:`. Strip trailing whitespace before printing so no extra blank lines appear.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nFrom: ada@example.org\nSubject: Hello\n\nFrom: lin@example.org\n\n```",
+        "starter": "# Filter From: headers.",
+        "hint": "From: headers are different from From followed by a space.",
+        "setup": "",
+        "sampleFiles": {
+          "mail.txt": "From: ada@example.org\nSubject: Hello\n\nFrom: lin@example.org\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C03 | Select sender headers\n\nRead `mail.txt` line by line. Print only lines beginning with `From:`. Strip trailing whitespace before printing so no extra blank lines appear.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nFrom: ada@example.org\nSubject: Hello\n\nFrom: lin@example.org\n\n```\n\n**Source checkpoint:** Searching through a file",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "C04",
+        "kind": "code",
+        "title": "Search anywhere in a line",
+        "level": "Easy",
+        "points": 10,
+        "source": "Searching through a file",
+        "task": "Read `mail.txt`. Use find to print lines containing `@uct.ac.za` anywhere. Remove trailing whitespace and print each matching line once.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nFrom: a@uct.ac.za\nFrom: b@example.org\n\n```",
+        "starter": "# Find the requested domain in each line.",
+        "hint": "A match at position zero is still a match; only -1 means absent.",
+        "setup": "",
+        "sampleFiles": {
+          "mail.txt": "From: a@uct.ac.za\nFrom: b@example.org\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C04 | Search anywhere in a line\n\nRead `mail.txt`. Use find to print lines containing `@uct.ac.za` anywhere. Remove trailing whitespace and print each matching line once.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nFrom: a@uct.ac.za\nFrom: b@example.org\n\n```\n\n**Source checkpoint:** Searching through a file",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "C05",
+        "kind": "code",
+        "title": "Choose a file safely",
+        "level": "Medium",
+        "points": 10,
+        "source": "Letting the user choose the file name; Using try, except, and open",
+        "task": "Read a filename with input. Try to open it, count lines beginning with `Subject:`, and print only that count. If opening fails, print `File cannot be opened:` followed by the filename. Use try/except and avoid reading a handle that failed to open.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `mail.txt`. Input prompts are omitted from captured output.\n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nSubject: one\nFrom: a\nSubject: two\n\n```",
+        "starter": "# Read the filename; handle missing files.",
+        "hint": "Keep the file-processing code on the successful-open path.",
+        "setup": "",
+        "sampleFiles": {
+          "mail.txt": "Subject: one\nFrom: a\nSubject: two\n"
+        },
+        "sampleInputs": [
+          "mail.txt"
+        ],
+        "prompt": "## C05 | Choose a file safely\n\nRead a filename with input. Try to open it, count lines beginning with `Subject:`, and print only that count. If opening fails, print `File cannot be opened:` followed by the filename. Use try/except and avoid reading a handle that failed to open.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `mail.txt`. Input prompts are omitted from captured output.\n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nSubject: one\nFrom: a\nSubject: two\n\n```\n\n**Source checkpoint:** Letting the user choose the file name; Using try, except, and open",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "C06",
+        "kind": "code",
+        "title": "Uppercase a file",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercise 1",
+        "task": "Ask for a filename using input, open it, and print every line in uppercase. Remove trailing whitespace before printing. Test files exist, so this mission does not require missing-file handling.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `words.txt`. Input prompts are omitted from captured output.\n\nPractice files are created afresh for every check. Sample file contents:\n\n**words.txt**\n```text\nhello\nworld\n\n```",
+        "starter": "# Open the requested file and uppercase each line.",
+        "hint": "upper returns a new string; print that returned value.",
+        "setup": "",
+        "sampleFiles": {
+          "words.txt": "hello\nworld\n"
+        },
+        "sampleInputs": [
+          "words.txt"
+        ],
+        "prompt": "## C06 | Uppercase a file\n\nAsk for a filename using input, open it, and print every line in uppercase. Remove trailing whitespace before printing. Test files exist, so this mission does not require missing-file handling.\n\nFive independent checks are worth 2 XP each. \n\nUse `input()` normally: the checker enters test values for you. Sample inputs, in order: `words.txt`. Input prompts are omitted from captured output.\n\nPractice files are created afresh for every check. Sample file contents:\n\n**words.txt**\n```text\nhello\nworld\n\n```\n\n**Source checkpoint:** Exercises: Exercise 1",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "C07",
+        "kind": "code",
+        "title": "Average spam confidence",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercise 2",
+        "task": "Open `mail.txt`, select `X-DSPAM-Confidence:` lines, and convert the part after the colon to float. Track `count` and `total`, then print the average. Print `No matching lines` if count is zero. Values in matching lines are valid numbers.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nX-DSPAM-Confidence: 0.5\nIgnore this\nX-DSPAM-Confidence: 1.0\n\n```",
+        "starter": "count = 0\ntotal = 0.0\n# Read matching lines, then calculate the average.",
+        "hint": "A counter and accumulator allow you to compute an average after the loop.",
+        "setup": "",
+        "sampleFiles": {
+          "mail.txt": "X-DSPAM-Confidence: 0.5\nIgnore this\nX-DSPAM-Confidence: 1.0\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C07 | Average spam confidence\n\nOpen `mail.txt`, select `X-DSPAM-Confidence:` lines, and convert the part after the colon to float. Track `count` and `total`, then print the average. Print `No matching lines` if count is zero. Values in matching lines are valid numbers.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nX-DSPAM-Confidence: 0.5\nIgnore this\nX-DSPAM-Confidence: 1.0\n\n```\n\n**Source checkpoint:** Exercises: Exercise 2",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "C08",
+        "kind": "code",
+        "title": "Write a fresh text file",
+        "level": "Medium",
+        "points": 10,
+        "source": "Writing files",
+        "task": "Open `output.txt` in write mode. Write supplied `first` and `second` on separate lines, each ending with a newline. Close the handle. Existing file contents must be replaced.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfirst = 'Hello'\nsecond = 'World'\n```\n\nPractice files are created afresh for every check. Sample file contents:\n\n**output.txt**\n```text\nold contents that must disappear\n\n```",
+        "starter": "# Write two lines to output.txt.",
+        "hint": "write does not add a newline automatically; include it in the string.",
+        "setup": "first = 'Hello'\nsecond = 'World'",
+        "sampleFiles": {
+          "output.txt": "old contents that must disappear\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C08 | Write a fresh text file\n\nOpen `output.txt` in write mode. Write supplied `first` and `second` on separate lines, each ending with a newline. Close the handle. Existing file contents must be replaced.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nfirst = 'Hello'\nsecond = 'World'\n```\n\nPractice files are created afresh for every check. Sample file contents:\n\n**output.txt**\n```text\nold contents that must disappear\n\n```\n\n**Source checkpoint:** Writing files",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M01",
+        "kind": "mcq",
+        "title": "A file handle",
+        "level": "Easy",
+        "points": 2,
+        "source": "Opening files",
+        "task": "What does open return when it succeeds?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "All file text"
+          },
+          {
+            "letter": "B",
+            "text": "A file handle"
+          },
+          {
+            "letter": "C",
+            "text": "The line count"
+          },
+          {
+            "letter": "D",
+            "text": "A list of words"
+          }
+        ],
+        "answer": "B",
+        "explanation": "A handle provides access to the file; opening alone does not load all its data.",
+        "prompt": "## M01 | A file handle\n\nWhat does open return when it succeeds?\n\nA. All file text\nB. A file handle\nC. The line count\nD. A list of words",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M02",
+        "kind": "mcq",
+        "title": "Missing file",
+        "level": "Easy",
+        "points": 2,
+        "source": "Opening files",
+        "task": "Opening a missing file for reading normally raises which exception?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "TypeError"
+          },
+          {
+            "letter": "B",
+            "text": "ZeroDivisionError"
+          },
+          {
+            "letter": "C",
+            "text": "FileNotFoundError"
+          },
+          {
+            "letter": "D",
+            "text": "No exception"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Use try/except when a supplied path may not exist.",
+        "prompt": "## M02 | Missing file\n\nOpening a missing file for reading normally raises which exception?\n\nA. TypeError\nB. ZeroDivisionError\nC. FileNotFoundError\nD. No exception",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M03",
+        "kind": "mcq",
+        "title": "Newline length",
+        "level": "Easy",
+        "points": 2,
+        "source": "Text files and lines",
+        "task": "How many characters are in the string `\"X\nY\"`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "2"
+          },
+          {
+            "letter": "B",
+            "text": "4"
+          },
+          {
+            "letter": "C",
+            "text": "5"
+          },
+          {
+            "letter": "D",
+            "text": "3"
+          }
+        ],
+        "answer": "D",
+        "explanation": "The newline escape represents one character.",
+        "prompt": "## M03 | Newline length\n\nHow many characters are in the string `\"X\nY\"`?\n\nA. 2\nB. 4\nC. 5\nD. 3",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M04",
+        "kind": "mcq",
+        "title": "File iteration",
+        "level": "Easy",
+        "points": 2,
+        "source": "Reading files",
+        "task": "A for loop over a text file handle yields what?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "One line at a time"
+          },
+          {
+            "letter": "B",
+            "text": "The entire file each time"
+          },
+          {
+            "letter": "C",
+            "text": "Only filenames"
+          },
+          {
+            "letter": "D",
+            "text": "One integer per byte"
+          }
+        ],
+        "answer": "A",
+        "explanation": "A file loop reads successive lines, normally retaining their newline characters.",
+        "prompt": "## M04 | File iteration\n\nA for loop over a text file handle yields what?\n\nA. One line at a time\nB. The entire file each time\nC. Only filenames\nD. One integer per byte",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M05",
+        "kind": "mcq",
+        "title": "Read again",
+        "level": "Easy",
+        "points": 2,
+        "source": "Reading files",
+        "task": "After f.read() reaches the end, what does another f.read() return?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "The whole file again"
+          },
+          {
+            "letter": "B",
+            "text": "None"
+          },
+          {
+            "letter": "C",
+            "text": "An empty string"
+          },
+          {
+            "letter": "D",
+            "text": "The last line"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Reading consumes the handle through the end of the file.",
+        "prompt": "## M05 | Read again\n\nAfter f.read() reaches the end, what does another f.read() return?\n\nA. The whole file again\nB. None\nC. An empty string\nD. The last line",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M06",
+        "kind": "mcq",
+        "title": "Double spacing",
+        "level": "Easy",
+        "points": 2,
+        "source": "Searching through a file",
+        "task": "Why can print(line) show blank lines between file lines?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "Files add tabs"
+          },
+          {
+            "letter": "B",
+            "text": "line already ends in a newline and print adds another"
+          },
+          {
+            "letter": "C",
+            "text": "print repeats each word"
+          },
+          {
+            "letter": "D",
+            "text": "open inserts blank lines"
+          }
+        ],
+        "answer": "B",
+        "explanation": "Remove the trailing newline before printing to avoid extra spacing.",
+        "prompt": "## M06 | Double spacing\n\nWhy can print(line) show blank lines between file lines?\n\nA. Files add tabs\nB. line already ends in a newline and print adds another\nC. print repeats each word\nD. open inserts blank lines",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M07",
+        "kind": "mcq",
+        "title": "Prefix filtering",
+        "level": "Easy",
+        "points": 2,
+        "source": "Searching through a file",
+        "task": "Which checks whether line begins with `From:`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "line.find(\"From:\") == -1"
+          },
+          {
+            "letter": "B",
+            "text": "\"From:\" == line"
+          },
+          {
+            "letter": "C",
+            "text": "line.upper()"
+          },
+          {
+            "letter": "D",
+            "text": "line.startswith(\"From:\")"
+          }
+        ],
+        "answer": "D",
+        "explanation": "startswith checks the beginning of the string.",
+        "prompt": "## M07 | Prefix filtering\n\nWhich checks whether line begins with `From:`?\n\nA. line.find(\"From:\") == -1\nB. \"From:\" == line\nC. line.upper()\nD. line.startswith(\"From:\")",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M08",
+        "kind": "mcq",
+        "title": "Choosing a filename",
+        "level": "Easy",
+        "points": 2,
+        "source": "Letting the user choose the file name",
+        "task": "Why read a filename with input?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "To process different files without editing the code"
+          },
+          {
+            "letter": "B",
+            "text": "To create every missing file"
+          },
+          {
+            "letter": "C",
+            "text": "To avoid opening the file"
+          },
+          {
+            "letter": "D",
+            "text": "To load every file at once"
+          }
+        ],
+        "answer": "A",
+        "explanation": "The user can select which file the same program processes.",
+        "prompt": "## M08 | Choosing a filename\n\nWhy read a filename with input?\n\nA. To process different files without editing the code\nB. To create every missing file\nC. To avoid opening the file\nD. To load every file at once",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M09",
+        "kind": "mcq",
+        "title": "Write mode",
+        "level": "Easy",
+        "points": 2,
+        "source": "Writing files",
+        "task": "What happens when an existing file is opened with mode w?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "New text always appends"
+          },
+          {
+            "letter": "B",
+            "text": "The file is read only"
+          },
+          {
+            "letter": "C",
+            "text": "Its old contents are cleared"
+          },
+          {
+            "letter": "D",
+            "text": "Nothing until close"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Write mode starts a fresh file, replacing existing contents.",
+        "prompt": "## M09 | Write mode\n\nWhat happens when an existing file is opened with mode w?\n\nA. New text always appends\nB. The file is read only\nC. Its old contents are cleared\nD. Nothing until close",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      },
+      {
+        "id": "M10",
+        "kind": "mcq",
+        "title": "Write return value",
+        "level": "Easy",
+        "points": 2,
+        "source": "Writing files",
+        "task": "What does a text file handle write method return?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "The file handle"
+          },
+          {
+            "letter": "B",
+            "text": "The number of characters written"
+          },
+          {
+            "letter": "C",
+            "text": "The whole file"
+          },
+          {
+            "letter": "D",
+            "text": "Always None"
+          }
+        ],
+        "answer": "B",
+        "explanation": "The return value records the length of the written text.",
+        "prompt": "## M10 | Write return value\n\nWhat does a text file handle write method return?\n\nA. The file handle\nB. The number of characters written\nC. The whole file\nD. Always None",
+        "sourceUrl": "https://www.py4e.com/html3/07-files"
+      }
+    ],
+    "notebook": "/ZHUDDLE_Files_Quest.ipynb"
+  },
+  {
+    "id": "lists",
+    "number": "08",
+    "title": "Lists",
+    "fullTitle": "Lists",
+    "source": "https://www.py4e.com/lessons/lists",
+    "reading": "https://www.py4e.com/html3/08-lists",
+    "questions": [
+      {
+        "id": "C01",
+        "kind": "code",
+        "title": "Index and mutate",
+        "level": "Easy",
+        "points": 10,
+        "source": "A list is a sequence; Lists are mutable",
+        "task": "For supplied nonempty `numbers`, save its first item as `first` and its last item as `last`. Replace the first item with `replacement`. Save the list length as `length`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [10, 20, 30]\nreplacement = 99\n```",
+        "starter": "first = None\nlast = None\nlength = None\n# Replace the first item.",
+        "hint": "Unlike strings, lists support assignment to an index.",
+        "setup": "numbers = [10, 20, 30]\nreplacement = 99",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C01 | Index and mutate\n\nFor supplied nonempty `numbers`, save its first item as `first` and its last item as `last`. Replace the first item with `replacement`. Save the list length as `length`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nnumbers = [10, 20, 30]\nreplacement = 99\n```\n\n**Source checkpoint:** A list is a sequence; Lists are mutable",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "C02",
+        "kind": "code",
+        "title": "Combine, repeat, and slice",
+        "level": "Easy",
+        "points": 10,
+        "source": "List operations; List slices",
+        "task": "Save `left + right` as `joined`, `left * 2` as `repeated`, and `joined[1:3]` as `middle`. Keep left and right unchanged.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nleft = [1, 2]\nright = [3, 4]\n```",
+        "starter": "joined = None\nrepeated = None\nmiddle = None",
+        "hint": "List addition concatenates; repetition repeats elements.",
+        "setup": "left = [1, 2]\nright = [3, 4]",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C02 | Combine, repeat, and slice\n\nSave `left + right` as `joined`, `left * 2` as `repeated`, and `joined[1:3]` as `middle`. Keep left and right unchanged.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nleft = [1, 2]\nright = [3, 4]\n```\n\n**Source checkpoint:** List operations; List slices",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "C03",
+        "kind": "code",
+        "title": "Append, extend, and sort",
+        "level": "Easy",
+        "points": 10,
+        "source": "List methods",
+        "task": "Append supplied `item` to `values`, extend values with the individual items from `extra`, then sort values in place in ascending order. Do not assign the return value of sort to values.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nvalues = [3, 1]\nitem = 2\nextra = [5, 4]\n```",
+        "starter": "# Modify values with three list methods.",
+        "hint": "append adds one item; extend adds items from another list.",
+        "setup": "values = [3, 1]\nitem = 2\nextra = [5, 4]",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C03 | Append, extend, and sort\n\nAppend supplied `item` to `values`, extend values with the individual items from `extra`, then sort values in place in ascending order. Do not assign the return value of sort to values.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nvalues = [3, 1]\nitem = 2\nextra = [5, 4]\n```\n\n**Source checkpoint:** List methods",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "C04",
+        "kind": "code",
+        "title": "Remove an element",
+        "level": "Easy",
+        "points": 10,
+        "source": "Deleting elements",
+        "task": "Use pop with supplied valid `index` on `values`. Store the removed item in `removed`, leaving values with the remaining items in their original order.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nvalues = [10, 20, 30]\nindex = 1\n```",
+        "starter": "removed = None",
+        "hint": "pop both modifies the list and returns the deleted item.",
+        "setup": "values = [10, 20, 30]\nindex = 1",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C04 | Remove an element\n\nUse pop with supplied valid `index` on `values`. Store the removed item in `removed`, leaving values with the remaining items in their original order.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\nvalues = [10, 20, 30]\nindex = 1\n```\n\n**Source checkpoint:** Deleting elements",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "C05",
+        "kind": "code",
+        "title": "Lists and string methods",
+        "level": "Medium",
+        "points": 10,
+        "source": "Lists and strings",
+        "task": "Split supplied `text` on whitespace into `words`. Join those words with a hyphen into `joined`. Save the number of words as `count`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ntext = 'pining for the fjords'\n```",
+        "starter": "words = None\njoined = None\ncount = None",
+        "hint": "With no argument, split handles runs of whitespace.",
+        "setup": "text = 'pining for the fjords'",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C05 | Lists and string methods\n\nSplit supplied `text` on whitespace into `words`. Join those words with a hyphen into `joined`. Save the number of words as `count`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\ntext = 'pining for the fjords'\n```\n\n**Source checkpoint:** Lists and strings",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "C06",
+        "kind": "code",
+        "title": "Copy without aliasing",
+        "level": "Medium",
+        "points": 10,
+        "source": "Objects and values; Aliasing; Debugging",
+        "task": "Copy supplied nonempty list `original` using a full slice into `copy`. Change copy[0] to supplied `replacement`. Leave original unchanged. Save `same_object` as the result of `copy is original`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\noriginal = [1, 2]\nreplacement = 9\n```",
+        "starter": "copy = None\nsame_object = None",
+        "hint": "Assignment alone creates an alias; a slice creates a separate list.",
+        "setup": "original = [1, 2]\nreplacement = 9",
+        "sampleFiles": {},
+        "sampleInputs": [],
+        "prompt": "## C06 | Copy without aliasing\n\nCopy supplied nonempty list `original` using a full slice into `copy`. Change copy[0] to supplied `replacement`. Leave original unchanged. Save `same_object` as the result of `copy is original`.\n\nFive independent checks are worth 2 XP each. The checker supplies the variables below with different values on each check. Use them without replacing their starting values.\n\n```python\noriginal = [1, 2]\nreplacement = 9\n```\n\n**Source checkpoint:** Objects and values; Aliasing; Debugging",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "C07",
+        "kind": "code",
+        "title": "Unique words in a file",
+        "level": "Medium",
+        "points": 10,
+        "source": "Exercises: Exercise 4",
+        "task": "Open `romeo.txt`, split each line into words, and append only words not already in `unique`. Sort unique alphabetically. Keep capitalization and punctuation as they are. Use a list and membership checks, without sets or dictionaries. No printing is required.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**romeo.txt**\n```text\nBut soft what light\nwhat light breaks\n\n```",
+        "starter": "unique = []\n# Read, collect distinct words, and sort.",
+        "hint": "Use not in before append, then sort once after reading.",
+        "setup": "",
+        "sampleFiles": {
+          "romeo.txt": "But soft what light\nwhat light breaks\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C07 | Unique words in a file\n\nOpen `romeo.txt`, split each line into words, and append only words not already in `unique`. Sort unique alphabetically. Keep capitalization and punctuation as they are. Use a list and membership checks, without sets or dictionaries. No printing is required.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**romeo.txt**\n```text\nBut soft what light\nwhat light breaks\n\n```\n\n**Source checkpoint:** Exercises: Exercise 4",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "C08",
+        "kind": "code",
+        "title": "A guarded mail reader",
+        "level": "Medium",
+        "points": 10,
+        "source": "Debugging: Lists, split, and files; Exercises 2 and 5",
+        "task": "Read `mail.txt`. Split each line and skip it unless it has at least two words and the first word is exactly `From` (not `From:`). Print the second word for each accepted line. Track `count` and finish by printing `Count:` and count. Handle blank and one-word lines safely.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nFrom ada@example.org Sat Jan 5\nFrom: header@example.org\n\nFrom\nFrom lin@example.org Sun Jan 6\n\n```",
+        "starter": "count = 0\n# Guard list indexes before reading a sender.",
+        "hint": "Check the length before accessing words[0] or words[1].",
+        "setup": "",
+        "sampleFiles": {
+          "mail.txt": "From ada@example.org Sat Jan 5\nFrom: header@example.org\n\nFrom\nFrom lin@example.org Sun Jan 6\n"
+        },
+        "sampleInputs": [],
+        "prompt": "## C08 | A guarded mail reader\n\nRead `mail.txt`. Split each line and skip it unless it has at least two words and the first word is exactly `From` (not `From:`). Print the second word for each accepted line. Track `count` and finish by printing `Count:` and count. Handle blank and one-word lines safely.\n\nFive independent checks are worth 2 XP each. \n\nPractice files are created afresh for every check. Sample file contents:\n\n**mail.txt**\n```text\nFrom ada@example.org Sat Jan 5\nFrom: header@example.org\n\nFrom\nFrom lin@example.org Sun Jan 6\n\n```\n\n**Source checkpoint:** Debugging: Lists, split, and files; Exercises 2 and 5",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M01",
+        "kind": "mcq",
+        "title": "Mutable lists",
+        "level": "Easy",
+        "points": 2,
+        "source": "Lists are mutable",
+        "task": "Which operation is valid when values is a nonempty list?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "values[0] = 7"
+          },
+          {
+            "letter": "B",
+            "text": "values(0) = 7"
+          },
+          {
+            "letter": "C",
+            "text": "values = values.sort() always preserves the list"
+          },
+          {
+            "letter": "D",
+            "text": "Lists cannot change"
+          }
+        ],
+        "answer": "A",
+        "explanation": "A list permits assignment to individual elements.",
+        "prompt": "## M01 | Mutable lists\n\nWhich operation is valid when values is a nonempty list?\n\nA. values[0] = 7\nB. values(0) = 7\nC. values = values.sort() always preserves the list\nD. Lists cannot change",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M02",
+        "kind": "mcq",
+        "title": "Nested elements",
+        "level": "Easy",
+        "points": 2,
+        "source": "A list is a sequence",
+        "task": "What is the length of `[1, [2, 3], 4]`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "4"
+          },
+          {
+            "letter": "B",
+            "text": "2"
+          },
+          {
+            "letter": "C",
+            "text": "3"
+          },
+          {
+            "letter": "D",
+            "text": "5"
+          }
+        ],
+        "answer": "C",
+        "explanation": "The inner list counts as a single element of the outer list.",
+        "prompt": "## M02 | Nested elements\n\nWhat is the length of `[1, [2, 3], 4]`?\n\nA. 4\nB. 2\nC. 3\nD. 5",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M03",
+        "kind": "mcq",
+        "title": "List concatenation",
+        "level": "Easy",
+        "points": 2,
+        "source": "List operations",
+        "task": "What is `[1, 2] + [3]`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "[4, 5]"
+          },
+          {
+            "letter": "B",
+            "text": "[1, 2, 3]"
+          },
+          {
+            "letter": "C",
+            "text": "[1, 2, [3]]"
+          },
+          {
+            "letter": "D",
+            "text": "An error"
+          }
+        ],
+        "answer": "B",
+        "explanation": "The + operator concatenates lists.",
+        "prompt": "## M03 | List concatenation\n\nWhat is `[1, 2] + [3]`?\n\nA. [4, 5]\nB. [1, 2, 3]\nC. [1, 2, [3]]\nD. An error",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M04",
+        "kind": "mcq",
+        "title": "Append or extend",
+        "level": "Easy",
+        "points": 2,
+        "source": "List methods",
+        "task": "What does `items.append([2, 3])` add?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "Two separate numbers"
+          },
+          {
+            "letter": "B",
+            "text": "Nothing"
+          },
+          {
+            "letter": "C",
+            "text": "Only 2"
+          },
+          {
+            "letter": "D",
+            "text": "One nested list"
+          }
+        ],
+        "answer": "D",
+        "explanation": "append adds its argument as one element.",
+        "prompt": "## M04 | Append or extend\n\nWhat does `items.append([2, 3])` add?\n\nA. Two separate numbers\nB. Nothing\nC. Only 2\nD. One nested list",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M05",
+        "kind": "mcq",
+        "title": "Sort return value",
+        "level": "Easy",
+        "points": 2,
+        "source": "List methods; Debugging",
+        "task": "What does a list sort method return?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "None"
+          },
+          {
+            "letter": "B",
+            "text": "The sorted list"
+          },
+          {
+            "letter": "C",
+            "text": "True"
+          },
+          {
+            "letter": "D",
+            "text": "The final element"
+          }
+        ],
+        "answer": "A",
+        "explanation": "sort mutates the list in place and returns None.",
+        "prompt": "## M05 | Sort return value\n\nWhat does a list sort method return?\n\nA. None\nB. The sorted list\nC. True\nD. The final element",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M06",
+        "kind": "mcq",
+        "title": "Pop result",
+        "level": "Easy",
+        "points": 2,
+        "source": "Deleting elements",
+        "task": "What does pop return?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "The remaining list"
+          },
+          {
+            "letter": "B",
+            "text": "Nothing"
+          },
+          {
+            "letter": "C",
+            "text": "The removed element"
+          },
+          {
+            "letter": "D",
+            "text": "The new length"
+          }
+        ],
+        "answer": "C",
+        "explanation": "pop removes an element and returns it.",
+        "prompt": "## M06 | Pop result\n\nWhat does pop return?\n\nA. The remaining list\nB. Nothing\nC. The removed element\nD. The new length",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M07",
+        "kind": "mcq",
+        "title": "Whitespace split",
+        "level": "Easy",
+        "points": 2,
+        "source": "Lists and strings",
+        "task": "What is `\"a  b\".split()`?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "[\"a\", \"\", \"b\"]"
+          },
+          {
+            "letter": "B",
+            "text": "[\"a\", \"b\"]"
+          },
+          {
+            "letter": "C",
+            "text": "[\"a  b\"]"
+          },
+          {
+            "letter": "D",
+            "text": "\"ab\""
+          }
+        ],
+        "answer": "B",
+        "explanation": "Default split treats runs of whitespace as one separator.",
+        "prompt": "## M07 | Whitespace split\n\nWhat is `\"a  b\".split()`?\n\nA. [\"a\", \"\", \"b\"]\nB. [\"a\", \"b\"]\nC. [\"a  b\"]\nD. \"ab\"",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M08",
+        "kind": "mcq",
+        "title": "Aliased names",
+        "level": "Easy",
+        "points": 2,
+        "source": "Aliasing",
+        "task": "After `a = [1, 2]; b = a; b[0] = 9`, what is a?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "[1, 2]"
+          },
+          {
+            "letter": "B",
+            "text": "[2, 9]"
+          },
+          {
+            "letter": "C",
+            "text": "None"
+          },
+          {
+            "letter": "D",
+            "text": "[9, 2]"
+          }
+        ],
+        "answer": "D",
+        "explanation": "a and b refer to the same list.",
+        "prompt": "## M08 | Aliased names\n\nAfter `a = [1, 2]; b = a; b[0] = 9`, what is a?\n\nA. [1, 2]\nB. [2, 9]\nC. None\nD. [9, 2]",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M09",
+        "kind": "mcq",
+        "title": "Make a copy",
+        "level": "Easy",
+        "points": 2,
+        "source": "Aliasing; Debugging",
+        "task": "Which creates a separate shallow copy of list a?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "b = a[:]"
+          },
+          {
+            "letter": "B",
+            "text": "b = a"
+          },
+          {
+            "letter": "C",
+            "text": "b = a.sort()"
+          },
+          {
+            "letter": "D",
+            "text": "b = a.append(0)"
+          }
+        ],
+        "answer": "A",
+        "explanation": "A full slice builds another list containing the same elements.",
+        "prompt": "## M09 | Make a copy\n\nWhich creates a separate shallow copy of list a?\n\nA. b = a[:]\nB. b = a\nC. b = a.sort()\nD. b = a.append(0)",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      },
+      {
+        "id": "M10",
+        "kind": "mcq",
+        "title": "Guard an index",
+        "level": "Easy",
+        "points": 2,
+        "source": "Debugging: Lists, split, and files",
+        "task": "Before reading words[1], which guard ensures that index exists?",
+        "options": [
+          {
+            "letter": "A",
+            "text": "len(words) > 0"
+          },
+          {
+            "letter": "B",
+            "text": "words[0] == \"From\""
+          },
+          {
+            "letter": "C",
+            "text": "len(words) >= 2"
+          },
+          {
+            "letter": "D",
+            "text": "words is not None"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Index one requires at least two elements.",
+        "prompt": "## M10 | Guard an index\n\nBefore reading words[1], which guard ensures that index exists?\n\nA. len(words) > 0\nB. words[0] == \"From\"\nC. len(words) >= 2\nD. words is not None",
+        "sourceUrl": "https://www.py4e.com/html3/08-lists"
+      }
+    ],
+    "notebook": "/ZHUDDLE_Lists_Quest.ipynb"
+  }
+]
