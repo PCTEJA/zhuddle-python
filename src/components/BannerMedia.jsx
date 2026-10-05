@@ -3,7 +3,13 @@ import { MotionContext } from "./MotionArt";
 
 const POSTER = "/assets/zhuddle/emerald-aurora-learner-banner.png";
 
-export default function BannerMedia() {
+export default function BannerMedia({
+  src = "/assets/zhuddle/welcome-banner.mp4",
+  poster = POSTER,
+  imageClassName = "hero-garden",
+  videoClassName = "hero-garden hero-video",
+  imageProps = { width: 2129, height: 738, fetchPriority: "high" },
+}) {
   const reducedMotion = useContext(MotionContext);
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
@@ -25,13 +31,13 @@ export default function BannerMedia() {
 
   return (
     <>
-      <img className="hero-garden" src={POSTER} alt="" width="2129" height="738" fetchPriority="high" />
+      <img className={imageClassName} src={poster} alt="" {...imageProps} />
       {!reducedMotion && !failed && (
         <video
           ref={videoRef}
-          className={`hero-garden hero-video${playing ? " is-playing" : ""}`}
-          src="/assets/zhuddle/welcome-banner.mp4"
-          poster={POSTER}
+          className={`${videoClassName}${playing ? " is-playing" : ""}`}
+          src={src}
+          poster={poster}
           autoPlay
           loop
           muted

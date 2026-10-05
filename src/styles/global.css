@@ -1436,6 +1436,7 @@ pre code {
   font-size: 13px;
 }
 .challenge-art {
+  position: relative;
   display: block;
   width: 100%;
   height: 140px;
@@ -1455,6 +1456,28 @@ pre code {
 }
 .challenge-art:hover img {
   transform: scale(1.03);
+}
+.challenge-poster,
+.challenge-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.challenge-video {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+}
+.challenge-video.is-playing {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .challenge-video {
+    display: none;
+  }
 }
 .challenge-copy {
   padding: 13px 3px 2px;
