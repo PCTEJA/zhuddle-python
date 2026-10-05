@@ -573,7 +573,13 @@ export function ProgressRail({
           aria-label="Open Random-number lab"
           onClick={() => selectQuestion("C02")}
         >
-          <Art name="python-challenge" />
+          <BannerMedia
+            src="/assets/zhuddle/snake-adventure.mp4"
+            poster="/assets/zhuddle/python-challenge-still.svg"
+            imageClassName="challenge-poster"
+            videoClassName="challenge-video"
+            imageProps={{ loading: "lazy" }}
+          />
         </button>
         <div className="challenge-copy">
           <span className="eyebrow">YOUR NEXT CHALLENGE</span>
