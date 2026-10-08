@@ -1,14 +1,14 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { MotionContext } from "./MotionArt";
 
-const POSTER = "/assets/zhuddle/welcome-poster-v1.webp";
+const POSTER = "/assets/zhuddle/welcome-poster-hd-v2.webp";
 
 export default function BannerMedia({
-  src = "/assets/zhuddle/welcome-banner-v2.mp4",
+  src = "/assets/zhuddle/welcome-banner-hd-v3.mp4",
   poster = POSTER,
   imageClassName = "hero-garden",
   videoClassName = "hero-garden hero-video",
-  imageProps = { width: 1280, height: 444, fetchPriority: "high" },
+  imageProps = { width: 2129, height: 738, fetchPriority: "high" },
 }) {
   const reducedMotion = useContext(MotionContext);
   const imageRef = useRef(null);

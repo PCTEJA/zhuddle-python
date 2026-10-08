@@ -95,6 +95,7 @@ test('decorative videos only load in view and pause when motion is disabled', as
   page.on('request', request => requests.push(request.url()));
   await page.goto('/');
   await expect(page.locator('video.hero-video')).toHaveClass(/is-playing/);
+  expect(await page.locator('video.hero-video').evaluate(video => [video.videoWidth, video.videoHeight])).toEqual([3840, 996]);
   expect(requests.some(url => url.includes('snake-adventure'))).toBe(false);
   await page.locator('.challenge-art').scrollIntoViewIfNeeded();
   await expect(page.locator('video.challenge-video')).toHaveClass(/is-playing/);
@@ -105,8 +106,8 @@ test('decorative videos only load in view and pause when motion is disabled', as
 
 test('optimized media stays within the page asset budget', () => {
   for (const [file, budget] of [
-    ['zhuddle/welcome-poster-v1.webp', 65000],
-    ['zhuddle/welcome-banner-v2.mp4', 70000],
+    ['zhuddle/welcome-poster-hd-v2.webp', 200000],
+    ['zhuddle/welcome-banner-hd-v3.mp4', 4250000],
     ['zhuddle/snake-adventure-v2.mp4', 140000],
     ['customer-care-v1.webp', 130000],
   ]) expect(statSync(new URL(`../public/assets/${file}`, import.meta.url)).size, file).toBeLessThan(budget);

@@ -33,6 +33,10 @@ The later removal of the animated loading illustration and memoization of lesson
 
 Videos preserve the existing animation but wait for page load and visibility. They stop when offscreen, the tab is hidden, or motion is disabled. Reduced-motion/data-saving connections receive still posters. Fonts are served locally and cached with versioned build assets.
 
+## Banner quality follow-up
+
+The owner reported visible softness in the original 960 × 250 optimization. The current welcome video (`welcome-banner-hd-v3.mp4`) preserves the source's 3840 × 996 resolution and uses H.264 CRF 18: 3,909,914 bytes, versus 8,753,576 bytes in the original source. Its 2129 × 738 poster (`welcome-poster-hd-v2.webp`) is 172,510 bytes. Loading-after-page-load, visibility controls, and reduced-motion/data-saving behavior remain in place. The earlier transfer and timing table is a historical measurement of the smaller video, not a measurement of this higher-quality revision.
+
 ## Search content and verification
 
 Eight indexable pages now include static content, descriptive titles, canonical links, Open Graph/Twitter metadata, and WebSite/WebPage JSON-LD. Seven guides cover variables, conditionals, functions, loops, strings, files, and lists with examples and links into the correct chapter. The generated sitemap and robots file expose their canonical URLs without indexing student data or query-string variants.
