@@ -43,6 +43,7 @@ test('legacy Functions progress survives chapter switches, edits, reloads, and s
   await page.addInitScript(saved => {
     if (!localStorage.getItem('qa-initialized')) {
       localStorage.setItem('zhuddle-functions-v1', JSON.stringify(saved));
+      localStorage.setItem('zhuddle-active-chapter', 'functions');
       localStorage.setItem('qa-initialized','yes');
     }
   }, legacy);

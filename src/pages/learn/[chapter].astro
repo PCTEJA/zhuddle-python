@@ -1,0 +1,47 @@
+---
+import SeoHead from '../../components/SeoHead.astro';
+import SupportButton from '../../components/SupportButton.astro';
+import { chapters } from '../../data/curriculum';
+import { guides, guidePath } from '../../data/chapter-guides';
+import '../../styles/global.css';
+import '../../styles/guides.css';
+export function getStaticPaths() {
+  return chapters.map(chapter => ({ params: { chapter: `python-${chapter.id}` }, props: { chapter } }));
+}
+const { chapter } = Astro.props;
+const guide = guides[chapter.id];
+const practice = `/?chapter=${chapter.id}#workspace`;
+const title = `Python ${chapter.title} for Beginners: Exercises & Practice | ZHUDDLE`;
+---
+<!doctype html>
+<html lang="en">
+  <head><SeoHead title={title} description={guide.summary} path={guidePath(chapter.id)} /></head>
+  <body>
+    <main class="chapter-guide">
+      <nav class="guide-nav" aria-label="Breadcrumb"><a class="brand" href="/">ZHUDDLE</a><a class="guide-link" href="/#course-heading">All Python chapters</a></nav>
+      <span class="eyebrow">BEGINNER PYTHON · CHAPTER {chapter.number}</span>
+      <h1>Python {chapter.title.toLowerCase()} for beginners</h1>
+      <p>{guide.summary}</p>
+      <div class="guide-actions"><a class="primary-button" href={practice}>Practice Python {chapter.title.toLowerCase()} →</a><a class="guide-link" href={chapter.notebook} download>Download the chapter notebook</a></div>
+      <section aria-labelledby="concept-heading">
+        <h2 id="concept-heading">Understanding {chapter.fullTitle.toLowerCase()}</h2>
+        <p>{guide.explanation}</p>
+        <pre><code>{guide.example}</code></pre>
+        <p>{guide.takeaway}</p>
+      </section>
+      <section aria-labelledby="practice-heading">
+        <h2 id="practice-heading">What you will practice</h2>
+        <p>Work through eight coding missions, then test your understanding with ten multiple-choice questions. Each mission provides starter code, a hint, and feedback after you run it.</p>
+        <ol>{chapter.questions.filter(q => q.kind === 'code').map(q => <li><strong>{q.title}</strong>{q.source ? ` — ${q.source}` : ''}</li>)}</ol>
+        <p>Your chapter progress is saved in this browser. Complete all 18 checks to unlock a certificate at your earned practice score, and download your notebook or grade report to keep a copy.</p>
+      </section>
+      <section aria-labelledby="reading-heading">
+        <h2 id="reading-heading">Read, practice, and try again</h2>
+        <p>For the chapter reading, see <a class="guide-link" href={chapter.reading}>Python for Everybody: {chapter.fullTitle}</a> by Charles R. Severance (CC BY 4.0). ZHUDDLE adds its own practice activities and scoring. The browser runs Python after its first interpreter download; no local installation is required.</p>
+        <a class="primary-button" href={practice}>Start the {chapter.title.toLowerCase()} exercises →</a>
+      </section>
+      <nav class="guide-actions" aria-label="More Python chapters">{chapters.filter(c => c.id !== chapter.id).map(c => <a class="guide-link" href={guidePath(c.id)}>Python {c.title.toLowerCase()}</a>)}</nav>
+    </main>
+    <SupportButton />
+  </body>
+</html>

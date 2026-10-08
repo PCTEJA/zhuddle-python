@@ -1,0 +1,22 @@
+---
+import { chapters } from '../data/curriculum';
+import { guides, guidePath } from '../data/chapter-guides';
+---
+<section class="course-overview" aria-labelledby="course-heading">
+  <span class="eyebrow">LEARN PYTHON WITH ZHUDDLE</span>
+  <h2 id="course-heading">A beginner Python learning platform built around practice.</h2>
+  <p>Learn Python in your browser with seven chapters, 56 coding missions, and 70 multiple-choice questions. Run real Python, learn from immediate feedback, and revisit exercises at your own pace.</p>
+  <nav class="course-grid" aria-label="Python chapter guides">
+    {chapters.map(chapter => <a href={guidePath(chapter.id)}>
+      <span class="eyebrow">CHAPTER {chapter.number}</span>
+      <h3>Python {chapter.title.toLowerCase()}</h3>
+      <p>{guides[chapter.id].summary}</p>
+      <span class="guide-link">Explore this chapter →</span>
+    </a>)}
+  </nav>
+  <h3>How does ZHUDDLE help you learn?</h3>
+  <p>Each chapter combines eight coding missions with ten knowledge checks. Retry your code, review the feedback, and build up to 100 practice XP. Download a notebook to keep learning offline, or finish all checks to unlock a chapter completion certificate.</p>
+  <h3>What do you need to start?</h3>
+  <p>No Python installation is needed for the browser exercises. Add your name and UNT ID to save practice results on this device. The first code run downloads the Python interpreter and needs an internet connection. Progress stays in this browser; certificates record practice completion and are not official UNT credentials.</p>
+  <p>Lessons build on Charles R. Severance’s <a class="guide-link" href="https://www.py4e.com/book">Python for Everybody</a>, with original ZHUDDLE practice questions and feedback. Begin with variables if you are new to Python, then follow the chapter order.</p>
+</section>

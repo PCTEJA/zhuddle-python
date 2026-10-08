@@ -8,6 +8,7 @@ export const functionsChapter = {
   notebook: '/ZHUDDLE_Functions_Quest.ipynb', questions,
 };
 export const chapters = [...additions, functionsChapter].sort((a, b) => a.number.localeCompare(b.number));
+export const defaultChapter = chapters.find(chapter => chapter.id === 'variables');
 export const chapterKey = chapter => `zhuddle-${chapter.id}-v1`;
 export const PROFILE_KEY = 'zhuddle-student-v1';
 export const ACTIVE_CHAPTER_KEY = 'zhuddle-active-chapter';

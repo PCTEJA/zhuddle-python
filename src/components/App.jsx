@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, lazy, Suspense } from "react";
+import React, { useEffect, useRef, useState, lazy, memo, Suspense } from "react";
 import {
   Flame,
   Code2,
@@ -21,7 +21,7 @@ import {
   LockKeyhole,
   FileCode2,
 } from "lucide-react";
-import Markdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 import Art, { MotionContext } from "./MotionArt";
 import {
   Header,
@@ -32,7 +32,7 @@ import {
   BadgeCollection,
   Explore,
 } from "./Dashboard";
-import { chapters, functionsChapter, chapterKey, PROFILE_KEY, ACTIVE_CHAPTER_KEY } from "../data/curriculum";
+import { chapters, defaultChapter, chapterKey, PROFILE_KEY, ACTIVE_CHAPTER_KEY } from "../data/curriculum";
 import { restoreChapter } from "../lib/chapter-storage";
 import {
   freshState,
@@ -44,19 +44,24 @@ import {
 } from "../lib/progress";
 
 const Editor = lazy(() => import("./Editor"));
+// Typing changes the answer, not the lesson. Avoid reparsing Markdown per keystroke.
+const Markdown = memo(ReactMarkdown);
 export default function App() {
-  const [chapterId, setChapterId] = useState('functions');
+  const [chapterId, setChapterId] = useState(defaultChapter.id);
   const [startAtFirst, setStartAtFirst] = useState(false);
-  const [ready, setReady] = useState(false);
   const [generation, setGeneration] = useState(0);
   useEffect(() => {
     try {
-      const selected = localStorage.getItem(ACTIVE_CHAPTER_KEY);
+      const requested = new URLSearchParams(location.search).get('chapter');
+      const selected = chapters.some(c => c.id === requested) ? requested : localStorage.getItem(ACTIVE_CHAPTER_KEY);
       if (chapters.some(c => c.id === selected)) setChapterId(selected);
+      if (selected) localStorage.setItem(ACTIVE_CHAPTER_KEY, selected);
     } catch { /* Chapter view handles unavailable storage. */ }
-    setReady(true);
   }, []);
   function selectChapter(id) {
+    const url = new URL(location.href);
+    url.searchParams.delete('chapter');
+    history.replaceState(null, '', url);
     setChapterId(id);
     setStartAtFirst(true);
     // Remount even when reselecting the current chapter to open its first lesson.
@@ -72,8 +77,7 @@ export default function App() {
     }
     setGeneration(value => value + 1);
   }
-  const chapter = chapters.find(c => c.id === chapterId) || functionsChapter;
-  if (!ready) return <main className="app-loading" aria-busy="true">Opening your chapters…</main>;
+  const chapter = chapters.find(c => c.id === chapterId) || defaultChapter;
   return <ChapterApp key={`${chapter.id}-${generation}`} {...{ chapter, startAtFirst, selectChapter, resetStudent }} />;
 }
 
@@ -540,12 +544,12 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
                           <Suspense
                             fallback={
                               <div className="editor-loading">
-                                <Art name="loading-code" mode="idle" />
+                                <LoaderCircle className="spin" size={20} aria-hidden="true" />
                                 Opening your workspace…
                               </div>
                             }
                           >
-                            <Editor
+                            {loaded ? <Editor
                               value={state.code[q.id] || ""}
                               disabled={busy}
                               onChange={(value) =>
@@ -554,7 +558,7 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
                                   code: { ...s.code, [q.id]: value },
                                 }))
                               }
-                            />
+                            /> : <div className="editor-loading">Opening your workspace…</div>}
                           </Suspense>
                           <div className="editor-actions" aria-live="polite">
                             <span>

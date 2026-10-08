@@ -1,21 +1,20 @@
 ---
 import App from '../components/App.jsx';
 import SupportButton from '../components/SupportButton.astro';
+import SeoHead from '../components/SeoHead.astro';
+import CourseOverview from '../components/CourseOverview.astro';
 import '../styles/global.css';
 import '../styles/welcome.css';
+import '../styles/guides.css';
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#16644b" />
-    <meta name="description" content="Practice Python variables, conditionals, functions, loops, strings, files, and lists. Each ZHUDDLE chapter offers 8 coding missions, 10 MCQs, independent progress, and its own certificate and report." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>ZHUDDLE | Your next spark in Python</title>
+    <SeoHead />
   </head>
   <body>
     <App client:load />
+    <CourseOverview />
     <SupportButton />
     <noscript>Enable JavaScript to run the interactive Python exercises. <a href="/ZHUDDLE_Functions_Quest.ipynb">Download the notebook instead.</a></noscript>
   </body>

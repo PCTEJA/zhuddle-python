@@ -7,6 +7,11 @@ const questions = JSON.parse(
 const solution =
   'message = "Hello world"\ncharacter_count = len(message)\nlargest_character = max(message)\nsmallest_character = min(message)\nwhole_number = int("32")\ndecimal_number = float("3.14159")';
 
+// This suite exercises the Functions question bank explicitly.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('zhuddle-active-chapter', 'functions'));
+});
+
 async function edit(page, value) {
   const editor = page.locator(".cm-content");
   await editor.click();

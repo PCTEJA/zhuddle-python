@@ -572,11 +572,11 @@ export function ProgressRail({
           onClick={() => selectQuestion("C02")}
         >
           <BannerMedia
-            src="/assets/zhuddle/snake-adventure.mp4"
+            src="/assets/zhuddle/snake-adventure-v2.mp4"
             poster="/assets/zhuddle/python-challenge-still.svg"
             imageClassName="challenge-poster"
             videoClassName="challenge-video"
-            imageProps={{ loading: "lazy" }}
+            imageProps={{ loading: "lazy", width: 1500, height: 1000 }}
           />
         </button>
         <div className="challenge-copy">

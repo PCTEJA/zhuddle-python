@@ -1,0 +1,18 @@
+.course-overview, .chapter-guide { max-width: 1120px; margin: 40px auto; padding: 32px; }
+.course-overview { border-top: 1px solid var(--line); }
+.course-overview > p, .chapter-guide > p { max-width: 76ch; }
+.course-overview h2, .chapter-guide h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.2; }
+.course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin: 24px 0 32px; }
+.course-grid > a { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.course-grid h3 { margin: 10px 0; }
+.course-grid p { font-size: 14px; }
+.guide-link { color: #16644b; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.guide-nav, .guide-actions { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin: 24px 0; }
+.guide-nav { justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.chapter-guide pre { overflow-x: auto; padding: 24px; background: #102d27; color: #e8f7ef; border-radius: 14px; line-height: 1.7; }
+.chapter-guide section { margin: 36px 0; }
+.chapter-guide li { margin-bottom: 12px; line-height: 1.6; }
+.guide-actions .primary-button { display: inline-flex; }
+@media (max-width: 700px) {
+  .course-overview, .chapter-guide { padding: 20px; margin: 24px auto; }
+}

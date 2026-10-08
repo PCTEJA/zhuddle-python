@@ -1,0 +1,38 @@
+---
+const {
+  title = 'ZHUDDLE | Beginner Python Learning Platform & Practice',
+  description = 'Learn Python by doing with ZHUDDLE: 7 beginner chapters, 56 coding exercises, quizzes, instant feedback, and downloadable practice notebooks. Start in your browser.',
+  path = '/',
+} = Astro.props;
+const canonical = new URL(path, Astro.site).href;
+const image = new URL('/assets/zhuddle/welcome-poster-v1.webp', Astro.site).href;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${Astro.site}#website`, name: 'ZHUDDLE', alternateName: 'Zhuddle', url: Astro.site.href },
+    { '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: title, description,
+      isPartOf: { '@id': `${Astro.site}#website` }, inLanguage: 'en' },
+  ],
+};
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#16644b" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href={canonical} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ZHUDDLE" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content="ZHUDDLE illustrated Python learning garden" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />

@@ -19,12 +19,13 @@ test.beforeEach(async ({page}) => {
   await page.addInitScript(student => localStorage.setItem('zhuddle-student-v1',JSON.stringify(student)),student);
 });
 
-test('reference states: closed Functions, open menu overlay, selected Loops with real lessons', async ({page}, info) => {
+test('reference states: default Variables, open menu overlay, selected Loops with real lessons', async ({page}, info) => {
   await page.setViewportSize({width:1872,height:1000});
   await page.goto('/');
   await page.locator('.cm-content').waitFor();
   await expect(page.locator('.chapter-picker, .chapter-grid')).toHaveCount(0);
-  await expect(trigger(page)).toHaveAccessibleName('Choose chapter. Current: Chapter 04 — Functions');
+  await expect(trigger(page)).toHaveAccessibleName('Choose chapter. Current: Chapter 02 — Variables');
+  await expect(page.locator('.quest-heading h2')).toHaveText('Values and their types');
   await expect(trigger(page)).toHaveAttribute('aria-expanded','false');
   const banner = await page.locator('.welcome-band').boundingBox();
   const course = await page.locator('.course-card').boundingBox();
@@ -33,13 +34,13 @@ test('reference states: closed Functions, open menu overlay, selected Loops with
   expect(Math.abs(banner.y - rail.y)).toBeLessThan(2);
   const lessonBefore = await page.locator('.mission-list').boundingBox();
   const centerBefore = await page.locator('.quest-surface').boundingBox();
-  await page.screenshot({path:info.outputPath('01-functions-closed.png')});
+  await page.screenshot({path:info.outputPath('01-variables-closed.png')});
   await trigger(page).click();
   await expect(menu(page)).toBeVisible();
   await expect(menu(page).getByRole('option')).toHaveCount(7);
-  await expect(option(page,'Chapter 04: Functions')).toHaveAttribute('aria-selected','true');
+  await expect(option(page,'Chapter 02: Variables')).toHaveAttribute('aria-selected','true');
   await expect(menu(page).locator('[aria-selected="true"] svg')).toHaveCount(1);
-  await expect(option(page,'Chapter 04: Functions')).toBeFocused();
+  await expect(option(page,'Chapter 02: Variables')).toBeFocused();
   const anchor = await trigger(page).boundingBox();
   const popup = await menu(page).boundingBox();
   expect(popup.x).toBeCloseTo(anchor.x,0);
@@ -48,7 +49,7 @@ test('reference states: closed Functions, open menu overlay, selected Loops with
   expect(await page.locator('.mission-list').boundingBox()).toEqual(lessonBefore);
   expect(await page.locator('.quest-surface').boundingBox()).toEqual(centerBefore);
   await option(page,'Chapter 05: Loops').hover();
-  await page.screenshot({path:info.outputPath('02-functions-open.png')});
+  await page.screenshot({path:info.outputPath('02-variables-open.png')});
   await option(page,'Chapter 05: Loops').click();
   await expect(menu(page)).toHaveCount(0);
   await expect(trigger(page)).toHaveAccessibleName('Choose chapter. Current: Chapter 05 — Loops');
@@ -74,14 +75,14 @@ test('keyboard navigation, selection, tabbing, and outside-click dismissal', asy
   await expect(trigger(page)).toBeEnabled();
   await trigger(page).focus();
   await page.keyboard.press('ArrowDown');
-  await expect(option(page,'Chapter 04: Functions')).toBeFocused();
+  await expect(option(page,'Chapter 02: Variables')).toBeFocused();
   await page.keyboard.press('ArrowDown');
-  await expect(option(page,'Chapter 05: Loops')).toBeFocused();
-  await expect(option(page,'Chapter 04: Functions')).toHaveAttribute('aria-selected','true');
+  await expect(option(page,'Chapter 03: Conditionals')).toBeFocused();
+  await expect(option(page,'Chapter 02: Variables')).toHaveAttribute('aria-selected','true');
   await page.keyboard.press('Escape');
   await expect(menu(page)).toHaveCount(0);
   await expect(trigger(page)).toBeFocused();
-  await expect(page.locator('.quest-heading h2')).toHaveText('Toolbox warm-up');
+  await expect(page.locator('.quest-heading h2')).toHaveText('Values and their types');
   await page.keyboard.press('Enter');
   await page.keyboard.press('Home');
   await expect(option(page,'Chapter 02: Variables')).toBeFocused();
@@ -138,6 +139,7 @@ test('switching opens the first lesson while preserving answers, XP, attempts, a
     if (localStorage.getItem('dropdown-seeded')) return;
     localStorage.setItem('dropdown-seeded','yes');
     localStorage.setItem('zhuddle-functions-v1',JSON.stringify(fn));
+    localStorage.setItem('zhuddle-active-chapter','functions');
     localStorage.setItem('zhuddle-loops-v1',JSON.stringify(savedLoops));
   },{fn,savedLoops});
   await page.goto('/');
