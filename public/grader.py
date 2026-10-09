@@ -1,6 +1,19 @@
 import ast, contextlib, io, json, math, sys
 
 
+def _error_line(exc):
+    if isinstance(exc, SyntaxError):
+        return exc.lineno
+    line = None
+    trace = exc.__traceback__
+    while trace:
+        # Only student frames, never the checker or a library's source lines.
+        if trace.tb_frame.f_code.co_filename.startswith('<C') or ':' in trace.tb_frame.f_code.co_filename and trace.tb_frame.f_code.co_filename.startswith('<'):
+            line = trace.tb_lineno
+        trace = trace.tb_next
+    return line
+
+
 @contextlib.contextmanager
 def _bounded():
     # A trace budget catches accidental infinite Python loops, not hostile code.
@@ -48,22 +61,29 @@ def _evaluate(qid, source):
     ns = {'__name__': '__student__'}
     output = io.StringIO()
     error = None
+    error_line = None
     tree = None
     try:
         tree = ast.parse(source)
         with _bounded(), contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):
             exec(compile(tree, '<' + qid + '>', 'exec'), ns)
     except BaseException as exc:
+        error_line = _error_line(exc)
         if isinstance(exc, KeyboardInterrupt):
             error = 'KeyboardInterrupt: run interrupted; edit and retry.'
         else:
             error = type(exc).__name__ + ': ' + str(exc)
     checks = []
+    execution_failed = error is not None
     def check(label, predicate):
+        nonlocal error, error_line
         try:
-            passed = error is None and bool(predicate())
-        except BaseException:
+            passed = not execution_failed and bool(predicate())
+        except BaseException as exc:
             passed = False
+            if _error_line(exc) is not None and error is None:
+                error = type(exc).__name__ + ': ' + str(exc)
+                error_line = _error_line(exc)
         checks.append({'label': label, 'earned': 2 if passed else 0, 'possible': 2})
     if qid == 'C01':
         check('Use len for the character count.', lambda: ns.get('character_count') == 11 and _called(tree, 'len'))
@@ -114,6 +134,6 @@ def _evaluate(qid, source):
         check('Return C, D and F at the correct boundaries.', lambda: all(_invoke(ns, 'computegrade', (v,), grade, '') for v, grade in [(.799,'C'),(.75,'C'),(.7,'C'),(.699,'D'),(.6,'D'),(.599,'F'),(.5,'F'),(0,'F')]))
         check('Reject numeric scores outside 0 through 1.', lambda: all(_invoke(ns, 'computegrade', (v,), 'Bad score', '') for v in (-.1, 10.0)))
         check('Use the supplied text-input helper for numeric and invalid text.', lambda: all(_invoke(ns, 'grade_text', (v,), grade, '') for v, grade in [('0.95','A'),('0.75','C'),('0.5','F'),('perfect','Bad score'),('10.0','Bad score')]) and output.getvalue() == 'A\nBad score\n')
-    return {'source': source, 'stdout': output.getvalue(), 'error': error,
+    return {'source': source, 'stdout': output.getvalue(), 'error': error, 'errorLine': error_line,
             'checks': checks, 'earned': sum(c['earned'] for c in checks), 'possible': 10}
 

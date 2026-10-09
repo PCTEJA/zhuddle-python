@@ -92,6 +92,7 @@ def _run_case(compiled, case):
     ns = copy.deepcopy(case.get('given', {}))
     ns.update(__name__='__student__', __builtins__={**vars(builtins), 'input':read_input, 'open':practice_open, 'exit':finish, 'quit':finish})
     error = None
+    error_line = None
     previous = os.getcwd()
     with tempfile.TemporaryDirectory(prefix='zhuddle-') as folder:
         try:
@@ -107,6 +108,7 @@ def _run_case(compiled, case):
                     error = 'Program exited with status ' + str(exc.code)
             except BaseException as exc:
                 error = type(exc).__name__ + ': ' + str(exc)
+                error_line = _error_line(exc)
             passed = error is None
             details = []
             for key, expected in case.get('expected', {}).items():
@@ -127,7 +129,7 @@ def _run_case(compiled, case):
                 except OSError:
                     passed = False
                     details.append(f'Create {name} and close it after writing.')
-            return passed, output.getvalue(), error, ' '.join(details)
+            return passed, output.getvalue(), error, ' '.join(details), error_line
         finally:
             for handle in opened:
                 handle.close()
@@ -141,6 +143,7 @@ def _evaluate_chapter(chapter_id, qid, source, manifest):
     if not spec:
         raise ValueError('Unknown chapter or coding mission. Reload and try again.')
     checks, output, error = [], '', None
+    error_line = None
     try:
         tree = ast.parse(source)
         compiled = compile(tree, '<' + chapter_id + ':' + qid + '>', 'exec')
@@ -148,20 +151,22 @@ def _evaluate_chapter(chapter_id, qid, source, manifest):
     except (SyntaxError, ValueError) as exc:
         compiled, missing = None, []
         error = type(exc).__name__ + ': ' + str(exc)
+        error_line = _error_line(exc)
     for index, group in enumerate(spec['cases']):
         passed, detail = compiled is not None and not missing, ''
         if compiled is not None:
             for variant_index, case in enumerate(group.get('variants', [group])):
-                ok, stdout, failure, feedback = _run_case(compiled, case)
+                ok, stdout, failure, feedback, failure_line = _run_case(compiled, case)
                 if index == 0 and variant_index == 0:
                     output = stdout
                 if failure and error is None:
                     error = failure
+                    error_line = failure_line
                 passed = passed and ok
                 if not ok and not detail:
                     detail = failure or feedback
         if missing:
             detail = ' '.join(_requirement_feedback(r) for r in missing)
         checks.append(dict(label=group['label'] + (' ' + detail if detail else ''), earned=2 if passed else 0, possible=2))
-    return dict(sourceId=qid, source=source, stdout=output, error=error, checks=checks,
+    return dict(sourceId=qid, source=source, stdout=output, error=error, errorLine=error_line, checks=checks,
                 earned=sum(c['earned'] for c in checks), possible=10)

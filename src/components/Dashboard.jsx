@@ -28,6 +28,7 @@ const badges = [
 ];
 
 export function Header({
+  ready,
   view,
   setView,
   state,
@@ -169,6 +170,7 @@ export function Header({
         </button>
         <button
           className="icon-button mobile-menu"
+          disabled={!ready}
           aria-label={menu ? "Close course menu" : "Open course menu"}
           aria-expanded={menu}
           aria-controls="course-sidebar"

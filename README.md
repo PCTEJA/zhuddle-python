@@ -110,7 +110,7 @@ pnpm install
 pnpm dev
 ```
 
-Open **http://localhost:4321**. The app builds as a static site; no backend service or API keys are needed.
+Open **http://localhost:4321**. Lessons and Python checks work without API keys. To enable the Groq-powered Code Coach and Zhuddle Guide, copy `.env.example` to `.env`, set the server-only `GROQ_API_KEY`, and restart the dev server. See [AI assistant setup](docs/ai-assistant.md) for hosting and free-tier details.
 
 <details>
 <summary><strong>Build, test, and explore the code</strong></summary>
@@ -143,7 +143,7 @@ Astro delivers the static page, React powers the learning workspace, and Pyodide
 | [`scripts/`](scripts/) | Curriculum and media generation |
 | [`tests/`](tests/) | Browser checks, grader tests, and reference solutions |
 
-Deploy `dist/` to a static host. Netlify and Vercel configurations are included.
+Netlify and Vercel configurations include `/api/assistant`. Deploy the project with its functions and set `GROQ_API_KEY` in the host's server environment. Uploading only `dist/` provides the lessons and built-in guidance, but cannot connect Groq.
 
 </details>
 

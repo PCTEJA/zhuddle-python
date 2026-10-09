@@ -4,6 +4,7 @@ dist/
 .netlify/
 .vercel/
 .env*
+!.env.example
 .qa/
 test-results/
 playwright-report/

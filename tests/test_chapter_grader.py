@@ -75,5 +75,14 @@ class CurriculumTests(unittest.TestCase):
     def test_unknown_chapter_does_not_use_functions_checks(self):
         with self.assertRaises(ValueError): evaluate('missing', 'C01', '', manifest)
 
+    def test_error_locations_refer_to_student_code(self):
+        for chapter in ['variables', 'functions']:
+            syntax = evaluate(chapter, 'C01', 'x = 1\nif :', manifest)
+            self.assertEqual(syntax['errorLine'], 2)
+            runtime = evaluate(chapter, 'C01', 'x = 1\nprint(missing_name)', manifest)
+            self.assertEqual(runtime['errorLine'], 2)
+        function = evaluate('functions', 'C05', 'def addtwo(a, b):\n    return missing_name', manifest)
+        self.assertEqual(function['errorLine'], 2)
+
 
 if __name__ == '__main__': unittest.main()

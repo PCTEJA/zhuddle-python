@@ -23,6 +23,10 @@ import {
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import Art, { MotionContext } from "./MotionArt";
+import CodeCoach from './CodeCoach';
+import AssistantGuide from './AssistantGuide';
+import { useCodeCoach } from '../lib/assistant';
+import '../styles/assistant.css';
 import {
   Header,
   Sidebar,
@@ -99,6 +103,8 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
     [resetQuestion, setResetQuestion] = useState(false),
     [newStudent, setNewStudent] = useState(false);
   const [systemReduced, setSystemReduced] = useState(false);
+  const [aiEnabled, setAiEnabled] = useState(true);
+  const [focusLine, setFocusLine] = useState(null);
   const [exporting, setExporting] = useState(false),
     [reducedMotion, setReducedMotion] = useState(true);
   const worker = useRef(null),
@@ -113,9 +119,26 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
     { score, complete, mastered } = scoreState(state, questions);
   const needsIdentity = !state.student.name || !state.student.untId;
   const allDone = complete === questions.length;
+  const coach = useCodeCoach({ chapterId: chapter.id, question: q, result, enabled: loaded && aiEnabled && !busy && view === 'quest' });
+  function toggleAi() {
+    setAiEnabled(value => {
+      try { localStorage.setItem('zhuddle-ai-help', value ? 'off' : 'on'); } catch {}
+      return !value;
+    });
+  }
+  function prepareGuideTarget(action) {
+    setMenu(false);
+    if (action === 'results' || action === 'downloads') { setView('results'); return action === 'downloads' ? '.finish-panel' : '.results-title'; }
+    if (action === 'profile') return '.profile-button';
+    setView('quest');
+    if (action === 'editor' && q.kind !== 'code') selectQuestion(questions.find(item => item.kind === 'code').id);
+    if (action === 'chapters') return matchMedia('(max-width:700px)').matches ? '.mobile-menu' : '#chapter-selector';
+    return action === 'editor' ? '.editor-frame' : '.instructions';
+  }
 
   useEffect(() => {
     let restored = freshState(questions);
+    try { setAiEnabled(localStorage.getItem('zhuddle-ai-help') !== 'off'); } catch {}
     try {
       const saved = JSON.parse(localStorage.getItem(chapterKey(chapter)) || "null");
       restored = restoreChapter(saved, questions);
@@ -374,6 +397,7 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
           Skip to exercise
         </a>
         <Header
+          ready={loaded}
           {...{
             view,
             setView,
@@ -551,6 +575,8 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
                           >
                             {loaded ? <Editor
                               value={state.code[q.id] || ""}
+                              diagnostics={coach.review?.diagnostics}
+                              focusLine={focusLine}
                               disabled={busy}
                               onChange={(value) =>
                                 setState((s) => ({
@@ -592,6 +618,7 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
                             )}
                           </div>
                         </div>
+                        <CodeCoach review={coach.review} enabled={aiEnabled} onToggle={toggleAi} onRetry={coach.retry} onLine={setFocusLine} />
                         <div className="console" aria-live="polite">
                           <div className="console-header">
                             <Terminal size={15} />
@@ -915,6 +942,7 @@ function ChapterApp({ chapter, startAtFirst, selectChapter, resetStudent }) {
             <Art name="xp-star" mode="event" />
           </div>
         )}
+        <AssistantGuide chapterId={chapter.id} prepareTarget={prepareGuideTarget} ready={loaded} />
         <dialog ref={dialog} onCancel={closeDialog} className="dialog">
           <button
             className="dialog-close icon-button"
