@@ -17,3 +17,5 @@
 .visitor-count-note{display:flex;align-items:center;gap:8px;border-top:1px solid #d8e5d3;padding-top:12px;font-size:9px;line-height:1.5;color:#536c56}
 @media(max-width:700px){.visitor-count{left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom))}.visitor-count-pill{gap:7px;min-height:44px;padding:5px 10px 5px 5px}.visitor-count-icon{width:28px;height:28px}.visitor-count-copy strong{font-size:14px}.visitor-count-copy>span{font-size:9px}.visitor-count-arrow{display:none}}
 @media(prefers-reduced-motion:reduce){.visitor-count-pill{transition:none}.visitor-count-pill:hover,.visitor-count-pill[aria-expanded=true]{transform:none}}
+/* Keep the expanded card above the guide launcher on narrow screens. */
+@media(max-width:700px){.visitor-count-details{bottom:calc(100% + 56px)}.visitor-count-details:after{bottom:-68px;height:68px}}

@@ -16,6 +16,6 @@
   "d1_databases": [{
     "binding": "DB",
     "database_name": "zhuddle-visitor-totals",
-    "database_id": "REPLACE_WITH_CREATED_D1_ID"
+    "database_id": "987acb53-ffc6-434e-8608-851d06ebcd85"
   }]
 }

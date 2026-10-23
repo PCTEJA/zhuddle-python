@@ -1,6 +1,45 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { DatabaseSync } from 'node:sqlite';
+import { readFileSync } from 'node:fs';
 import worker, { dailySnapshots, syncVisits } from '../workers/visitor-count/index.mjs';
+
+test('persisted snapshots survive repeats and out-of-order concurrent syncs', async () => {
+  const sqlite = new DatabaseSync(':memory:');
+  try {
+    sqlite.exec(readFileSync(new URL('../workers/visitor-count/schema.sql', import.meta.url), 'utf8'));
+    sqlite.exec("INSERT INTO daily_visits VALUES ('2026-10-23', 7, '2026-10-24T00:00:00.000Z'); INSERT INTO sync_state VALUES (1, '2026-10-29T01:00:00.000Z')");
+    const DB = {
+      prepare(sql) {
+        let args = [];
+        return {
+          bind(...values) { args = values; return this; },
+          async first() { return sqlite.prepare(sql).get(...args); },
+          run() { return sqlite.prepare(sql).run(...args); },
+        };
+      },
+      async batch(statements) {
+        sqlite.exec('BEGIN');
+        try { statements.forEach(statement => statement.run()); sqlite.exec('COMMIT'); }
+        catch (error) { sqlite.exec('ROLLBACK'); throw error; }
+      },
+    };
+    const env = { DB, TRACKING_SINCE: '2026-10-23T00:00:00Z', CF_ANALYTICS_TOKEN: 'test', ACCOUNT_ID: 'account', SITE_TAG: 'site' };
+    const response = visits => Response.json({ data: { viewer: { accounts: [{ rumPageloadEventsAdaptiveGroups: [
+      { dimensions: { date: '2026-10-29' }, sum: { visits } },
+    ] }] } } });
+    let release;
+    const pending = new Promise(resolve => { release = resolve; });
+    const older = syncVisits(env, new Date('2026-10-29T02:00:00Z'), async () => { await pending; return response(8); });
+    await syncVisits(env, new Date('2026-10-29T03:00:00Z'), async () => response(10));
+    release();
+    await older;
+    await syncVisits(env, new Date('2026-10-29T03:00:00Z'), async () => response(10));
+    const result = await worker.fetch(new Request('https://example.com/visits'), env);
+    assert.deepEqual(await result.json(), { total: 17, since: env.TRACKING_SINCE, updatedAt: '2026-10-29T03:00:00.000Z' });
+    assert.equal(sqlite.prepare("SELECT visits FROM daily_visits WHERE day = '2026-10-23'").get().visits, 7);
+  } finally { sqlite.close(); }
+});
 
 test('daily snapshots fill zero days and reject corrupt analytics', () => {
   const rows = [{ dimensions: { date: '2026-10-23' }, sum: { visits: 8 } }];
