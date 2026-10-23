@@ -1,0 +1,16 @@
+---
+// This is a public site identifier, never a Cloudflare API credential.
+const token = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN?.trim();
+const enabled = import.meta.env.PROD && Boolean(token);
+if (enabled && !/^[a-f0-9]{32}$/i.test(token)) {
+  throw new Error('PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN must be the 32-character token from the Cloudflare Web Analytics snippet.');
+}
+---
+{enabled && (
+  <script
+    is:inline
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon={JSON.stringify({ token })}
+  ></script>
+)}

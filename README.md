@@ -101,6 +101,8 @@ A 10-second introduction to the world of ZHUDDLE.
 
 ## Run it locally
 
+**Traffic reporting:** Free Cloudflare Web Analytics integration is available for visits, page views, and traffic sources. Set the public site token in your hosting environment and redeploy. See [traffic analytics setup](docs/traffic-analytics.md), including the separate setup needed for attack reports.
+
 **Requirements:** Node.js **22.12+** and [pnpm](https://pnpm.io/installation).
 
 ```sh

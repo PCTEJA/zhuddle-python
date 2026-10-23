@@ -1,5 +1,6 @@
 ---
 import SeoHead from '../../components/SeoHead.astro';
+import TrafficAnalytics from '../../components/TrafficAnalytics.astro';
 import SupportButton from '../../components/SupportButton.astro';
 import { chapters } from '../../data/curriculum';
 import { guides, guidePath } from '../../data/chapter-guides';
@@ -43,5 +44,6 @@ const title = `Python ${chapter.title} for Beginners: Exercises & Practice | ZHU
       <nav class="guide-actions" aria-label="More Python chapters">{chapters.filter(c => c.id !== chapter.id).map(c => <a class="guide-link" href={guidePath(c.id)}>Python {c.title.toLowerCase()}</a>)}</nav>
     </main>
     <SupportButton />
+    <TrafficAnalytics />
   </body>
 </html>
