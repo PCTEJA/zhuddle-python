@@ -19,11 +19,17 @@ Cloudflare counts visits and page views; these are not an exact count of distinc
 
 ## View attacks and blocked requests
 
-The browser analytics snippet cannot detect all attacks, API abuse, or bots that do not run JavaScript. Cloudflare security reporting is separate and requires requests to pass through Cloudflare's proxy.
+For the current Vercel deployment, use the existing Vercel Firewall alongside Cloudflare Web Analytics:
 
-For that setup, add `zhuddle.com` to a Cloudflare Free plan, review and preserve all existing DNS records (including mail records), follow its nameserver onboarding, and proxy the web records to the existing host. Verify HTTPS and `/api/assistant` after activation. This code change does not change DNS or activate a firewall.
+- [Visitor dashboard](https://dash.cloudflare.com/d04fe4763d53950f2656f61bd11ad98b/web-analytics/overview?siteTag~in=d12b2b9e0ab0495bb803b1e6074d5bcb&excludeBots=Yes): visits, page views, referrers, and visitor breakdowns.
+- [Security dashboard](https://vercel.com/teja-piepur-chakravarthis-projects/zhuddle-python/firewall): allowed, denied, and challenged requests, DDoS mitigation activity, and active alerts.
+- [Request traffic](https://vercel.com/teja-piepur-chakravarthis-projects/zhuddle-python/firewall/traffic): inspect traffic using the filters available on the current plan.
 
-Then open your domain in Cloudflare and go to **Security > Analytics** / **Security Events** for mitigated requests and available sampled logs. Free-plan reports are limited and sampled: they are not a complete attack log. Requests sent directly to the Vercel fallback hostname bypass the Cloudflare domain proxy, so review those in the hosting provider's security tools too. Web visits and edge request counts measure different things and will differ.
+The Hobby project already has an active firewall and system mitigations. These reports do not require a DNS migration or another analytics script. Some historical views and advanced features require a paid plan; the dashboard indicates those restrictions. Denied or challenged requests are security actions, not proof that every request was an attack. Web visits and HTTP request counts measure different things and will differ.
+
+The browser analytics snippet cannot detect all attacks, API abuse, or bots that do not run JavaScript. Cloudflare security reporting is separate and requires requests to pass through Cloudflare's proxy. The Cloudflare domain onboarding has not been completed; use Vercel for security reporting in the current setup.
+
+Vercel recommends connecting directly where possible. Adding an external proxy introduces security visibility, caching, and certificate-validation tradeoffs. Do not enable the Cloudflare proxy solely to obtain reports that Vercel already provides. If a future migration requires it, review the current Verified Proxy requirements, preserve DNS and mail records, and validate HTTPS and `/api/assistant` before switching traffic.
 
 ## Verify and troubleshoot
 
@@ -38,3 +44,5 @@ Official references:
 - [Setup and manual versus automatic installation](https://developers.cloudflare.com/web-analytics/get-started/)
 - [Available metrics](https://developers.cloudflare.com/web-analytics/data-metrics/)
 - [Security Events and plan limitations](https://developers.cloudflare.com/waf/analytics/security-events/)
+- [Vercel Firewall](https://vercel.com/docs/vercel-firewall)
+- [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment)
