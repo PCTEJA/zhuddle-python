@@ -1,4 +1,7 @@
 const DAY = 86400000;
+// Previous counter total supplied by the site owner, before continuous tracking.
+// Add at read time so analytics refreshes and repeated deploys cannot duplicate it.
+const HISTORICAL_VISITS = 23127;
 const QUERY = `query Visits($account: string!, $filter: AccountRumPageloadEventsAdaptiveGroupsFilter_InputObject!) {
   viewer { accounts(filter: {accountTag: $account}) {
     rumPageloadEventsAdaptiveGroups(limit: 32, filter: $filter) { dimensions {date} sum {visits} }
@@ -65,7 +68,7 @@ export default {
       const state = await env.DB.prepare('SELECT through_time FROM sync_state WHERE id = 1').first();
       if (!state) return Response.json({ error: 'Count not ready' }, { status: 503, headers: { ...headers, 'Cache-Control': 'no-store' } });
       const row = await env.DB.prepare('SELECT COALESCE(SUM(visits), 0) AS total FROM daily_visits').first();
-      const payload = { total: row.total, since: env.TRACKING_SINCE, updatedAt: state.through_time };
+      const payload = { total: HISTORICAL_VISITS + row.total, since: env.TRACKING_SINCE, updatedAt: state.through_time };
       return new Response(request.method === 'HEAD' ? null : JSON.stringify(payload), { headers: {
         ...headers, 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=300',
       } });
