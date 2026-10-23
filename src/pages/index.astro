@@ -4,6 +4,7 @@ import TrafficAnalytics from '../components/TrafficAnalytics.astro';
 import SupportButton from '../components/SupportButton.astro';
 import SeoHead from '../components/SeoHead.astro';
 import CourseOverview from '../components/CourseOverview.astro';
+import VisitorCount from '../components/VisitorCount.jsx';
 import '../styles/global.css';
 import '../styles/welcome.css';
 import '../styles/guides.css';
@@ -17,6 +18,7 @@ import '../styles/guides.css';
     <App client:load />
     <CourseOverview />
     <SupportButton />
+    {import.meta.env.PUBLIC_VISITOR_STATS_URL && <VisitorCount client:load endpoint={import.meta.env.PUBLIC_VISITOR_STATS_URL} />}
     <noscript>Enable JavaScript to run the interactive Python exercises. <a href="/ZHUDDLE_Functions_Quest.ipynb">Download the notebook instead.</a></noscript>
     <TrafficAnalytics />
   </body>

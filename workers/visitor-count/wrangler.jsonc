@@ -1,0 +1,21 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "zhuddle-visitor-count",
+  "main": "index.mjs",
+  "account_id": "d04fe4763d53950f2656f61bd11ad98b",
+  "compatibility_date": "2026-10-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 },
+  "triggers": { "crons": ["*/15 * * * *"] },
+  "vars": {
+    "ACCOUNT_ID": "d04fe4763d53950f2656f61bd11ad98b",
+    "SITE_TAG": "d12b2b9e0ab0495bb803b1e6074d5bcb",
+    "TRACKING_SINCE": "2026-10-23T00:00:00Z"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "zhuddle-visitor-totals",
+    "database_id": "REPLACE_WITH_CREATED_D1_ID"
+  }]
+}
